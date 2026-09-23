@@ -22,5 +22,5 @@
 ---
 
 ## 👥 Presenters
-* **Bikram Chapagain** — Repository Architecture & Pipeline Engineering [1]
-* **Deepa Paneru** — Application Integration & Feature Deployment [1]
+* **Bikram Chapagain** 
+* **Deepa Paneru**  

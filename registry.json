@@ -1,0 +1,400 @@
+{
+    "modules":  [
+                    {
+                        "id":  "dr",
+                        "name_en":  "Diabetic Retinopathy",
+                        "name_ne":  "",
+                        "modality":  "fundus",
+                        "tier":  "A",
+                        "status":  "experimental",
+                        "classes":  [
+
+                                    ],
+                        "classes_ne":  [
+
+                                       ],
+                        "input_size":  224,
+                        "mean":  [
+                                     0.485,
+                                     0.456,
+                                     0.406
+                                 ],
+                        "std":  [
+                                    0.229,
+                                    0.224,
+                                    0.225
+                                ],
+                        "backbone":  "",
+                        "checkpoint":  "models/dr/model.onnx",
+                        "format":  "onnx",
+                        "threshold":  0.6,
+                        "results_file":  "results/dr/results.json",
+                        "datasets":  [
+
+                                     ]
+                    },
+                    {
+                        "id":  "fundus_multi",
+                        "name_en":  "Multi-disease Fundus",
+                        "name_ne":  "",
+                        "modality":  "fundus",
+                        "tier":  "A",
+                        "status":  "experimental",
+                        "classes":  [
+
+                                    ],
+                        "classes_ne":  [
+
+                                       ],
+                        "input_size":  224,
+                        "mean":  [
+                                     0.485,
+                                     0.456,
+                                     0.406
+                                 ],
+                        "std":  [
+                                    0.229,
+                                    0.224,
+                                    0.225
+                                ],
+                        "backbone":  "",
+                        "checkpoint":  "models/fundus_multi/model.onnx",
+                        "format":  "onnx",
+                        "threshold":  0.6,
+                        "results_file":  "results/fundus_multi/results.json",
+                        "datasets":  [
+
+                                     ]
+                    },
+                    {
+                        "id":  "cxr_pneumonia",
+                        "name_en":  "Pneumonia / COVID-19",
+                        "name_ne":  "",
+                        "modality":  "chest_xray",
+                        "tier":  "A",
+                        "status":  "experimental",
+                        "classes":  [
+
+                                    ],
+                        "classes_ne":  [
+
+                                       ],
+                        "input_size":  224,
+                        "mean":  [
+                                     0.485,
+                                     0.456,
+                                     0.406
+                                 ],
+                        "std":  [
+                                    0.229,
+                                    0.224,
+                                    0.225
+                                ],
+                        "backbone":  "",
+                        "checkpoint":  "models/cxr_pneumonia/model.onnx",
+                        "format":  "onnx",
+                        "threshold":  0.6,
+                        "results_file":  "results/cxr_pneumonia/results.json",
+                        "datasets":  [
+
+                                     ]
+                    },
+                    {
+                        "id":  "tb",
+                        "name_en":  "Tuberculosis",
+                        "name_ne":  "",
+                        "modality":  "chest_xray",
+                        "tier":  "A",
+                        "status":  "experimental",
+                        "classes":  [
+
+                                    ],
+                        "classes_ne":  [
+
+                                       ],
+                        "input_size":  224,
+                        "mean":  [
+                                     0.485,
+                                     0.456,
+                                     0.406
+                                 ],
+                        "std":  [
+                                    0.229,
+                                    0.224,
+                                    0.225
+                                ],
+                        "backbone":  "",
+                        "checkpoint":  "models/tb/model.onnx",
+                        "format":  "onnx",
+                        "threshold":  0.6,
+                        "results_file":  "results/tb/results.json",
+                        "datasets":  [
+
+                                     ]
+                    },
+                    {
+                        "id":  "skin",
+                        "name_en":  "Skin Lesion",
+                        "name_ne":  "",
+                        "modality":  "dermoscopy",
+                        "tier":  "A",
+                        "status":  "experimental",
+                        "classes":  [
+
+                                    ],
+                        "classes_ne":  [
+
+                                       ],
+                        "input_size":  224,
+                        "mean":  [
+                                     0.485,
+                                     0.456,
+                                     0.406
+                                 ],
+                        "std":  [
+                                    0.229,
+                                    0.224,
+                                    0.225
+                                ],
+                        "backbone":  "",
+                        "checkpoint":  "models/skin/model.onnx",
+                        "format":  "onnx",
+                        "threshold":  0.6,
+                        "results_file":  "results/skin/results.json",
+                        "datasets":  [
+
+                                     ]
+                    },
+                    {
+                        "id":  "brain_tumor",
+                        "name_en":  "Brain Tumor",
+                        "name_ne":  "",
+                        "modality":  "mri",
+                        "tier":  "A",
+                        "status":  "experimental",
+                        "classes":  [
+
+                                    ],
+                        "classes_ne":  [
+
+                                       ],
+                        "input_size":  224,
+                        "mean":  [
+                                     0.485,
+                                     0.456,
+                                     0.406
+                                 ],
+                        "std":  [
+                                    0.229,
+                                    0.224,
+                                    0.225
+                                ],
+                        "backbone":  "",
+                        "checkpoint":  "models/brain_tumor/model.onnx",
+                        "format":  "onnx",
+                        "threshold":  0.6,
+                        "results_file":  "results/brain_tumor/results.json",
+                        "datasets":  [
+
+                                     ]
+                    },
+                    {
+                        "id":  "malaria",
+                        "name_en":  "Malaria",
+                        "name_ne":  "",
+                        "modality":  "blood_smear",
+                        "tier":  "A",
+                        "status":  "experimental",
+                        "classes":  [
+
+                                    ],
+                        "classes_ne":  [
+
+                                       ],
+                        "input_size":  224,
+                        "mean":  [
+                                     0.485,
+                                     0.456,
+                                     0.406
+                                 ],
+                        "std":  [
+                                    0.229,
+                                    0.224,
+                                    0.225
+                                ],
+                        "backbone":  "",
+                        "checkpoint":  "models/malaria/model.onnx",
+                        "format":  "onnx",
+                        "threshold":  0.6,
+                        "results_file":  "results/malaria/results.json",
+                        "datasets":  [
+
+                                     ]
+                    },
+                    {
+                        "id":  "breast",
+                        "name_en":  "Breast Cancer",
+                        "name_ne":  "",
+                        "modality":  "ultrasound",
+                        "tier":  "A",
+                        "status":  "experimental",
+                        "classes":  [
+
+                                    ],
+                        "classes_ne":  [
+
+                                       ],
+                        "input_size":  224,
+                        "mean":  [
+                                     0.485,
+                                     0.456,
+                                     0.406
+                                 ],
+                        "std":  [
+                                    0.229,
+                                    0.224,
+                                    0.225
+                                ],
+                        "backbone":  "",
+                        "checkpoint":  "models/breast/model.onnx",
+                        "format":  "onnx",
+                        "threshold":  0.6,
+                        "results_file":  "results/breast/results.json",
+                        "datasets":  [
+
+                                     ]
+                    },
+                    {
+                        "id":  "bone_fracture",
+                        "name_en":  "Bone Fracture",
+                        "name_ne":  "",
+                        "modality":  "xray",
+                        "tier":  "B",
+                        "status":  "experimental",
+                        "classes":  [
+
+                                    ],
+                        "classes_ne":  [
+
+                                       ],
+                        "input_size":  224,
+                        "mean":  [
+                                     0.485,
+                                     0.456,
+                                     0.406
+                                 ],
+                        "std":  [
+                                    0.229,
+                                    0.224,
+                                    0.225
+                                ],
+                        "backbone":  "",
+                        "checkpoint":  "models/bone_fracture/model.onnx",
+                        "format":  "onnx",
+                        "threshold":  0.6,
+                        "results_file":  "results/bone_fracture/results.json",
+                        "datasets":  [
+
+                                     ]
+                    },
+                    {
+                        "id":  "ear",
+                        "name_en":  "Ear Disease",
+                        "name_ne":  "",
+                        "modality":  "otoscopy",
+                        "tier":  "B",
+                        "status":  "experimental",
+                        "classes":  [
+
+                                    ],
+                        "classes_ne":  [
+
+                                       ],
+                        "input_size":  224,
+                        "mean":  [
+                                     0.485,
+                                     0.456,
+                                     0.406
+                                 ],
+                        "std":  [
+                                    0.229,
+                                    0.224,
+                                    0.225
+                                ],
+                        "backbone":  "",
+                        "checkpoint":  "models/ear/model.onnx",
+                        "format":  "onnx",
+                        "threshold":  0.6,
+                        "results_file":  "results/ear/results.json",
+                        "datasets":  [
+
+                                     ]
+                    },
+                    {
+                        "id":  "oral_cancer",
+                        "name_en":  "Oral Cancer",
+                        "name_ne":  "",
+                        "modality":  "clinical_photo",
+                        "tier":  "B",
+                        "status":  "experimental",
+                        "classes":  [
+
+                                    ],
+                        "classes_ne":  [
+
+                                       ],
+                        "input_size":  224,
+                        "mean":  [
+                                     0.485,
+                                     0.456,
+                                     0.406
+                                 ],
+                        "std":  [
+                                    0.229,
+                                    0.224,
+                                    0.225
+                                ],
+                        "backbone":  "",
+                        "checkpoint":  "models/oral_cancer/model.onnx",
+                        "format":  "onnx",
+                        "threshold":  0.6,
+                        "results_file":  "results/oral_cancer/results.json",
+                        "datasets":  [
+
+                                     ]
+                    },
+                    {
+                        "id":  "down_syndrome",
+                        "name_en":  "Down Syndrome (research only)",
+                        "name_ne":  "",
+                        "modality":  "face_photo",
+                        "tier":  "B",
+                        "status":  "hidden",
+                        "classes":  [
+
+                                    ],
+                        "classes_ne":  [
+
+                                       ],
+                        "input_size":  224,
+                        "mean":  [
+                                     0.485,
+                                     0.456,
+                                     0.406
+                                 ],
+                        "std":  [
+                                    0.229,
+                                    0.224,
+                                    0.225
+                                ],
+                        "backbone":  "",
+                        "checkpoint":  "models/down_syndrome/model.onnx",
+                        "format":  "onnx",
+                        "threshold":  0.6,
+                        "results_file":  "results/down_syndrome/results.json",
+                        "datasets":  [
+
+                                     ]
+                    }
+                ]
+}

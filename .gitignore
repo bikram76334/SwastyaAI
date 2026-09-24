@@ -1,0 +1,15 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+.ipynb_checkpoints/
+.vscode/
+.DS_Store
+
+# large model files (use Git LFS or external hosting later)
+*.pth
+*.onnx
+
+# raw data
+data/

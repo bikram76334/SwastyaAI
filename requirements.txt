@@ -1,0 +1,12 @@
+flask
+flask-limiter
+python-dotenv
+gunicorn
+onnxruntime
+numpy
+pillow
+opencv-python-headless
+# Grad-CAM needs gradients, so CPU torch is kept for heatmaps (optimize later)
+torch
+torchvision
+grad-cam

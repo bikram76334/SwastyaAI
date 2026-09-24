@@ -1,47 +1,26 @@
-# SwastyaAI
+# 🩺 SwasthyaAI — Project Presentation 
 
-A free, no-login, bilingual (English / Nepali) web platform for medical image screening across multiple diseases.
+ **SwasthyaAI**, a multi-disease medical image screening platform featuring bilingual access. This presentation outlines a unified platform designed to bridge the gap between laboratory research and accessible public health screening.
 
-> **Research prototype for education only. Not a medical diagnosis.** Always consult a qualified doctor.
+---
 
-## What it does
+## 🎙️ Presentation Highlights
 
-Pick a disease module, upload an image, and get:
+* **The Problem**: Current public medical AI models suffer from single-data evaluation, data leakage, lack of single platform consolidation, and language barriers (English-only).
+* **The Solution**: An open, no-login, bilingual (**English/Nepali**) web platform hosting multiple cross-evaluated screening models.
+* **Core Innovation**: Provides transparent outputs by presenting predictions alongside **Grad-CAM explanations**, uncertainty estimation, and open performance metrics.
 
-- Predicted class with probabilities
-- Grad-CAM heatmap
-- Uncertainty / low-confidence warning
-- The model's measured performance, including external-dataset results
+---
 
-No accounts. Images are processed in memory and never stored.
+## 📊 Project at a Glance
 
-## Disease modules (planned)
+* **Disease Modules**: Core screening support for **8 to 12 disease tasks** across multiple modalities including Chest X-rays, Fundus images, Dermoscopy, and MRIs.
+* **Deep Learning Framework**: Standardized training pipeline evaluating **ResNet, EfficientNet, ConvNeXt, and Vision Transformers (ViT)**.
+* **Core Tech Stack**: Python Flask application tier powering a lightweight, responsive local and web presentation layer.
+* **Ethics & Privacy First**: Complete **anonymous use**—user images are processed purely in volatile memory and discarded immediately after prediction.
 
-Diabetic retinopathy · Multi-disease fundus · Pneumonia / COVID-19 · Tuberculosis · Skin lesions · Brain tumor · Malaria · Breast cancer
+---
 
-Each is trained on 2+ public datasets and tested on a dataset it never saw during training.
-
-## Tech stack
-
-PyTorch (ResNet, EfficientNet, ConvNeXt, ViT) · Flask · ONNX · Render / Railway
-
-## Quick start
-
-```bash
-git clone https://github.com/<your-username>/SwasthyaAI.git
-cd SwasthyaAI
-pip install -r requirements.txt
-cd app && python app.py
-```
-
-Open http://127.0.0.1:5000
-
-## Status
-
- In development. First milestone: Diabetic Retinopathy + Chest X-ray Pneumonia.
-
-## Author
-
-Bikram Chapagain
-
-
+## 👥 Presenters
+* **Bikram Chapagain** 
+* **Deepa Paneru**  

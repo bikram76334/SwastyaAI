@@ -1,4 +1,3 @@
-# Diabetic Retinopathy - literature notes
 # Literature Table: Diabetic Retinopathy Module (SwasthyaAI)
 
 Each row summarises one paper: what it did, what it reported, where it falls short,
@@ -24,7 +23,7 @@ Learning Techniques. *IJNRD* 10(9).
 | **Metrics reported** | Accuracy, weighted precision, recall, F1 (balanced accuracy and macro F1 promised but not reported) |
 | **Key result** | APTOS: ResNet-50 86.5% (EffNet-B3 85.5%, DenseNet 81.1%); DR-Resized: EffNet-B3 77.8% (ResNet 73.9%, DenseNet 71.6%) |
 | **Limitations found** | Severe DR recall only 26% on APTOS; Mild recall only 15% on DR-Resized (majority class ~71%); overfitting visible in loss curves but denied in text; no cross-dataset test; split method not described (2 eyes per patient, no laterality field used); three imbalance methods stacked with no ablation; minimal preprocessing; Gaussian blur used as augmentation; ordinal grades treated as flat classes (no QWK, CIs, or multiple seeds); text inconsistencies (224 vs 300 px, ResNet described with "compound scaling") |
-| **Your fix (SwasthyaAI)** | Report per-class sensitivity, macro-AUC, QWK, bootstrap CIs, 3+ seeds; patient-level split using laterality (left/right eye) so both eyes of one patient stay together; external test on IDRiD and Messidor-2; one imbalance method at a time (ablation), with calibration and ECE reported; retina crop + Ben Graham + CLAHE at 512 px, drop blur; ordinal head (CORAL/CORN) |
+| **Our fix (SwasthyaAI)** | We will report per-class sensitivity, macro-AUC, QWK, bootstrap CIs, 3+ seeds; we will do a patient-level split using laterality (left/right eye) so both eyes of one patient stay together; we will run an external test on IDRiD and Messidor-2; we will use one imbalance method at a time (ablation), with calibration and ECE reported; we will do a retina crop + Ben Graham + CLAHE at 512 px, and drop blur; we will use an ordinal head (CORAL/CORN) |
 
 ---
 
@@ -40,7 +39,7 @@ retinopathy detection using foundation models (MMRDR). *Scientific Data* 13:639.
 | **Metrics reported** | Accuracy and F1 only (DR grade, lesion, DME); no AUC, QWK, per-class results, or CIs |
 | **Key result** | CFP DR grade: ResNet-50 0.823, RETFound 0.822; UWF: ResNet-50 0.745 (best); zero-shot LVLMs poor; fine-tuned InternVL3-38B 0.781 (CFP) |
 | **Limitations found** | CFP split at image level, not patient level (patient IDs unavailable in source OIA-DDR), so CFP scores are optimistic; CFP is the existing OIA-DDR set, not an independent collection; UWF/OCT are split at patient level and include a laterality field (left/right eye), but CFP does not; modalities are not paired (different patients across CFP/UWF/OCT); single hospital; one OCT slice per eye; labels are mostly single-reader, and inter-rater calibration used only 130 images; aggressive quality filtering removed ~35% of UWF images; baseline comparison is confounded (linear probe vs full fine-tune); the text's claim about foundation-model robustness contradicts Table 3's own AccG numbers |
-| **Your fix (SwasthyaAI)** | Use MMRDR-CFP only as a test-only set, and only if DDR is not already in training; re-group near-duplicates (pHash) before any re-split; add a laterality field to the CFP subset where recoverable so both eyes of a patient stay on the same side of the split; use the same training recipe for every backbone; build an own quality gate and "ungradable" path; report QWK, per-class metrics and CIs |
+| **Our fix (SwasthyaAI)** | We will use MMRDR-CFP only as a test-only set, and only if DDR is not already in our training data; we will re-group near-duplicates (pHash) before any re-split; we will add a laterality field to the CFP subset where recoverable so both eyes of a patient stay on the same side of the split; we will use the same training recipe for every backbone; we will build our own quality gate and "ungradable" path; we will report QWK, per-class metrics and CIs |
 
 ---
 
@@ -56,7 +55,7 @@ grading (RSG-Net). *Scientific Reports* 15:3763.
 | **Metrics reported** | Accuracy, sensitivity, specificity, F1, PPV, NPV, AUC, likelihood ratios |
 | **Key result** | Test accuracy 99.36% (4-class), 99.37% (binary); AUC ~99.98%; claims to outperform prior work (Table 9) |
 | **Limitations found** | Augmentation performed **before** the train/test split — near-copies of one retina end up in both train and test, so the reported accuracy largely measures memorisation, not generalisation (the critical flaw); no patient- or laterality-based split described at all; artificially balanced test set; a very large dense layer relative to ~1,200 real images (training accuracy reaches ~100%); blur, global histogram equalisation and 200 px resolution all damage small lesions; non-standard label scheme; several numbers in the text are inconsistent with the paper's own confusion matrix (10 errors shown vs "5" stated; sensitivity 0.9527 in text vs 0.9941 in Table 8); single small dataset, with no CIs, seeds, or external test |
-| **Your fix (SwasthyaAI)** | Split the original images first, then augment on the fly for the training set only; group by patient/laterality where available before splitting; keep the natural class distribution in validation/test; use a pretrained backbone with global pooling instead of a large dense layer from scratch; use CLAHE/Ben Graham at 512 px instead of blur + global HE; use the standard 0–4 label scheme; use k-fold cross-validation, multiple seeds, and CIs; generate all reported numbers directly from saved prediction files |
+| **Our fix (SwasthyaAI)** | We will split the original images first, then augment on the fly for the training set only; we will group by patient/laterality where available before splitting; we will keep the natural class distribution in validation/test; we will use a pretrained backbone with global pooling instead of a large dense layer from scratch; we will use CLAHE/Ben Graham at 512 px instead of blur + global HE; we will use the standard 0–4 label scheme; we will use k-fold cross-validation, multiple seeds, and CIs; we will generate all reported numbers directly from saved prediction files |
 
 ---
 

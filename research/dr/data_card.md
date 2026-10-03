@@ -1,6 +1,5 @@
 # Data Cards — Diabetic Retinopathy Public Datasets
 
-Filled using the counts in `Public_Datasets_Summary.pdf` and the paper review above.
 Grade scheme: 0 = No DR, 1 = Mild, 2 = Moderate, 3 = Severe, 4 = Proliferative DR
 (for Messidor-1: 2 = Moderate+Severe merged, 3 = Proliferative, no separate grade 4).
 

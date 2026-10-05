@@ -1,0 +1,34 @@
+ 
+{% extends 'base.html' %}
+{% block title %}About Us {% endblock%}
+
+{% block contents %}
+<h4 >About Swashthya AI</h4>
+
+  <p>
+  <img src="static/poster.png" width="550px" height="750px" >
+
+SwasthyaAI, a free,<br>
+public, no-login web platform that works as a central hub for several medical image
+screening models, with an interface in English and Nepali.
+<br><br>
+
+  The platform will host at least eight and up to twelve disease modules, including
+diabetic retinopathy, multi-disease fundus screening, pneumonia, tuberculosis, skin
+lesions, brain tumors, malaria and breast cancer imaging. Each module is trained on
+publicly available data collected from Kaggle .
+
+<br><br>
+<h5>
+What it does?  </h5>
+<i>Pick a disease module, upload an image, and get:</i>
+<ul type="disc">
+<li>Predicted class with probabilities</li>
+<li>Grad-CAM heatmap </li>
+<li>Uncertainty / low-confidence warning</li>
+<li>The model's measured performance, including external-dataset results</li>
+</ul>
+</p>
+
+</div>
+{% endblock %}

@@ -2,8 +2,17 @@ body{
     margin:20px;
     padding:15px;
     font-size:20px;
+    
 
 }
+.nav-item{
+    float:right;
+}
+.custom-nav{
+    background-color:orange;
+}
+
+
 img{
     float:right;
 }
@@ -13,12 +22,38 @@ h4{
   
 }
 .flex-container{
-    display: flex;
-    flex-direction:row;
-    
+
+    display:flex;
 
 }
-.language-selector{
+.up{
     float:right;
 
+}
+
+.disease-card{
+    flex-direction:column;
+   display:flex;
+   border-radius:5px;
+    box-shadow:  rgb(86, 84, 84);
+    background-color:rgb(208, 208, 221);
+    border:1px solid black;
+    padding:20px;
+     margin:30px ;
+     width:100%;
+     overflow:hidden;
+     height:300px;
+     
+         
+}
+.disease-card img{
+    width:100%;
+    object-fit:cover;
+    height:250px;
+}
+.disease-card span{
+    display:block;
+    flex-wrap:wrap;
+    text-align:center;
+   
 }

@@ -1,9 +1,93 @@
 {% extends 'base.html' %}
-{% block title %}DR {% endblock%}
+{% block title %}Diabetic Retinopathy {% endblock%}
 
 {% block contents %}
-<h6>Hello I am DR</h6>
-<button class="btn btn-secondary mt-3 "  > Upload Photo</button>
+<div class="container my-5">
 
+  <h4 class="pt-3">Diabetic Retinopathy Screening</h4>
+  <p>
+    Upload a retinal fundus photo (JPG or PNG). The model grades diabetic
+    retinopathy severity from 0 (No DR) to 4 (Proliferative DR).
+  </p>
+
+  <div class="alert alert-info" role="alert">
+    <strong>Screening support, not a diagnosis.</strong>
+    This result comes from a research model and has not been reviewed by
+    a clinician. Always consult a qualified doctor for medical advice.
+  </div>
+
+  <div class="row g-4">
+
+    <div class="col-12 col-md-5">
+      <form method="post" enctype="multipart/form-data" action="{{ url_for('dr') }}">
+        <div class="mb-3">
+          <label for="model" class="form-label">Select model</label>
+          <select class="form-select" id="model" name="model" required>
+            {% for value, label in model_choices %}
+            <option value="{{ value }}" {% if value == selected_model %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Fundus image</label>
+          <input class="form-control" type="file" id="image" name="image" accept=".jpg,.jpeg,.png" required>
+          <div class="form-text">JPG or PNG, up to 10 MB.</div>
+        </div>
+
+        {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-secondary mt-2">Run Inference</button>
+      </form>
+    </div>
+
+    {% if result %}
+    <div class="col-12 col-md-7">
+      <div class="card">
+        {% if result.image_data_uri %}
+        <img src="{{ result.image_data_uri }}" class="card-img-top" alt="Uploaded fundus image">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">Predicted: {{ result.predicted_class }}</h5>
+          <p class="text-muted small mb-2">Model: {{ result.model_used }}</p>
+          <p class="card-text mb-3">Confidence: {{ "%.0f"|format(result.confidence * 100) }}%</p>
+
+          {% for c in result.classes %}
+          <div class="mb-2">
+            <div class="d-flex justify-content-between">
+              <small>{{ c.name }}</small>
+              <small>{{ "%.1f"|format(c.probability * 100) }}%</small>
+            </div>
+            <div class="progress" style="height: 6px;">
+              <div class="progress-bar {% if c.name == result.predicted_class %}bg-secondary{% endif %}"
+                   role="progressbar"
+                   data-pct="{{ (c.probability * 100) | round(1) }}"
+                   aria-valuenow="{{ (c.probability * 100) | round(1) }}"
+                   aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          {% endfor %}
+
+          {% if result.is_uncertain %}
+          <div class="alert alert-warning mt-3 mb-0" role="alert">
+            Low confidence — please don't rely on this result, and consult a doctor.
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+
+<script>
+  // Sets each progress bar's width from its data-pct attribute (plain JS,
+  // no Jinja inside the script block — keeps editors from flagging it).
+  document.querySelectorAll(".progress-bar[data-pct]").forEach(function (el) {
+    el.style.width = el.getAttribute("data-pct") + "%";
+  });
+</script>
 {% endblock %}
-

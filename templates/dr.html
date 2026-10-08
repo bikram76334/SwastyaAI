@@ -20,13 +20,16 @@
 
     <div class="col-12 col-md-5">
       <form method="post" enctype="multipart/form-data" action="{{ url_for('dr') }}">
-        <div class="mb-3">
+        <div class="mb-3 ">
           <label for="model" class="form-label">Select model</label>
+          <div class="input-group">
           <select class="form-select" id="model" name="model" required>
             {% for value, label in model_choices %}
             <option value="{{ value }}" {% if value == selected_model %}selected{% endif %}>{{ label }}</option>
             {% endfor %}
           </select>
+<button class=" m-4 btn btn-warning">?</button>
+        </div>
         </div>
 
         <div class="mb-3">

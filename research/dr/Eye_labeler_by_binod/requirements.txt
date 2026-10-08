@@ -1,0 +1,2 @@
+flask>=3.0
+kagglehub>=0.3

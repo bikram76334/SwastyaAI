@@ -3,24 +3,39 @@
 {% block title %}About Us {% endblock%}
 
 {% block contents %}
-<h4 class="pt-5" >About Swashthya AI</h4>
+<h4 class="pt-5 mt-5" >About Swashthya AI</h4>
 
   <p>
-  <img src="static/poster.png" width="550px" height="750px" >
-
-SwasthyaAI, a free,<br>
-public, no-login web platform that works as a central hub for several medical image
-screening models, with an interface in English and Nepali.
-<br><br>
-
+  <img src="static/poster.png" width="550px" height="800px" >
+<div class=" about card p-4 bg-info ">
+  <div class=" text-dark">
+    <strong>SwasthyaAI</strong>, a free,<br>
+    public, no-login web platform that works as a central hub for several medical image
+    screening models, with an interface in English and Nepali.
+  </div>
   The platform will host at least eight and up to twelve disease modules, including
 diabetic retinopathy, multi-disease fundus screening, pneumonia, tuberculosis, skin
 lesions, brain tumors, malaria and breast cancer imaging. Each module is trained on
 publicly available data collected from Kaggle .
+</div>
 
-<br><br>
-<h5>
-What it does?  </h5>
+<div class=" mb-3">
+ <div class="row g-0 ">
+  <h5 class="p-2">Our Features</h5>
+  <div class=" features  col-md-4">
+    <ul >
+      <li> Bilingual </li>
+      <li>Multiple datasets use</li>
+      <li> Multile Diseases Screening </li>
+      <li>No data leakages</li>
+      <li>Heatmaps,performance information</li>
+    </ul>
+    </div>
+
+
+<h5 class="p-2">What it does?  </h5>
+<div class =" features col-md-8">
+
 <i>Pick a disease module, upload an image, and get:</i>
 <ul type="disc">
 <li>Predicted class with probabilities</li>
@@ -29,6 +44,11 @@ What it does?  </h5>
 <li>The model's measured performance, including external-dataset results</li>
 </ul>
 </p>
+</div>
 
 </div>
+</div>
+
+
+
 {% endblock %}

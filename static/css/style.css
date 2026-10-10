@@ -26,10 +26,7 @@ h4{
     display:flex;
 
 }
-.up{
-    float:right;
 
-}
 
 .disease-card{
     flex-direction:column;
@@ -56,4 +53,12 @@ h4{
     flex-wrap:wrap;
     text-align:center;
    
+}
+.about{
+    width:50%;
+}
+.features{
+width:60%;
+  
+    background-color:pink;
 }

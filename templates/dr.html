@@ -16,34 +16,24 @@
     a clinician. Always consult a qualified doctor for medical advice.
   </div>
 
-  <div class="row g-3">
+  <div class="row g-4">
 
     <div class="col-12 col-md-5">
       <form method="post" enctype="multipart/form-data" action="{{ url_for('dr') }}">
-        <div class="mb-3 ">
+
+        <div class="mb-3">
           <label for="model" class="form-label">Select model</label>
-          
-          <select class="form-select" id="model" name="model" required>
-            {% for value, label in model_choices %}
-            <option value="{{ value }}" {% if value == selected_model %}selected{% endif %}>{{ label }}</option>
-            {% endfor %}
-          </select>
+          <div class="input-group">
+            <select class="form-select" id="model" name="model" required>
+              {% for value, label in model_choices %}
+              <option value="{{ value }}" {% if value == selected_model %}selected{% endif %}>{{ label }}</option>
+              {% endfor %}
+            </select>
+            <!-- type="button" so it never submits the form -->
+            <button type="button" class="btn btn-outline-secondary fw-bold" id="metricBtn"
+                    title="Show this model's metrics" aria-label="Show model metrics">?</button>
           </div>
         </div>
-
-
-    <div class="col-12 col-md-5">
-      <form method="post" enctype="multipart/form-data" action="{{ url_for('dr') }}">
-        <div class="mb-3 ">
-          <label for="model " class="form-label mx-5 ">?</label>        
-<select class="form-select " id="metric" name="metric" required>
-<option>Qualitative</option>
-<option>Quantitative</option>
-        
-  </select>
-        </div>
-        </div>
-
 
         <div class="mb-3">
           <label for="image" class="form-label">Fundus image</label>
@@ -99,11 +89,110 @@
   </div>
 </div>
 
+<!--metrics of the selected model-->
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoTitle" aria-hidden="true"
+     data-grid-base="{{ url_for('static', filename='samples/dr/') }}">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoTitle">Model Performance</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <ul class="nav nav-tabs mb-3" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#pane-quant" type="button" role="tab">Quantitative</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pane-qual" type="button" role="tab">Qualitative</button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+
+          <div class="tab-pane fade show active" id="pane-quant" role="tabpanel">
+            <div class="table-responsive">
+              <table class="table table-striped align-middle mb-2">
+                <thead>
+                  <tr><th>Metric</th><th class="text-end">Value</th></tr>
+                </thead>
+                <tbody id="metricRows"></tbody>
+              </table>
+            </div>
+            <p class="form-text mb-0">
+              QWK = quadratic weighted kappa. MAE = mean absolute error in grades.
+              Measured on the held-out test set.
+            </p>
+          </div>
+
+          <div class="tab-pane fade" id="pane-qual" role="tabpanel">
+            <img class="img-fluid rounded border" id="gridImg" alt="Predictions on 30 test images">
+            <div class="alert alert-secondary text-center d-none" id="gridMissing">
+              Add this model's 30-image grid at<br><code id="gridPath"></code>
+            </div>
+            <p class="form-text mt-2 mb-0">Sample predictions on 30 test images (true vs. predicted grade).</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <script>
-  // Sets each progress bar's width from its data-pct attribute (plain JS,
-  // no Jinja inside the script block — keeps editors from flagging it).
   document.querySelectorAll(".progress-bar[data-pct]").forEach(function (el) {
     el.style.width = el.getAttribute("data-pct") + "%";
+  });
+
+  // ---- EDIT HERE: one entry per dropdown value (same keys as MODEL_CHOICES) ----
+  // Copy the numbers from  e1_summary_seed*.csv files.
+  // grid = image file inside static/samples/dr/
+  var METRICS = {
+    "2024": { name: "Seed 2024", grid: "qualitative_2024.png",
+              acc: "—", qwk: "—", f1: "—", mae: "—" },
+    "42":   { name: "Seed 42",   grid: "qualitative_42.png",
+              acc: "—", qwk: "—", f1: "—", mae: "—" },
+    "123":  { name: "Seed 123",  grid: "qualitative_123.png",
+              acc: "—", qwk: "—", f1: "—", mae: "—" },
+    "all":  { name: "Ensemble (all 3 seeds)", grid: "qualitative_all.png",
+              acc: "—", qwk: "—", f1: "—", mae: "—" }
+  };
+
+  // ? button: fill the modal with the currently selected model, then open it.
+  // `bootstrap` is only used inside the handler because base.html loads
+  // bootstrap.min.js after this block.
+  document.getElementById("metricBtn").addEventListener("click", function () {
+    var key = document.getElementById("model").value;
+    var m = METRICS[key];
+    if (!m) { return; }
+
+    var modalEl = document.getElementById("infoModal");
+    document.getElementById("infoTitle").textContent = "Model Performance — " + m.name;
+
+    document.getElementById("metricRows").innerHTML =
+      "<tr><td>Accuracy</td><td class='text-end'>" + m.acc + "</td></tr>" +
+      "<tr><td>QWK</td><td class='text-end'>" + m.qwk + "</td></tr>" +
+      "<tr><td>Macro F1</td><td class='text-end'>" + m.f1 + "</td></tr>" +
+      "<tr><td>MAE</td><td class='text-end'>" + m.mae + "</td></tr>";
+
+    var img = document.getElementById("gridImg");
+    var missing = document.getElementById("gridMissing");
+    var src = modalEl.getAttribute("data-grid-base") + m.grid;
+    document.getElementById("gridPath").textContent = "static/samples/dr/" + m.grid;
+    missing.classList.add("d-none");
+    img.style.display = "";
+    img.onerror = function () { img.style.display = "none"; missing.classList.remove("d-none"); };
+    img.src = src;
+
+    // always open on the Quantitative tab
+    bootstrap.Tab.getOrCreateInstance(
+      document.querySelector('[data-bs-target="#pane-quant"]')
+    ).show();
+    bootstrap.Modal.getOrCreateInstance(modalEl).show();
   });
 </script>
 {% endblock %}

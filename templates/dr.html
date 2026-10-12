@@ -162,9 +162,6 @@
               acc: "—", qwk: "—", f1: "—", mae: "—" }
   };
 
-  // ? button: fill the modal with the currently selected model, then open it.
-  // `bootstrap` is only used inside the handler because base.html loads
-  // bootstrap.min.js after this block.
   document.getElementById("metricBtn").addEventListener("click", function () {
     var key = document.getElementById("model").value;
     var m = METRICS[key];

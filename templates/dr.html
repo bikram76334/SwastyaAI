@@ -106,6 +106,7 @@
           <li class="nav-item" role="presentation">
             <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#pane-quant" type="button" role="tab">Quantitative</button>
           </li>
+
           <li class="nav-item" role="presentation">
             <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pane-qual" type="button" role="tab">Qualitative</button>
           </li>
@@ -157,9 +158,9 @@
     "42":   { name: "Seed 42",   grid: "qualitative_42.png",
               acc: "",  macro_f1: "", ref_sens :"_",ref_spec:"" },
     "123":  { name: "Seed 123",  grid: "qualitative_123.png",
-              acc: "77.05%",  macro_f1: "59.10%", ref_sens: "89.78%",ref_Spec:"94.32%" },
+              acc: "77.05%",  macro_f1: "59.10%", ref_sens: "89.78%",ref_spec:"94.32%" },
     "all":  { name: "Ensemble (all 3 seeds)", grid: "qualitative_all.png",
-              acc: "—", f1: "—", ref_sens: "—",ref_Spec:"" }
+              acc: "—", f1: "—", ref_sens: "—",ref_spec:"" }
   };
 
   // ? button: fill the modal with the currently selected model, then open it.
@@ -175,9 +176,10 @@
 
     document.getElementById("metricRows").innerHTML =
       "<tr><td>Accuracy</td><td class='text-end'>" + m.acc + "</td></tr>" +
-      "<tr><td>QWK</td><td class='text-end'>" + m.qwk + "</td></tr>" +
-      "<tr><td>Macro F1</td><td class='text-end'>" + m.f1 + "</td></tr>" +
-      "<tr><td>MAE</td><td class='text-end'>" + m.mae + "</td></tr>";
+       
+      "<tr><td>Macro F1</td><td class='text-end'>" + m.macro_f1 + "</td></tr>" +
+      "<tr><td>Ref_Sensivity</td><td class='text-end'>" + m.ref_sens + "</td></tr>"+
+      "<tr><td>Ref_Specivity</td><td class='text-end'>" + m.ref_spec + "</td></tr>";
 
     var img = document.getElementById("gridImg");
     var missing = document.getElementById("gridMissing");

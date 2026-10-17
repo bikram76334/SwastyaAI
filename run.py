@@ -28,8 +28,12 @@ def dr():
     selected_model = request.form.get("model", "2024")
     ctx = {"model_choices": MODEL_CHOICES, "selected_model": selected_model}
 
+    
+
     if selected_model not in dict(MODEL_CHOICES):
         return render_template("dr.html", error="Please select a model.", **ctx)
+
+   
 
     file = request.files.get("image")
     if file is None or file.filename == "":
@@ -56,6 +60,11 @@ def dr():
     )
 
     return render_template("dr.html", result=result, **ctx)
+
+#for DR grade library
+@app.route('/grade0')
+def grade0():
+    return render_template('grade0.html')
 
 
 @app.errorhandler(413)

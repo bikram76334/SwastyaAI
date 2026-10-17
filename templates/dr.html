@@ -16,80 +16,186 @@
     a clinician. Always consult a qualified doctor for medical advice.
   </div>
 
-  <div class="row g-4">
 
+ <!-- Main Row layout -->
+  <div class="row g-4 align-items-stretch">
+
+    <!-- Left Column: Form -->
     <div class="col-12 col-md-5">
-      <form method="post" enctype="multipart/form-data" action="{{ url_for('dr') }}">
-
-        <div class="mb-3">
-          <label for="model" class="form-label">Select model</label>
-          <div class="input-group">
-            <select class="form-select" id="model" name="model" required>
-              {% for value, label in model_choices %}
-              <option value="{{ value }}" {% if value == selected_model %}selected{% endif %}>{{ label }}</option>
-              {% endfor %}
-            </select>
-            <!-- type="button" so it never submits the form -->
-            <button type="button" class="btn btn-outline-secondary fw-bold" id="metricBtn"
-                    title="Show this model's metrics" aria-label="Show model metrics">?</button>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="image" class="form-label">Fundus image</label>
-          <input class="form-control" type="file" id="image" name="image" accept=".jpg,.jpeg,.png" required>
-          <div class="form-text">JPG or PNG, up to 10 MB.</div>
-        </div>
-
-        {% if error %}
-        <div class="alert alert-danger" role="alert">{{ error }}</div>
-        {% endif %}
-
-        <button type="submit" class="btn btn-secondary mt-2">Run Inference</button>
-      </form>
-    </div>
-
-    {% if result %}
-    <div class="col-12 col-md-7">
-      <div class="card">
-        {% if result.image_data_uri %}
-        <img src="{{ result.image_data_uri }}" class="card-img-top" alt="Uploaded fundus image">
-        {% endif %}
+      <div class="card shadow-sm h-100 p-3">
         <div class="card-body">
-          <h5 class="card-title">Predicted: {{ result.predicted_class }}</h5>
-          <p class="text-muted small mb-2">Model: {{ result.model_used }}</p>
-          <p class="card-text mb-3">Confidence: {{ "%.0f"|format(result.confidence * 100) }}%</p>
+          <form method="post" enctype="multipart/form-data" action="{{ url_for('dr') }}">
 
-          {% for c in result.classes %}
-          <div class="mb-2">
-            <div class="d-flex justify-content-between">
-              <small>{{ c.name }}</small>
-              <small>{{ "%.1f"|format(c.probability * 100) }}%</small>
+            <div class="mb-3">
+              <label for="model" class="form-label">Select model</label>
+              <div class="input-group">
+                <select class="form-select" id="model" name="model" required>
+                  {% for value, label in model_choices %}
+                  <option value="{{ value }}" {% if value == selected_model %}selected{% endif %}>{{ label }}</option>
+                  {% endfor %}
+                </select>
+                <!-- type="button" so it never submits the form -->
+                <button type="button" class="btn btn-outline-secondary fw-bold" id="metricBtn"
+                        title="Show this model's metrics" aria-label="Show model metrics">?</button>
+              </div>
             </div>
-            <div class="progress" style="height: 6px;">
-              <div class="progress-bar {% if c.name == result.predicted_class %}bg-secondary{% endif %}"
-                   role="progressbar"
-                   data-pct="{{ (c.probability * 100) | round(1) }}"
-                   aria-valuenow="{{ (c.probability * 100) | round(1) }}"
-                   aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-          {% endfor %}
 
-          {% if result.is_uncertain %}
-          <div class="alert alert-warning mt-3 mb-0" role="alert">
-            Low confidence — please don't rely on this result, and consult a doctor.
-          </div>
-          {% endif %}
+            <div class="mb-3">
+              <label for="image" class="form-label">Fundus image</label>
+              <input class="form-control" type="file" id="image" name="image" accept=".jpg,.jpeg,.png" required>
+              <div class="form-text">JPG or PNG, up to 10 MB.</div>
+            </div>
+
+            {% if error %}
+            <div class="alert alert-danger" role="alert">{{ error }}</div>
+            {% endif %}
+
+            <button type="submit" class="btn btn-secondary w-100 mt-2">Run Inference</button>
+          </form>
         </div>
       </div>
     </div>
-    {% endif %}
+
+    <!-- Right Column: Swaps mutually between Inference Result and DR Library -->
+    <div class="col-12 col-md-7">
+      {% if result %}
+        <!-- Inference Result Card -->
+        <div class="card shadow-sm h-auto">
+          {% if result.image_data_uri %}
+          <img src="{{ result.image_data_uri }}" class="card-img-top" alt="Uploaded fundus image">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">Predicted: {{ result.predicted_class }}</h5>
+            <p class="text-muted small mb-2">Model: {{ result.model_used }}</p>
+            <p class="card-text mb-3">Confidence: {{ "%.0f"|format(result.confidence * 100) }}%</p>
+
+            {% for c in result.classes %}
+            <div class="mb-2">
+              <div class="d-flex justify-content-between">
+                <small>{{ c.name }}</small>
+                <small>{{ "%.1f"|format(c.probability * 100) }}%</small>
+              </div>
+              <div class="progress" style="height: 6px;">
+                <div class="progress-bar {% if c.name == result.predicted_class %}bg-secondary{% endif %}"
+                     role="progressbar"
+                     data-pct="{{ (c.probability * 100) | round(1) }}"
+                     aria-valuenow="{{ (c.probability * 100) | round(1) }}"
+                     aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            {% endfor %}
+
+            {% if result.is_uncertain %}
+            <div class="alert alert-warning mt-3 mb-0" role="alert">
+              Low confidence — please don't rely on this result, and consult a doctor.
+            </div>
+            {% endif %}
+
+            <div class="mt-3">
+              <a href="{{ url_for('dr') }}" class="btn btn-danger ">Clear Result & Show Library</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- library show if no image choose -->
+      {% else %}
+        <!-- DR Library Container -->
+        <div class="card shadow-sm h-100 border-0">
+          <div class="container-fluid px-0 mb-0">
+            <div class="bg-warning rounded-top p-3 d-flex align-items-center justify-content-between flex-wrap gap-2 shadow-sm">
+              <h2 class="fs-5 fw-bold mb-0">DR Library</h2>
+              <div class="d-flex align-items-center gap-2">
+                <input type="text" class="form-control rounded-pill border-0 bg-white px-3" style="width: 110px;" placeholder="Search">
+                <select class="form-select rounded-pill border-0 bg-white text-dark px-3 fw-medium" style="max-width: 115px; font-size: 0.9rem;">
+                  <option selected>All Grades</option>
+                  <option value="0">Grade0</option>
+                  <option value="1">Grade1</option>
+                  <option value="2">Grade2</option>
+                  <option value="3">Grade3</option>
+                  <option value="4">Grade4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grade Cards Grid with Controlled Height & Scrolling -->
+          <div class="p-3 overflow-y-auto" style="max-height: 290px;">
+            <div class="row g-3">
+              <!-- Grade 0 card -->
+              <div class="col-6">
+                <div class="card border-0 bg-transparent">
+                  <a href="/grade0">
+                    <img src="static/samples/dr/grade0.jpeg" class="card-img-top rounded-4 object-fit-cover" style="height: 100px;">
+                  </a>
+                  <div class="card-body p-1 px-0">
+                    <div class="text-dark fw-medium lh-sm fs-6">Grade 0</div>
+                    <div class="text-muted small"><i class="fa-solid fa-seedling me-1"></i> No DR</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Grade 1 -->
+              <div class="col-6">
+                <div class="card border-0 bg-transparent">
+                  <a href="#" class="grade-trigger" data-title="Grade 1: Mild Non-Proliferative DR" data-desc="Presence of microaneurysms only. These are tiny balloon-like swellings in the retinal blood vessels that may leak small amounts of fluid." data-img="static/samples/dr/grade1.jpeg">
+                    <img src="static/samples/dr/grade1.jpeg" class="card-img-top rounded-4   object-fit-cover"style="height: 100px;" >
+                  </a>
+                  <div class="card-body p-1 px-0">
+                    <div class="text-dark fw-medium lh-sm fs-6">Grade 1</div>
+                    <div class="text-muted small"><i class="fa-solid fa-seedling me-1"></i> Mild DR</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Grade 2 -->
+              <div class="col-6">
+                <div class="card border-0 bg-transparent">
+                  <a href="#" class="grade-trigger" data-title="Grade 2: Moderate Non-Proliferative DR" data-desc="More than just microaneurysms are present. This includes minor hemorrhages, hard exudates, or cotton wool spots indicating early vascular changes." data-img="static/samples/dr/grade2.jpeg">
+                    <img src="static/samples/dr/grade2.jpeg" class="card-img-top rounded-4 object-fit-cover" style="height: 100px;">
+                  </a>
+                  <div class="card-body p-1 px-0">
+                    <div class="text-dark fw-medium lh-sm fs-6">Grade 2</div>
+                    <div class="text-muted small"><i class="fa-solid fa-seedling me-1"></i> Moderate DR</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Grade 3 -->
+              <div class="col-6">
+                <div class="card border-0 bg-transparent">
+                  <a href="#" class="grade-trigger" data-title="Grade 3: Severe Non-Proliferative DR" data-desc="Significant vascular blockage. Numerous retinal hemorrhages in all 4 quadrants, venous beading, or prominent intraretinal microvascular abnormalities (IRMA)." data-img="static/samples/dr/grade3.jpeg">
+                    <img src="static/samples/dr/grade3.jpeg" class="card-img-top rounded-4 object-fit-cover" style="height: 100px;">
+                  </a>
+                  <div class="card-body p-1 px-0">
+                    <div class="text-dark fw-medium lh-sm fs-6">Grade 3</div>
+                    <div class="text-muted small"><i class="fa-solid fa-seedling me-1"></i> Severe DR</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Grade 4 -->
+              <div class="col-6">
+                <div class="card border-0 bg-transparent">
+                  <a href="#" class="grade-trigger" data-title="Grade 4: Proliferative Diabetic Retinopathy (PDR)" data-desc="Advanced stage characterized by neovascularization (growth of new, fragile blood vessels) which can lead to vitreous hemorrhage or retinal detachment." data-img="static/samples/dr/grade4.jpeg">
+                    <img src="static/samples/dr/grade4.jpeg" class="card-img-top rounded-4 object-fit-cover" style="height: 80px;">
+                  </a>
+                  <div class="card-body p-1 px-0">
+                    <div class="text-dark fw-medium lh-sm fs-6">Grade 4</div>
+                    <div class="text-muted small"><i class="fa-solid fa-seedling me-1"></i> Proliferative DR</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
 
   </div>
-</div>
 
-<!--metrics of the selected model-->
+
+<!-- Metrics of the selected model modal -->
 <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoTitle" aria-hidden="true"
      data-grid-base="{{ url_for('static', filename='samples/dr/') }}">
   <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
@@ -101,19 +207,16 @@
       </div>
 
       <div class="modal-body">
-
         <ul class="nav nav-tabs mb-3" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#pane-quant" type="button" role="tab">Quantitative</button>
           </li>
-
           <li class="nav-item" role="presentation">
             <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pane-qual" type="button" role="tab">Qualitative</button>
           </li>
         </ul>
 
         <div class="tab-content">
-
           <div class="tab-pane fade show active" id="pane-quant" role="tabpanel">
             <div class="table-responsive">
               <table class="table table-striped align-middle mb-2">
@@ -123,10 +226,6 @@
                 <tbody id="metricRows"></tbody>
               </table>
             </div>
-            <p class="form-text mb-0">
-              QWK = quadratic weighted kappa. MAE = mean absolute error in grades.
-              Measured on the held-out test set.
-            </p>
           </div>
 
           <div class="tab-pane fade" id="pane-qual" role="tabpanel">
@@ -136,7 +235,6 @@
             </div>
             <p class="form-text mt-2 mb-0">Sample predictions on 30 test images (true vs. predicted grade).</p>
           </div>
-
         </div>
       </div>
 
@@ -149,18 +247,15 @@
     el.style.width = el.getAttribute("data-pct") + "%";
   });
 
-  // ---- EDIT HERE: one entry per dropdown value (same keys as MODEL_CHOICES) ----
-  // Copy the numbers from  e1_summary_seed*.csv files.
-  // grid = image file inside static/samples/dr/
   var METRICS = {
     "2024": { name: "Seed 2024", grid: "qualitative_2024.png",
-              acc: "73.78%", macro_f1: "55.52%", ref_sens: "90.51%",ref_spec:"93.89%" },
+              acc: "73.78%", macro_f1: "55.52%", ref_sens: "90.51%", ref_spec: "93.89%" },
     "42":   { name: "Seed 42",   grid: "qualitative_42.png",
-              acc: "",  macro_f1: "", ref_sens :"_",ref_spec:"" },
+              acc: "_",  macro_f1: "_", ref_sens: "_", ref_spec: "_" },
     "123":  { name: "Seed 123",  grid: "qualitative_123.png",
-              acc: "77.05%",  macro_f1: "59.10%", ref_sens: "89.78%",ref_spec:"94.32%" },
+              acc: "77.05%",  macro_f1: "59.10%", ref_sens: "89.78%", ref_spec: "94.32%" },
     "all":  { name: "Ensemble (all 3 seeds)", grid: "qualitative_all.png",
-              acc: "—", f1: "—", ref_sens: "—",ref_spec:"" }
+              acc: "—", f1: "—", ref_sens: "—", ref_spec: "" }
   };
 
   document.getElementById("metricBtn").addEventListener("click", function () {
@@ -173,7 +268,6 @@
 
     document.getElementById("metricRows").innerHTML =
       "<tr><td>Accuracy</td><td class='text-end'>" + m.acc + "</td></tr>" +
-       
       "<tr><td>Macro F1</td><td class='text-end'>" + m.macro_f1 + "</td></tr>" +
       "<tr><td>Ref_Sensivity</td><td class='text-end'>" + m.ref_sens + "</td></tr>"+
       "<tr><td>Ref_Specivity</td><td class='text-end'>" + m.ref_spec + "</td></tr>";
@@ -187,7 +281,6 @@
     img.onerror = function () { img.style.display = "none"; missing.classList.remove("d-none"); };
     img.src = src;
 
-    // always open on the Quantitative tab
     bootstrap.Tab.getOrCreateInstance(
       document.querySelector('[data-bs-target="#pane-quant"]')
     ).show();

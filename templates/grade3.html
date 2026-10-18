@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}Grade 3 - Retinopathy{% endblock %}
+
+{% block contents %}
+<!-- Outer Wrapper to fit inside your fixed base container -->
+<div class="row my-4 shadow-sm border rounded overflow-hidden bg-white h-100" style="min-height: 82vh;" >
+
+    <!-- Left Sidebar Column (Exact previous styling) -->
+    <div class="col-md-3 p-3 bg-warning d-flex flex-column border-end" style="width: 280px;">
+        <span class="fs-4 fw-bold text-dark p-4">Grade3</span>
+        <hr class="my-2 border-dark">
+        <ul class="nav flex-column mb-auto" id="sidebar-tab" role="tablist">
+            <li class="nav-item mb-1" role="presentation">
+                <a href="#overview-tab" 
+                   class="nav-link text-dark d-flex align-items-center bg-light bg-opacity-50 " 
+                   id="overview-link" 
+                   data-bs-toggle="tab" 
+                   role="tab" 
+                   aria-controls="overview-tab" 
+                   aria-selected="false">
+                   
+                   <!-- Overview SVG Icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-grid-1x2-fill" viewBox="0 0 16 16">
+                      <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1z"/>
+                   </svg>
+
+                   <span class="fw-semibold">Overview</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Right Content Area Column -->
+    <div class="col-md-9 p-4 bg-light overflow-auto flex-grow-1">
+        <div class="tab-content" id="sidebar-tab-content">
+            
+            <!-- Overview Tab Pane -->
+            <div class="tab-pane fade " id="overview-tab" role="tabpanel" aria-labelledby="overview-link">
+                
+                <div class="mx-auto" style="max-width: 650px;">
+                    
+                    <!-- Center Image -->
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="p-4  ">
+                            <img src="{{ url_for('static', filename='samples/dr/grade3.jpeg') }}" 
+                                 class="rounded img-fluid" 
+                                 alt="Grade 0 DR"
+                                 style=" object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-4">
+                        <span class="text-uppercase fw-bold d-block mb-1 fs-6">Description</span>
+                        <p class="text-dark mb-0">
+                           Commanly known as Severe DR .Many retinal blood vessels become blocked, severely depriving large areas of the retina of blood supply and oxygen. 
+                           The retina sends signals to body tissues to grow new blood vessels
+                        </p>
+                    </div>
+
+                    <!-- Symptoms -->
+                    <div class="mb-4">
+                        <span class="text-uppercase fw-bold d-block mb-1 fs-6">Symptoms</span>
+                        <ul class="text-dark ps-3 mb-0">
+                            <li class="mb-1">Noticeably blurred, hazy, or fluctuating vision.</li>
+                            <li class="mb-1">Increasing number of floaters</li>
+                            <li class="mb-1">Reduced visual clarity and difficulty seeing in dim light</li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Causes -->
+                    <div class="mb-4">
+                        <span class="text-uppercase fw-bold d-block mb-1 fs-6">Causes</span>
+                        <ul class="text-dark ps-3 mb-0">
+                           <li class="mb-1">Widespread retinal ischemia</li>
+                            <li class="mb-1">VEGF overproduction</li>
+                            <li>Chronic poor metabolic control</li>
+                        </ul>
+                    </div>
+
+                    <!-- Affected Parts & Duration (2 Columns) -->
+                    <div class="row pt-2">
+                        <div class="col-6">
+                            <span class="text-uppercase fw-bold d-block mb-1 fs-6">Affected Parts</span>
+                            <p class="text-dark mb-0">Widespread retinal capillaries, Retinal tissue (ischemic areas)</p>
+                        </div>
+
+                        <div class="col-6">
+                            <span class="text-uppercase fw-bold d-block mb-1 fs-6">Recommended Checkup</span>
+                                <ul class="text-dark ps-3 mb-0">
+                            <li>Schedule frequent specialist follow-ups every 1 to 3 months.</li>
+
+                          <li>Prepare for potential preventive treatments such as Anti-VEGF injections or Panretinal Photocoagulation (laser therapy).</li>
+
+                  <li>Strictly manage cardiovascular risk factors and avoid strenuous activities if advised by a physician.</li> 
+                       
+                </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

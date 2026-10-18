@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}Grade 4 - Retinopathy{% endblock %}
+
+{% block contents %}
+<!-- Outer Wrapper to fit inside your fixed base container -->
+<div class="row my-4 shadow-sm border rounded overflow-hidden bg-white h-100" style="min-height: 82vh;" >
+
+    <!-- Left Sidebar Column (Exact previous styling) -->
+    <div class="col-md-3 p-3 bg-warning d-flex flex-column border-end" style="width: 280px;">
+        <span class="fs-4 fw-bold text-dark p-4">Grade4</span>
+        <hr class="my-2 border-dark">
+        <ul class="nav flex-column mb-auto" id="sidebar-tab" role="tablist">
+            <li class="nav-item mb-1" role="presentation">
+                <a href="#overview-tab" 
+                   class="nav-link text-dark d-flex align-items-center bg-light bg-opacity-50 " 
+                   id="overview-link" 
+                   data-bs-toggle="tab" 
+                   role="tab" 
+                   aria-controls="overview-tab" 
+                   aria-selected="false">
+                   
+                   <!-- Overview SVG Icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-grid-1x2-fill" viewBox="0 0 16 16">
+                      <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1z"/>
+                   </svg>
+
+                   <span class="fw-semibold">Overview</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Right Content Area Column -->
+    <div class="col-md-9 p-4 bg-light overflow-auto flex-grow-1">
+        <div class="tab-content" id="sidebar-tab-content">
+            
+            <!-- Overview Tab Pane -->
+            <div class="tab-pane fade " id="overview-tab" role="tabpanel" aria-labelledby="overview-link">
+                
+                <div class="mx-auto" style="max-width: 650px;">
+                    
+                    <!-- Center Image -->
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="p-4  ">
+                            <img src="{{ url_for('static', filename='samples/dr/grade4.jpeg') }}" 
+                                 class="rounded img-fluid" 
+                                 alt="Grade 0 DR"
+                                 style=" object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-4">
+                        <span class="text-uppercase fw-bold d-block mb-1 fs-6">Description</span>
+                        <p class="text-dark mb-0">
+                            Commanly Known as Proliferative Diabetic Retinopathy.The most advanced and severe stage. 
+                            New, fragile, abnormal blood vessels grow along the retina and vitreous humor. These vessels bleed easily, causing vitreous hemorrhages, scar tissue formation, and potential retinal detachment.
+                        </p>
+                    </div>
+
+                    <!-- Symptoms -->
+                    <div class="mb-4">
+                        <span class="text-uppercase fw-bold d-block mb-1 fs-6">Symptoms</span>
+                        <ul class="text-dark ps-3 mb-0">
+                            <li class="mb-1">Sudden floaters or dark spots.</li>
+                            <li class="mb-1">Flashes of light</li>
+                            <li class="mb-1">Missing areas of vision</li>
+                            <li>Sudden or severe vision loss from bleeding or retinal detachment</li>
+                        </ul>
+                    </div>
+
+                    <!-- Causes -->
+                    <div class="mb-4">
+                        <span class="text-uppercase fw-bold d-block mb-1 fs-6">Causes</span>
+                        <ul class="text-dark ps-3 mb-0">
+                            <li class="mb-1">Neovascularization from VEGF</li>
+                        <li class="mb-1">Vitreous hemorrhage and fibrosis</li>
+                        <li>Tractional retinal detachment</li>
+                        </ul>
+                    </div>
+
+                    <!-- Affected Parts & Duration (2 Columns) -->
+                    <div class="row pt-2">
+                        <div class="col-6">
+                            <span class="text-uppercase fw-bold d-block mb-1 fs-6">Affected Parts</span>
+                            <p class="text-dark mb-0">Retina, Vitreous humor, Optic disc, Macula</p>
+                        </div>
+
+                        <div class="col-6">
+                            <span class="text-uppercase fw-bold d-block mb-1 fs-6">Recommended Checkup</span>
+                                 <ul class="text-dark ps-3 mb-0">
+                            <li>Seek immediate specialized medical or surgical treatment (such as Anti-VEGF therapy, laser photocoagulation, or vitrectomy surgery)</li>
+
+                          <li>Schedule frequent, close monitoring with a retina specialist.</li>
+
+                  <li>Avoid sudden physical exertion, heavy lifting, or activities that increase intraocular pressure.</li> 
+                       
+                </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

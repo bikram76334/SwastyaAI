@@ -105,9 +105,12 @@
             <div class="bg-warning rounded-top p-3 d-flex align-items-center justify-content-between flex-wrap gap-2 shadow-sm">
               <h2 class="fs-5 fw-bold mb-0">DR Library</h2>
               <div class="d-flex align-items-center gap-2">
-                <input type="text" class="form-control rounded-pill border-0 bg-white px-3" style="width: 110px;" placeholder="Search">
-                <select class="form-select rounded-pill border-0 bg-white text-dark px-3 fw-medium" style="max-width: 115px; font-size: 0.9rem;">
-                  <option selected>All Grades</option>
+                <!--search with input id-->
+                <input type="text" id="drSearchInput" class="form-control rounded-pill border-0 bg-white px-3 w-50" placeholder="Search">
+
+                <!--Dropdown select-->
+                <select id="drGradeSelect" class="form-select rounded-pill border-0 bg-white text-dark px-3 fw-medium" style="max-width: 115px; font-size: 0.9rem;">
+                  <option value="all" selected>All Grades</option>
                   <option value="0">Grade0</option>
                   <option value="1">Grade1</option>
                   <option value="2">Grade2</option>
@@ -120,9 +123,9 @@
 
           <!-- Grade Cards Grid with Controlled Height & Scrolling -->
           <div class="p-3 overflow-y-auto" style="max-height: 290px;">
-            <div class="row g-3">
+            <div class="row g-3" id="drCardGrid">
               <!-- Grade 0 card -->
-              <div class="col-6">
+              <div class="col-6 grade-card-item" data-grade="grade 0">
                 <div class="card border-0 bg-transparent">
                   <a href="/grade0">
                     <img src="static/samples/dr/grade0.jpeg" class="card-img-top rounded-4 object-fit-cover" style="height: 100px;">
@@ -135,9 +138,9 @@
               </div>
 
               <!-- Grade 1 -->
-              <div class="col-6">
+              <div class="col-6 grade-card-item" data-grade="grade 1">
                 <div class="card border-0 bg-transparent">
-                  <a href="#" class="grade-trigger" data-title="Grade 1: Mild Non-Proliferative DR" data-desc="Presence of microaneurysms only. These are tiny balloon-like swellings in the retinal blood vessels that may leak small amounts of fluid." data-img="static/samples/dr/grade1.jpeg">
+                  <a href="/grade1" class="grade-trigger" data-title="Grade 1: Mild Non-Proliferative DR" data-desc="Presence of microaneurysms only. These are tiny balloon-like swellings in the retinal blood vessels that may leak small amounts of fluid." data-img="static/samples/dr/grade1.jpeg">
                     <img src="static/samples/dr/grade1.jpeg" class="card-img-top rounded-4   object-fit-cover"style="height: 100px;" >
                   </a>
                   <div class="card-body p-1 px-0">
@@ -148,9 +151,9 @@
               </div>
 
               <!-- Grade 2 -->
-              <div class="col-6">
+              <div class="col-6 grade-card-item" data-grade="grade 2">
                 <div class="card border-0 bg-transparent">
-                  <a href="#" class="grade-trigger" data-title="Grade 2: Moderate Non-Proliferative DR" data-desc="More than just microaneurysms are present. This includes minor hemorrhages, hard exudates, or cotton wool spots indicating early vascular changes." data-img="static/samples/dr/grade2.jpeg">
+                  <a href="/grade2" class="grade-trigger" data-title="Grade 2: Moderate Non-Proliferative DR" data-desc="More than just microaneurysms are present. This includes minor hemorrhages, hard exudates, or cotton wool spots indicating early vascular changes." data-img="static/samples/dr/grade2.jpeg">
                     <img src="static/samples/dr/grade2.jpeg" class="card-img-top rounded-4 object-fit-cover" style="height: 100px;">
                   </a>
                   <div class="card-body p-1 px-0">
@@ -161,9 +164,9 @@
               </div>
 
               <!-- Grade 3 -->
-              <div class="col-6">
+              <div class="col-6 grade-card-item" data-grade="grade 3">
                 <div class="card border-0 bg-transparent">
-                  <a href="#" class="grade-trigger" data-title="Grade 3: Severe Non-Proliferative DR" data-desc="Significant vascular blockage. Numerous retinal hemorrhages in all 4 quadrants, venous beading, or prominent intraretinal microvascular abnormalities (IRMA)." data-img="static/samples/dr/grade3.jpeg">
+                  <a href="/grade3" class="grade-trigger" data-title="Grade 3: Severe Non-Proliferative DR" data-desc="Significant vascular blockage. Numerous retinal hemorrhages in all 4 quadrants, venous beading, or prominent intraretinal microvascular abnormalities (IRMA)." data-img="static/samples/dr/grade3.jpeg">
                     <img src="static/samples/dr/grade3.jpeg" class="card-img-top rounded-4 object-fit-cover" style="height: 100px;">
                   </a>
                   <div class="card-body p-1 px-0">
@@ -174,9 +177,9 @@
               </div>
 
               <!-- Grade 4 -->
-              <div class="col-6">
+              <div class="col-6  grade-card-item" data-grade="grade 4">
                 <div class="card border-0 bg-transparent">
-                  <a href="#" class="grade-trigger" data-title="Grade 4: Proliferative Diabetic Retinopathy (PDR)" data-desc="Advanced stage characterized by neovascularization (growth of new, fragile blood vessels) which can lead to vitreous hemorrhage or retinal detachment." data-img="static/samples/dr/grade4.jpeg">
+                  <a href="/grade4" class="grade-trigger" data-title="Grade 4: Proliferative Diabetic Retinopathy (PDR)" data-desc="Advanced stage characterized by neovascularization (growth of new, fragile blood vessels) which can lead to vitreous hemorrhage or retinal detachment." data-img="static/samples/dr/grade4.jpeg">
                     <img src="static/samples/dr/grade4.jpeg" class="card-img-top rounded-4 object-fit-cover" style="height: 80px;">
                   </a>
                   <div class="card-body p-1 px-0">
@@ -185,6 +188,7 @@
                   </div>
                 </div>
               </div>
+              <p id="drNoResult" class="col-12 text-muted text-center d-none">No grade found.</p>
 
             </div>
           </div>
@@ -243,10 +247,47 @@
 </div>
 
 <script>
+  // ---------- DR Library: filter by search + select ----------
+ function filterCards() {
+  var searchEl = document.getElementById('drSearchInput');
+  var selectEl = document.getElementById('drGradeSelect');
+  var noResult = document.getElementById('drNoResult');
+  if (!searchEl || !selectEl) { return; }
+
+  // remove all spaces so "grade0", "grade 0" and "Grade  0" all behave the same
+  var search = searchEl.value.toLowerCase().replace(/\s+/g, '');
+  var select = selectEl.value;                       
+  var shown = 0;
+
+  document.querySelectorAll('.grade-card-item').forEach(function (card) {
+    var grade = card.getAttribute('data-grade');     
+    var text = (grade + ' ' + card.textContent).toLowerCase().replace(/\s+/g, '');
+
+    var matchSelect = (select === 'all') || (grade === 'grade ' + select);
+    var matchSearch = !search || text.includes(search);
+
+    var visible = matchSelect && matchSearch;
+    card.classList.toggle('d-none', !visible);
+    if (visible) { shown++; }
+  });
+
+  if (noResult) { noResult.classList.toggle('d-none', shown > 0); }
+}
+
+  // attach only if the library is on the page (it is hidden when a result shows)
+  var searchInput = document.getElementById('drSearchInput');
+  var gradeSelect = document.getElementById('drGradeSelect');
+  if (searchInput || gradeSelect) {
+    searchInput.addEventListener('input', filterCards);
+    gradeSelect.addEventListener('change', filterCards);
+  }
+
+  // ---------- Progress bars ----------
   document.querySelectorAll(".progress-bar[data-pct]").forEach(function (el) {
     el.style.width = el.getAttribute("data-pct") + "%";
   });
 
+  // ---------- Model metrics ----------
   var METRICS = {
     "2024": { name: "Seed 2024", grid: "qualitative_2024.png",
               acc: "73.78%", macro_f1: "55.52%", ref_sens: "90.51%", ref_spec: "93.89%" },
@@ -255,7 +296,7 @@
     "123":  { name: "Seed 123",  grid: "qualitative_123.png",
               acc: "77.05%",  macro_f1: "59.10%", ref_sens: "89.78%", ref_spec: "94.32%" },
     "all":  { name: "Ensemble (all 3 seeds)", grid: "qualitative_all.png",
-              acc: "—", f1: "—", ref_sens: "—", ref_spec: "" }
+              acc: "—", macro_f1: "—", ref_sens: "—", ref_spec: "—" }
   };
 
   document.getElementById("metricBtn").addEventListener("click", function () {
@@ -269,7 +310,7 @@
     document.getElementById("metricRows").innerHTML =
       "<tr><td>Accuracy</td><td class='text-end'>" + m.acc + "</td></tr>" +
       "<tr><td>Macro F1</td><td class='text-end'>" + m.macro_f1 + "</td></tr>" +
-      "<tr><td>Ref_Sensivity</td><td class='text-end'>" + m.ref_sens + "</td></tr>"+
+      "<tr><td>Ref_Sensivity</td><td class='text-end'>" + m.ref_sens + "</td></tr>" +
       "<tr><td>Ref_Specivity</td><td class='text-end'>" + m.ref_spec + "</td></tr>";
 
     var img = document.getElementById("gridImg");

@@ -66,6 +66,21 @@ def dr():
 def grade0():
     return render_template('grade0.html')
 
+@app.route('/grade1')
+def grade1():
+    return render_template('grade1.html')
+
+@app.route('/grade2')
+def grade2():
+    return render_template('grade2.html')
+
+@app.route('/grade3')
+def grade3():
+    return render_template('grade3.html')
+
+@app.route('/grade4')
+def grade4():
+    return render_template('grade4.html')
 
 @app.errorhandler(413)
 def too_large(e):

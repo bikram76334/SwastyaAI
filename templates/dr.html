@@ -26,18 +26,34 @@
         <div class="card-body">
           <form method="post" enctype="multipart/form-data" action="{{ url_for('dr') }}">
 
+            <!-- Step 1: pick the model family (no name, so it is not submitted) -->
             <div class="mb-3">
-              <label for="model" class="form-label">Select model</label>
+              <label for="family" class="form-label">Select model</label>
+              <select class="form-select" id="family">
+                {% for group_label, choices in model_choices.items() %}
+                <option value="{{ group_label }}" {% if selected_model in choices %}selected{% endif %}>{{ group_label }}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <!-- Step 2: pick the seed inside that model (this one is submitted) -->
+            <div class="mb-3">
+              <label for="model" class="form-label">Select seed</label>
               <div class="input-group">
-                <select class="form-select" id="model" name="model" required>
-                  {% for value, label in model_choices %}
-                  <option value="{{ value }}" {% if value == selected_model %}selected{% endif %}>{{ label }}</option>
-                  {% endfor %}
-                </select>
+                <select class="form-select" id="model" name="model" data-selected="{{ selected_model }}" required></select>
                 <!-- type="button" so it never submits the form -->
                 <button type="button" class="btn btn-outline-secondary fw-bold" id="metricBtn"
                         title="Show this model's metrics" aria-label="Show model metrics">?</button>
               </div>
+            </div>
+
+            <!-- Data for the seed dropdown, filled in by Jinja, read by the script below -->
+            <div id="seedData" class="d-none">
+              {% for group_label, choices in model_choices.items() %}
+                {% for value, label in choices.items() %}
+                <span data-group="{{ group_label }}" data-value="{{ value }}" data-label="{{ label }}"></span>
+                {% endfor %}
+              {% endfor %}
             </div>
 
             <div class="mb-3">
@@ -106,7 +122,7 @@
               <h2 class="fs-5 fw-bold mb-0">DR Library</h2>
               <div class="d-flex align-items-center gap-2">
                 <!--search with input id-->
-                <input type="text" id="drSearchInput" class="form-control rounded-pill border-0 bg-white px-3 w-50" placeholder="Search">
+                <input type="text" id="drSearchInput" class="form-control rounded-pill border-0 bg-white px-3" style="width: 110px;" placeholder="Search">
 
                 <!--Dropdown select-->
                 <select id="drGradeSelect" class="form-select rounded-pill border-0 bg-white text-dark px-3 fw-medium" style="max-width: 115px; font-size: 0.9rem;">
@@ -141,7 +157,7 @@
               <div class="col-6 grade-card-item" data-grade="grade 1">
                 <div class="card border-0 bg-transparent">
                   <a href="/grade1" class="grade-trigger" data-title="Grade 1: Mild Non-Proliferative DR" data-desc="Presence of microaneurysms only. These are tiny balloon-like swellings in the retinal blood vessels that may leak small amounts of fluid." data-img="static/samples/dr/grade1.jpeg">
-                    <img src="static/samples/dr/grade1.jpeg" class="card-img-top rounded-4   object-fit-cover"style="height: 100px;" >
+                    <img src="static/samples/dr/grade1.jpeg" class="card-img-top rounded-4 object-fit-cover" style="height: 100px;">
                   </a>
                   <div class="card-body p-1 px-0">
                     <div class="text-dark fw-medium lh-sm fs-6">Grade 1</div>
@@ -177,7 +193,7 @@
               </div>
 
               <!-- Grade 4 -->
-              <div class="col-6  grade-card-item" data-grade="grade 4">
+              <div class="col-6 grade-card-item" data-grade="grade 4">
                 <div class="card border-0 bg-transparent">
                   <a href="/grade4" class="grade-trigger" data-title="Grade 4: Proliferative Diabetic Retinopathy (PDR)" data-desc="Advanced stage characterized by neovascularization (growth of new, fragile blood vessels) which can lead to vitreous hemorrhage or retinal detachment." data-img="static/samples/dr/grade4.jpeg">
                     <img src="static/samples/dr/grade4.jpeg" class="card-img-top rounded-4 object-fit-cover" style="height: 80px;">
@@ -246,56 +262,52 @@
   </div>
 </div>
 
+</div><!-- end .container -->
+
 <script>
+  // ---------- Model dropdown: family -> seeds ----------
+  var SEED_DATA = Array.from(document.querySelectorAll("#seedData span")).map(function (s) {
+    return { group: s.dataset.group, value: s.dataset.value, label: s.dataset.label };
+  });
+
+  function fillSeeds(preselect) {
+    var family = document.getElementById("family").value;
+    var seedSelect = document.getElementById("model");
+    seedSelect.innerHTML = "";
+    SEED_DATA.filter(function (d) { return d.group === family; }).forEach(function (d) {
+      var opt = document.createElement("option");
+      opt.value = d.value;
+      opt.textContent = d.label;
+      if (d.value === preselect) { opt.selected = true; }
+      seedSelect.appendChild(opt);
+    });
+  }
+
+  // first load: keep the previously chosen seed after a form submit
+  fillSeeds(document.getElementById("model").dataset.selected);
+  document.getElementById("family").addEventListener("change", function () {
+    fillSeeds(null);
+  });
+
   // ---------- DR Library: filter by search + select ----------
-// ---------- DR Library: filter by search + select ----------
   function filterCards() {
     var searchEl = document.getElementById('drSearchInput');
     var selectEl = document.getElementById('drGradeSelect');
     var noResult = document.getElementById('drNoResult');
     if (!searchEl || !selectEl) { return; }
 
-    var search = searchEl.value.toLowerCase().replace(/\s+/g, '');
-    var select = selectEl.value;                      
+    var search = searchEl.value.toLowerCase().trim();
+    var select = selectEl.value;                       // "all", "0".."4"
     var shown = 0;
 
-    // Check if the search input specifies a grade number
-    var digitMatch = search.match(/(?:grade)?([0-9])/);
-    var searchDigit = digitMatch ? parseInt(digitMatch[1]) : null;
-
     document.querySelectorAll('.grade-card-item').forEach(function (card) {
-      var grade = card.getAttribute('data-grade');      
-      var text = (grade + ' ' + card.textContent).toLowerCase().replace(/\s+/g, '');
+      var grade = card.getAttribute('data-grade');     // "grade 3"
+      var text = (grade + ' ' + card.textContent).toLowerCase();
 
-      var visible = false;
+      var matchSelect = (select === 'all') || (grade === 'grade ' + select);
+      var matchSearch = !search || text.includes(search);
 
-      if (!search) {
-        // 1. If search is empty -> filter purely by the dropdown selection
-        visible = (select === 'all') || (grade === 'grade ' + select);
-      } 
-      else if (select === 'all') {
-        // 2. If dropdown is 'All Grades' -> search works independently for any grade/keyword
-        if (searchDigit !== null && (searchDigit < 0 || searchDigit > 4)) {
-          visible = false; // Invalid grade outside 0-4 range
-        } else {
-          visible = text.includes(search);
-        }
-      } 
-      else {
-        // 3. Both search and a specific dropdown are active -> grades 0-4 must match each other
-        if (searchDigit !== null) {
-          if (searchDigit >= 0 && searchDigit <= 4) {
-            visible = (parseInt(select) === searchDigit) && (grade === 'grade ' + searchDigit);
-          } else {
-            visible = false; // Invalid grade outside 0-4 range
-          }
-        } else {
-          var matchSelect = (grade === 'grade ' + select);
-          var matchSearch = text.includes(search);
-          visible = matchSelect && matchSearch;
-        }
-      }
-
+      var visible = matchSelect && matchSearch;
       card.classList.toggle('d-none', !visible);
       if (visible) { shown++; }
     });
@@ -317,44 +329,57 @@
   });
 
   // ---------- Model metrics ----------
+  // Keys match the seed dropdown values: "<family>:<seed>" or "<family>:all"
   var METRICS = {
-    "2024": { name: "Seed 2024", grid: "qualitative_2024.png",
-              acc: "73.78%", macro_f1: "55.52%", ref_sens: "90.51%", ref_spec: "93.89%" },
-    "42":   { name: "Seed 42",   grid: "qualitative_42.png",
-              acc: "_",  macro_f1: "_", ref_sens: "_", ref_spec: "_" },
-    "123":  { name: "Seed 123",  grid: "qualitative_123.png",
-              acc: "77.05%",  macro_f1: "59.10%", ref_sens: "89.78%", ref_spec: "94.32%" },
-    "all":  { name: "Ensemble (all 3 seeds)", grid: "qualitative_all.png",
-              acc: "—", macro_f1: "—", ref_sens: "—", ref_spec: "—" }
+    "e1b0:2024": { name: "E1 with B0 - Seed 2024", grid: "qualitative_2024.png",
+                   acc: "73.78%", macro_f1: "55.52%", ref_sens: "90.51%", ref_spec: "93.89%" },
+    "e1b0:42":   { name: "E1 with B0 - Seed 42",   grid: "qualitative_42.png",
+                   acc: "_", macro_f1: "_", ref_sens: "_", ref_spec: "_" },
+    "e1b0:123":  { name: "E1 with B0 - Seed 123",  grid: "qualitative_123.png",
+                   acc: "77.05%", macro_f1: "59.10%", ref_sens: "89.78%", ref_spec: "94.32%" },
+    "e1b0:all":  { name: "E1 with B0 - Ensemble (all 3 seeds)", grid: "qualitative_all.png",
+                   acc: "—", macro_f1: "—", ref_sens: "—", ref_spec: "—" }
+    // "e1b1:2024": { ... }  add B1 later with the same pattern
   };
 
   document.getElementById("metricBtn").addEventListener("click", function () {
-    var key = document.getElementById("model").value;
-    var m = METRICS[key];
-    if (!m) { return; }
+    try {
+      var key = document.getElementById("model").value;
+      var m = METRICS[key];
+      if (!m) {
+        alert("No METRICS entry for key: '" + key + "'");
+        return;
+      }
+      if (typeof bootstrap === "undefined") {
+        alert("Bootstrap JS is not loaded. Check base.html.");
+        return;
+      }
 
-    var modalEl = document.getElementById("infoModal");
-    document.getElementById("infoTitle").textContent = "Model Performance — " + m.name;
+      var modalEl = document.getElementById("infoModal");
+      document.getElementById("infoTitle").textContent = "Model Performance - " + m.name;
 
-    document.getElementById("metricRows").innerHTML =
-      "<tr><td>Accuracy</td><td class='text-end'>" + m.acc + "</td></tr>" +
-      "<tr><td>Macro F1</td><td class='text-end'>" + m.macro_f1 + "</td></tr>" +
-      "<tr><td>Ref_Sensivity</td><td class='text-end'>" + m.ref_sens + "</td></tr>" +
-      "<tr><td>Ref_Specivity</td><td class='text-end'>" + m.ref_spec + "</td></tr>";
+      document.getElementById("metricRows").innerHTML =
+        "<tr><td>Accuracy</td><td class='text-end'>" + m.acc + "</td></tr>" +
+        "<tr><td>Macro F1</td><td class='text-end'>" + m.macro_f1 + "</td></tr>" +
+        "<tr><td>Ref_Sensivity</td><td class='text-end'>" + m.ref_sens + "</td></tr>" +
+        "<tr><td>Ref_Specivity</td><td class='text-end'>" + m.ref_spec + "</td></tr>";
 
-    var img = document.getElementById("gridImg");
-    var missing = document.getElementById("gridMissing");
-    var src = modalEl.getAttribute("data-grid-base") + m.grid;
-    document.getElementById("gridPath").textContent = "static/samples/dr/" + m.grid;
-    missing.classList.add("d-none");
-    img.style.display = "";
-    img.onerror = function () { img.style.display = "none"; missing.classList.remove("d-none"); };
-    img.src = src;
+      var img = document.getElementById("gridImg");
+      var missing = document.getElementById("gridMissing");
+      var src = modalEl.getAttribute("data-grid-base") + m.grid;
+      document.getElementById("gridPath").textContent = "static/samples/dr/" + m.grid;
+      missing.classList.add("d-none");
+      img.style.display = "";
+      img.onerror = function () { img.style.display = "none"; missing.classList.remove("d-none"); };
+      img.src = src;
 
-    bootstrap.Tab.getOrCreateInstance(
-      document.querySelector('[data-bs-target="#pane-quant"]')
-    ).show();
-    bootstrap.Modal.getOrCreateInstance(modalEl).show();
+      bootstrap.Tab.getOrCreateInstance(
+        document.querySelector('[data-bs-target="#pane-quant"]')
+      ).show();
+      bootstrap.Modal.getOrCreateInstance(modalEl).show();
+    } catch (err) {
+      alert("Metrics button error: " + err.message);
+    }
   });
 </script>
 {% endblock %}

@@ -1,11 +1,11 @@
 """
 inference.py
 
-Loads the three trained DR models — seeds 2024, 42, 123 (CoralEffNet:
-EfficientNet-B0 backbone + a CORAL ordinal head, trained in
-bo-dr-2024.ipynb) — lazily, and exposes predict_dr(image_bytes, model_key)
-for run.py to call. model_key picks one seed ("2024", "42", "123") or
-"all" to average the three seeds into one ensembled result.
+Loads the trained DR models (CoralEffNet: EfficientNet backbone + a CORAL
+ordinal head, trained in bo-dr-2024.ipynb) lazily, and exposes
+predict_dr(image_bytes, model_key) for run.py to call.
+
+
 
 CORAL recap: this model does NOT output 5 class scores directly like a
 normal softmax classifier. It outputs 4 threshold logits —
@@ -15,6 +15,8 @@ grade is how many of those thresholds are crossed (sigmoid > 0.5), and
 class probabilities are the differences between consecutive thresholds
 (notebook cell 8). That conversion is reproduced exactly below so this
 app's numbers match the notebook's own test results.
+
+
 
 Same pattern for your other modules: duplicate this file (e.g.
 inference_pneumonia.py) with that model's architecture and checkpoint
@@ -31,34 +33,66 @@ import torchvision
 
 from transforms import preprocess_bytes
 
-# Build paths from this file's own location, so it works no matter where
-# you start the app from. Expected layout:
-#   SwastyaAI/models/dr/e1withB0/e1_b0_seed2024.pt  (and seed42, seed123)
+#paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_DIR = os.path.join(BASE_DIR, "models", "dr", "e1withB0")
+DR_DIR = os.path.join(BASE_DIR, "models", "dr")
 
-# One entry per seed. The key is what the dropdown in dr.html sends back.
-# Each .pt file lives inside its own seed_<N> folder.
-WEIGHTS_PATHS = {
-    "2024": os.path.join(MODEL_DIR, "seed_2024", "e1_b0_seed2024.pt"),
-    "42":   os.path.join(MODEL_DIR, "seed_42",   "e1_b0_seed42.pt"),
-    "123":  os.path.join(MODEL_DIR, "seed_123",  "e1_b0_seed123.pt"),
+# One entry per model family ..
+# values ("e1b0:2024"). "arch" is the torchvision constructor name.
+MODEL_FAMILIES = {
+    "e1b0": {
+        "label": "E1 with B0",
+        "arch": "efficientnet_b0",
+        "seeds": {
+            "2024": os.path.join(DR_DIR, "e1withB0", "seed_2024", "e1_b0_seed2024.pt"),
+            "42":   os.path.join(DR_DIR, "e1withB0", "seed_42",   "e1_b0_seed42.pt"),
+            "123":  os.path.join(DR_DIR, "e1withB0", "seed_123",  "e1_b0_seed123.pt"),
+        },
+    },
+    # Add B1 later 
+     "e1b1": {
+         "label": "E1 with B1",
+         "arch": "efficientnet_b1",
+        "seeds": {
+             "2024": os.path.join(DR_DIR, "e1withB1", "seed_2024", "e1_b1_seed2024.pt"),
+            "42":   os.path.join(DR_DIR, "e1withB1", "seed_42",   "e1_b1_seed42.pt"),
+            "123":  os.path.join(DR_DIR, "e1withB1", "seed_123",  "e1_b1_seed123.pt"),
+        },
+    },
 }
 
-# (value, label) pairs shown in the dropdown in dr.html
-MODEL_CHOICES = [
-    ("2024", "Seed 2024"),
-    ("42", "Seed 42"),
-    ("123", "Seed 123"),
-    ("all", "Ensemble (all 3 seeds)"),
+# Built from MODEL_FAMILIES. Dictionary shape, used for the grouped dropdown:
+#   {
+#     "E1 with B0": {
+#         "e1b0:2024": "Seed 2024",
+#         "e1b0:42":   "Seed 42",
+#         "e1b0:123":  "Seed 123",
+#         "e1b0:all":  "Ensemble (all 3 seeds)",
+#     },
+#   }
+MODEL_CHOICES = {}
+_LABELS = {}  # value -> full label shown in the result card
+for _fam_key, _fam in MODEL_FAMILIES.items():
+    _group = {f"{_fam_key}:{seed}": f"Seed {seed}" for seed in _fam["seeds"]}
+    _group[f"{_fam_key}:all"] = f"Ensemble (all {len(_fam['seeds'])} seeds)"
+    MODEL_CHOICES[_fam["label"]] = _group
+    for _value, _label in _group.items():
+        _LABELS[_value] = _fam["label"] + " - " + _label
+
+DEFAULT_MODEL = "e1b0:all"
+
+METRIC_CHOICES = [
+    ("quantitative", ""),
+    ("qualittaive", ""),
+
 ]
 
 CLASS_NAMES = ["No DR", "Mild", "Moderate", "Severe", "Proliferative DR"]
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-#A result is flagged low-confidence if the model's probability on its
-#own predicted class is below this. 0.5 is a starting point — tune it
-#once looked at real outputs on held-out images.
+# A result is flagged low-confidence if the model's probability on its
+# own predicted class is below this. 0.5 is a starting point — tune it
+# once looked at real outputs on held-out images.
 UNCERTAIN_THRESHOLD = 0.5
 
 
@@ -67,11 +101,12 @@ class CoralEffNet(nn.Module):
     we load our own trained state_dict immediately below, so the app
     doesn't need internet access to download ImageNet weights on every
     startup (the notebook only needed those for the initial training
-    run, not for inference)."""
+    run, not for inference). `arch` picks the EfficientNet variant;
+    B0 and B1 both end in 1280 features, so the head is the same."""
 
-    def __init__(self):
+    def __init__(self, arch="efficientnet_b0"):
         super().__init__()
-        base = torchvision.models.efficientnet_b0(weights=None)
+        base = getattr(torchvision.models, arch)(weights=None)
         self.features = base.features
         self.pool = nn.AdaptiveAvgPool2d(1)
         self.drop = nn.Dropout(0.3)
@@ -84,20 +119,18 @@ class CoralEffNet(nn.Module):
         return z + self.bias
 
 
-_models = {}  # seed key -> loaded model, each loaded lazily on first use
+_models = {}  # (family key, seed) 
 
 
-def _load_one(path):
-    model = CoralEffNet().to(DEVICE)
-    state_dict = torch.load(path, map_location=DEVICE)
-    model.load_state_dict(state_dict)
-    model.eval()  #turns off dropout  important, the notebook does this too
-    return model
-
-
-def _get_model(key):
+def _get_model(fam_key, seed):
+    key = (fam_key, seed)
     if key not in _models:
-        _models[key] = _load_one(WEIGHTS_PATHS[key])
+        fam = MODEL_FAMILIES[fam_key]
+        model = CoralEffNet(fam["arch"]).to(DEVICE)
+        state_dict = torch.load(fam["seeds"][seed], map_location=DEVICE)
+        model.load_state_dict(state_dict)
+        model.eval()  
+        _models[key] = model
     return _models[key]
 
 
@@ -115,22 +148,29 @@ def _thresholds_to_class_probs(p):
     return cp
 
 
-def predict_dr(image_bytes, model_key="all"):
+def predict_dr(image_bytes, model_key=DEFAULT_MODEL):
     """Runs the full pipeline on one uploaded image.
-    model_key: "2024", "42", "123" for a single seed, or "all" to average
-    the CORAL threshold probabilities of the 3 seeds (ensembling) before
-    converting to class probabilities. Returns a dict ready for dr.html:
+    model_key: "<family>:<seed>" for a single seed (e.g. "e1b0:2024"), or
+    "<family>:all" to average the CORAL threshold probabilities of every
+    seed in that family (ensembling) before converting to class
+    probabilities. Returns a dict ready for dr.html:
         predicted_class, predicted_grade, confidence,
         classes: [{name, probability}, ...], is_uncertain, model_used
     """
-    if model_key == "all":
-        keys = list(WEIGHTS_PATHS.keys())
-    elif model_key in WEIGHTS_PATHS:
-        keys = [model_key]
+    try:
+        fam_key, which = model_key.split(":")
+        fam = MODEL_FAMILIES[fam_key]
+    except (ValueError, KeyError, AttributeError):
+        raise ValueError("Unknown model: " + str(model_key))
+
+    if which == "all":
+        seeds = list(fam["seeds"].keys())
+    elif which in fam["seeds"]:
+        seeds = [which]
     else:
         raise ValueError("Unknown model: " + str(model_key))
 
-    models = [_get_model(k) for k in keys]
+    models = [_get_model(fam_key, s) for s in seeds]
     x = preprocess_bytes(image_bytes).to(DEVICE)
 
     per_seed_p = []
@@ -155,5 +195,5 @@ def predict_dr(image_bytes, model_key="all"):
             for name, prob in zip(CLASS_NAMES, class_probs)
         ],
         "is_uncertain": confidence < UNCERTAIN_THRESHOLD,
-        "model_used": dict(MODEL_CHOICES)[model_key],
+        "model_used": _LABELS[model_key],
     }

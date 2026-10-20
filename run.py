@@ -2,12 +2,15 @@ import base64
 
 from flask import Flask, render_template, request
 
-from inference import predict_dr, MODEL_CHOICES
+from inference import predict_dr, MODEL_CHOICES, DEFAULT_MODEL
 
-app=Flask(__name__)
-app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024  #10 MB only images
+# MODEL_CHOICES is grouped, so flatten it to get every valid option value
+VALID_MODELS = {value for group in MODEL_CHOICES.values() for value in group}
 
-ALLOWED_TYPES={"image/jpeg", "image/jpg", "image/png"}
+app = Flask(__name__)
+app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024  # 10 MB only images
+
+ALLOWED_TYPES = {"image/jpeg", "image/jpg", "image/png"}
 
 
 @app.route('/')
@@ -23,17 +26,13 @@ def about():
 @app.route("/dr", methods=["GET", "POST"])
 def dr():
     if request.method == "GET":
-        return render_template("dr.html", model_choices=MODEL_CHOICES, selected_model="2024")
+        return render_template("dr.html", model_choices=MODEL_CHOICES, selected_model=DEFAULT_MODEL)
 
-    selected_model = request.form.get("model", "2024")
+    selected_model = request.form.get("model", DEFAULT_MODEL)
     ctx = {"model_choices": MODEL_CHOICES, "selected_model": selected_model}
 
-    
-
-    if selected_model not in dict(MODEL_CHOICES):
+    if selected_model not in VALID_MODELS:
         return render_template("dr.html", error="Please select a model.", **ctx)
-
-   
 
     file = request.files.get("image")
     if file is None or file.filename == "":
@@ -53,15 +52,16 @@ def dr():
             **ctx,
         )
 
-       #Preview only  nothing is written to disk, matches the "no stored
-#images" promise on the about page.
+    
+    # images display of run inference
     result["image_data_uri"] = (
         "data:" + file.mimetype + ";base64," + base64.b64encode(image_bytes).decode("ascii")
     )
 
     return render_template("dr.html", result=result, **ctx)
 
-#for DR grade library
+
+# for DR grade library
 @app.route('/grade0')
 def grade0():
     return render_template('grade0.html')
@@ -82,16 +82,19 @@ def grade3():
 def grade4():
     return render_template('grade4.html')
 
+
 @app.errorhandler(413)
 def too_large(e):
     return render_template(
         "dr.html",
         error="That file is too large. Please upload an image under 10 MB.",
         model_choices=MODEL_CHOICES,
-        selected_model="2024",
+        selected_model=DEFAULT_MODEL,
     ), 413
-# to add antoher module later like pneuonia// we have to copy trnasforms.py/infernece.py for any model own preprocessing , archeteture and predict function 
-# and simple add all templates,and form action, copy the /dr routes like wise to pnuemonia ...
+
+# to add another module later like pneumonia: copy transforms.py/inference.py for that
+# model's own preprocessing, architecture and predict function, then add its templates,
+# form action, and copy the /dr route likewise for pneumonia ...
 
 if __name__ == '__main__':
     app.run(debug=True)

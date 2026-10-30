@@ -92,6 +92,13 @@ def too_large(e):
         selected_model=DEFAULT_MODEL,
     ), 413
 
+
+#Ear Disease
+
+@app.route("/ear_disease")
+def ear_disease():
+    return render_template("ear.html")
+
 # to add another module later like pneumonia: copy transforms.py/inference.py for that
 # model's own preprocessing, architecture and predict function, then add its templates,
 # form action, and copy the /dr route likewise for pneumonia ...

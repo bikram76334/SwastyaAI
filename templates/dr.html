@@ -289,31 +289,55 @@
     fillSeeds(null);
   });
 
+
   // ---------- DR Library: filter by search + select ----------
-  function filterCards() {
-    var searchEl = document.getElementById('drSearchInput');
-    var selectEl = document.getElementById('drGradeSelect');
-    var noResult = document.getElementById('drNoResult');
-    if (!searchEl || !selectEl) { return; }
+function filterCards() {
+  var searchEl = document.getElementById('drSearchInput');
+  var selectEl = document.getElementById('drGradeSelect');
+  var noResult = document.getElementById('drNoResult');
+  if (!searchEl || !selectEl) { return; }
 
-    var search = searchEl.value.toLowerCase().trim();
-    var select = selectEl.value;                       // "all", "0".."4"
-    var shown = 0;
+  var search = searchEl.value.toLowerCase().trim();
+  var select = selectEl.value;                       // "all", "0".."4"
+  var shown = 0;
 
-    document.querySelectorAll('.grade-card-item').forEach(function (card) {
-      var grade = card.getAttribute('data-grade');     // "grade 3"
-      var text = (grade + ' ' + card.textContent).toLowerCase();
+  // "grade 0", "grade0", "g0", "0"  ,grade1...
+  var gradeMatch = search.match(/^(?:grade|g)?\s*([0-4])$/); //allow only from 0 to 4
 
-      var matchSelect = (select === 'all') || (grade === 'grade ' + select);
-      var matchSearch = !search || text.includes(search);
+  document.querySelectorAll('.grade-card-item').forEach(function (card) {
+    var grade = card.getAttribute('data-grade');   
+    var gradeNum = grade.replace('grade ', '');     
 
-      var visible = matchSelect && matchSearch;
-      card.classList.toggle('d-none', !visible);
-      if (visible) { shown++; }
-    });
+    var link = card.querySelector('a');
+    var title = link ? (link.getAttribute('data-title') || '') : '';
+    var desc  = link ? (link.getAttribute('data-desc')  || '') : '';
+    var text = (grade + ' ' + card.textContent + ' ' + title + ' ' + desc).toLowerCase();
 
-    if (noResult) { noResult.classList.toggle('d-none', shown > 0); }
-  }
+    var matchSelect = (select === 'all') || (gradeNum === select);
+
+    var matchSearch;
+    if (!search) {
+      matchSearch = true;
+    } else if (gradeMatch) {
+      matchSearch = (gradeNum === gradeMatch[1]);    //include g0...
+    } else {
+      matchSearch = text.includes(search);        // include mild....  
+    }
+
+    var visible = matchSelect && matchSearch;
+    card.classList.toggle('d-none', !visible);
+    if (visible) { shown++; }
+  });
+
+  if (noResult) { noResult.classList.toggle('d-none', shown > 0); }
+}
+
+var searchInput = document.getElementById('drSearchInput');
+var gradeSelect = document.getElementById('drGradeSelect');
+if (searchInput && gradeSelect) {
+  searchInput.addEventListener('input', filterCards);
+  gradeSelect.addEventListener('change', filterCards);
+}
 
   // attach only if the library is on the page (it is hidden when a result shows)
   var searchInput = document.getElementById('drSearchInput');
@@ -322,6 +346,9 @@
     searchInput.addEventListener('input', filterCards);
     gradeSelect.addEventListener('change', filterCards);
   }
+
+
+
 
   // ---------- Progress bars ----------
   document.querySelectorAll(".progress-bar[data-pct]").forEach(function (el) {

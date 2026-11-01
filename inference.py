@@ -49,6 +49,7 @@ MODEL_FAMILIES = {
             "123":  os.path.join(DR_DIR, "e1withB0", "seed_123",  "e1_b0_seed123.pt"),
         },
     },
+    
     # Add B1 later 
      "e1b1": {
          "label": "E1 with B1",
@@ -67,14 +68,15 @@ MODEL_FAMILIES = {
 #         "e1b0:2024": "Seed 2024",
 #         "e1b0:42":   "Seed 42",
 #         "e1b0:123":  "Seed 123",
-#         "e1b0:all":  "Ensemble (all 3 seeds)",
+#  
 #     },
 #   }
+
 MODEL_CHOICES = {}
 _LABELS = {}  # value -> full label shown in the result card
 for _fam_key, _fam in MODEL_FAMILIES.items():
     _group = {f"{_fam_key}:{seed}": f"Seed {seed}" for seed in _fam["seeds"]}
-    _group[f"{_fam_key}:all"] = f"Ensemble (all {len(_fam['seeds'])} seeds)"
+
     MODEL_CHOICES[_fam["label"]] = _group
     for _value, _label in _group.items():
         _LABELS[_value] = _fam["label"] + " - " + _label

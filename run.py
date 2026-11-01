@@ -1,8 +1,11 @@
 import base64
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 from inference import predict_dr, MODEL_CHOICES, DEFAULT_MODEL
+import requests,os ,threading,json
+from concurrent.futures import ThreadPoolExecutor
+
 
 # MODEL_CHOICES is grouped, so flatten it to get every valid option value
 VALID_MODELS = {value for group in MODEL_CHOICES.values() for value in group}
@@ -12,11 +15,86 @@ app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024  # 10 MB only images
 
 ALLOWED_TYPES = {"image/jpeg", "image/jpg", "image/png"}
 
+MYMEMORY_URL = "https://api.mymemory.translated.net/get"
+CONTACT_EMAIL = "deepapaneru220@gmail.com"  # raises the daily limit to ~50k chars
+CACHE_FILE = "translation_cache.json"
 
+_lock = threading.Lock()
+
+# load saved translations so a restart doesn't waste quota
+try:
+    with open(CACHE_FILE, "r", encoding="utf-8") as f:
+        _cache = json.load(f)
+except (FileNotFoundError, json.JSONDecodeError):
+    _cache = {}
+
+
+def save_cache():
+    with _lock:
+        with open(CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(_cache, f, ensure_ascii=False, indent=2)
+
+
+def translate_one(text, target):
+    """Translate one string with MyMemory. Falls back to the original on any problem."""
+    key = f"{target}|{text}"
+    if key in _cache:
+        return _cache[key]
+
+    # MyMemory allows max 500 chars per request
+    if len(text) > 500:
+        return text
+
+    try:
+        resp = requests.get(
+            MYMEMORY_URL,
+            params={"q": text, "langpair": f"en|{target}", "de": CONTACT_EMAIL},
+            timeout=10,
+        )
+        data = resp.json()
+
+        # responseStatus is 200 on success; quota errors come back as other codes
+        if str(data.get("responseStatus")) != "200":
+            return text
+
+        translated = data["responseData"]["translatedText"]
+
+        # quota warnings sometimes arrive as the "translation" text
+        if not translated or "MYMEMORY WARNING" in translated.upper():
+            return text
+
+        _cache[key] = translated
+        return translated
+    except (requests.RequestException, ValueError, KeyError):
+        return text
+
+
+@app.route("/translate", methods=["POST"])
+def translate():
+    data = request.get_json(silent=True) or {}
+    texts = data.get("texts", [])
+    target = data.get("target", "ne")
+
+    if not isinstance(texts, list) or not texts or len(texts) > 128:
+        return jsonify(error="texts must be a list of 1-128 strings"), 400
+
+    unique = list(dict.fromkeys(texts))
+
+    # a few parallel requests so the page doesn't take forever
+    with ThreadPoolExecutor(max_workers=5) as pool:
+        results = list(pool.map(lambda t: translate_one(t, target), unique))
+
+    lookup = dict(zip(unique, results))
+    save_cache()
+
+    return jsonify(translations=[lookup[t] for t in texts])
+
+
+
+#home 
 @app.route('/')
 def home():
     return render_template('home.html')
-
 
 @app.route("/about")
 def about():
@@ -67,6 +145,9 @@ def grade0():
     return render_template('grade0.html')
 
 @app.route('/grade1')
+
+
+
 def grade1():
     return render_template('grade1.html')
 

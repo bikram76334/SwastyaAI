@@ -1,0 +1,578 @@
+id_code,dataset,patient_id,group_id,lat_true,lat_pred,lat_conf_%,cen_true,cen_pred,cen_conf_%,grade_true,grade_pred,grade_name,grade_conf_%,p_grade0_%,p_grade1_%,p_grade2_%,p_grade3_%,p_grade4_%,lat_ok,cen_ok,grade_ok,needs_review
+APTOS__1b495ac025b7,APTOS,6,g5,left,left,99.93,macula,macula,92.06,3,3,Severe,39.45,1.39,6.48,23.63,39.45,29.06,True,True,1.0,True
+APTOS__1b8701231c8f,APTOS,7,g6,right,right,99.63,macula,macula,82.6,0,0,No DR,88.05,88.05,9.76,1.77,0.34,0.08,True,True,1.0,False
+APTOS__1c3a6b4449e9,APTOS,15,g14,right,right,99.93,macula,macula,98.03,1,0,No DR,51.33,51.33,35.16,10.69,2.28,0.54,True,True,0.0,True
+APTOS__1c9521878baf,APTOS,24,g23,right,right,99.96,optic_disc,optic_disc,57.6,3,3,Severe,36.34,0.7,3.42,14.67,36.34,44.87,True,True,1.0,True
+APTOS__1da4a17c18c9,APTOS,44,g43,left,left,100.0,optic_disc,macula,78.58,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__1dbdc32c17db,APTOS,48,g47,left,left,99.99,macula,macula,99.97,2,2,Moderate,38.73,9.2,28.88,38.73,17.82,5.38,True,True,1.0,True
+APTOS__1e036f2e7095,APTOS,56,g55,left,left,100.0,macula,macula,99.35,0,0,No DR,99.32,99.32,0.57,0.09,0.02,0.0,True,True,1.0,False
+APTOS__1e4650743fa2,APTOS,59,g58,right,right,99.96,macula,macula,98.44,2,1,Mild,41.1,36.99,41.1,16.96,3.98,0.97,True,True,0.0,True
+APTOS__1e7ccd4a1c87,APTOS,62,g61,right,right,99.79,macula,macula,92.08,0,0,No DR,99.96,99.96,0.03,0.0,0.0,0.0,True,True,1.0,False
+APTOS__1e9224ccca95,APTOS,65,g64,right,right,99.99,macula,macula,99.95,4,3,Severe,39.17,1.08,5.14,20.12,39.17,34.49,True,True,0.0,True
+APTOS__f6f3ea0d2693,APTOS,65,g64,right,right,99.99,macula,macula,99.95,4,3,Severe,39.17,1.08,5.14,20.12,39.17,34.49,True,True,0.0,True
+APTOS__1ee1eb7943db,APTOS,67,g66,right,right,100.0,macula,macula,99.93,2,3,Severe,34.61,2.86,12.29,33.87,34.61,16.38,True,True,0.0,True
+APTOS__c2d2b4f536da,APTOS,67,g66,right,right,100.0,macula,macula,99.93,2,3,Severe,34.61,2.86,12.29,33.87,34.61,16.38,True,True,0.0,True
+APTOS__012a242ac6ff,APTOS,71,g70,right,right,99.96,macula,macula,90.87,2,2,Moderate,36.82,11.53,32.65,36.82,14.77,4.23,True,True,1.0,True
+APTOS__1f07dae3cadb,APTOS,71,g70,right,right,99.96,macula,macula,90.87,2,2,Moderate,36.82,11.53,32.65,36.82,14.77,4.23,True,True,1.0,True
+APTOS__1f15ca672675,APTOS,73,g72,right,right,99.85,macula,macula,95.67,0,0,No DR,99.98,99.98,0.02,0.0,0.0,0.0,True,True,1.0,False
+APTOS__1f3f32efaf20,APTOS,75,g74,right,right,99.98,macula,macula,79.08,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__1f9ccda4ddf2,APTOS,79,g78,right,right,100.0,macula,macula,98.07,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__1ffaa51a6245,APTOS,84,g83,right,right,99.68,macula,macula,98.8,2,1,Mild,36.34,14.61,36.34,33.88,11.91,3.26,True,True,0.0,True
+APTOS__2017cd92c63d,APTOS,86,g85,left,left,99.89,macula,macula,98.2,4,4,Proliferative,82.97,0.12,0.59,3.01,13.31,82.97,True,True,1.0,False
+APTOS__210bfe0127c6,APTOS,98,g97,right,right,99.97,macula,macula,93.85,0,0,No DR,99.92,99.92,0.07,0.01,0.0,0.0,True,True,1.0,False
+APTOS__2131aa3a1e6f,APTOS,100,g99,left,left,99.96,macula,macula,95.88,2,3,Severe,36.15,2.48,10.89,32.01,36.15,18.47,True,True,0.0,True
+APTOS__218c822a3dd9,APTOS,103,g102,right,right,99.98,macula,macula,98.6,0,0,No DR,62.97,62.97,28.2,7.06,1.43,0.34,True,True,1.0,True
+APTOS__2221cf5c7935,APTOS,108,g107,left,left,99.98,optic_disc,optic_disc,82.42,0,0,No DR,77.08,77.08,18.25,3.77,0.73,0.17,True,True,1.0,False
+APTOS__222f3ee3a1e8,APTOS,110,g109,left,left,99.93,macula,macula,99.44,4,3,Severe,39.21,1.09,5.2,20.28,39.21,34.22,True,True,0.0,True
+APTOS__233d948e2544,APTOS,124,g123,left,left,100.0,macula,macula,99.26,0,0,No DR,80.35,80.35,15.78,3.13,0.6,0.14,True,True,1.0,False
+APTOS__23d7ca170bdb,APTOS,132,g131,left,left,100.0,macula,macula,98.2,2,1,Mild,42.02,25.56,42.02,24.24,6.53,1.65,True,True,0.0,True
+APTOS__ea9e0fb6fb0b,APTOS,132,g131,left,left,100.0,macula,macula,98.2,2,1,Mild,42.02,25.56,42.02,24.24,6.53,1.65,True,True,0.0,True
+APTOS__242fc19be06f,APTOS,136,g135,right,right,99.98,optic_disc,macula,82.87,0,0,No DR,99.87,99.87,0.11,0.02,0.0,0.0,True,False,1.0,False
+APTOS__252305189b3a,APTOS,149,g148,right,right,100.0,macula,macula,95.34,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__25d069089c5e,APTOS,158,g157,left,left,99.16,macula,macula,99.99,4,4,Proliferative,91.07,0.06,0.29,1.47,7.12,91.07,True,True,1.0,False
+APTOS__25e9fd872182,APTOS,160,g159,right,right,99.98,macula,macula,96.19,1,2,Moderate,35.78,12.65,34.13,35.78,13.62,3.82,True,True,0.0,True
+APTOS__2628305cbb29,APTOS,164,g163,left,left,100.0,macula,macula,97.91,4,3,Severe,39.3,1.51,7.03,24.92,39.3,27.24,True,True,0.0,True
+APTOS__269b44e628eb,APTOS,172,g171,left,left,99.95,macula,macula,99.28,3,4,Proliferative,55.79,0.45,2.24,10.29,31.23,55.79,True,True,0.0,True
+APTOS__26cd40b57ad1,APTOS,174,g173,left,left,100.0,macula,macula,76.87,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__272d9c043c81,APTOS,180,g179,right,right,99.99,macula,macula,99.93,2,4,Proliferative,85.55,0.1,0.49,2.49,11.37,85.55,True,True,0.0,False
+APTOS__278aa860dffd,APTOS,186,g185,left,left,99.99,macula,macula,98.07,1,1,Mild,41.48,35.43,41.48,17.81,4.24,1.04,True,True,1.0,True
+APTOS__f066db7a2efe,APTOS,186,g185,left,left,99.99,macula,macula,98.07,0,1,Mild,41.48,35.43,41.48,17.81,4.24,1.04,True,True,0.0,True
+APTOS__27f82ada84ac,APTOS,191,g190,right,right,99.79,macula,macula,92.32,0,0,No DR,96.32,96.32,3.05,0.51,0.09,0.02,True,True,1.0,False
+APTOS__28824d12d31d,APTOS,200,g199,left,left,99.91,macula,macula,89.5,2,3,Severe,35.41,0.64,3.13,13.64,35.41,47.18,True,True,0.0,True
+APTOS__29192375ab1b,APTOS,207,g206,right,right,99.95,macula,macula,96.54,0,0,No DR,99.96,99.96,0.04,0.01,0.0,0.0,True,True,1.0,False
+APTOS__291f581d365e,APTOS,209,g208,left,left,99.99,macula,macula,93.67,0,1,Mild,42.22,27.4,42.22,22.89,5.99,1.5,True,True,0.0,True
+APTOS__2927665214e1,APTOS,211,g210,right,right,99.98,macula,macula,93.94,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__29bc0e721cfe,APTOS,220,g219,right,right,99.9,optic_disc,macula,85.17,4,4,Proliferative,75.63,0.19,0.93,4.6,18.65,75.63,True,False,1.0,False
+APTOS__2a08ed6bbcbc,APTOS,224,g223,left,left,99.99,macula,macula,98.85,1,2,Moderate,36.08,12.33,33.73,36.08,13.92,3.93,True,True,0.0,True
+APTOS__2a4520f1f9a3,APTOS,230,g229,right,right,99.99,macula,macula,98.21,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__2b10f138e67d,APTOS,239,g238,right,right,99.99,macula,macula,96.52,0,0,No DR,99.82,99.82,0.15,0.02,0.0,0.0,True,True,1.0,False
+APTOS__2b3a4a81d748,APTOS,241,g240,left,left,100.0,macula,macula,97.98,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__2b88cb6e31cd,APTOS,245,g244,right,right,100.0,macula,macula,99.85,2,2,Moderate,39.73,7.07,24.52,39.73,21.64,7.04,True,True,1.0,True
+APTOS__2bb063318cf1,APTOS,247,g131,left,left,99.98,macula,macula,99.5,3,2,Moderate,38.04,10.12,30.48,38.04,16.49,4.86,True,True,0.0,True
+APTOS__2c1d5be654dd,APTOS,252,g250,right,right,99.99,macula,macula,99.83,2,2,Moderate,37.48,10.78,31.54,37.48,15.65,4.55,True,True,1.0,True
+APTOS__2c827005b8f8,APTOS,256,g254,right,right,100.0,macula,macula,98.33,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__2d04cead4d3a,APTOS,265,g263,left,left,100.0,macula,macula,99.05,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__2e26762daed5,APTOS,278,g276,left,left,99.93,optic_disc,optic_disc,75.75,2,1,Mild,37.02,15.32,37.02,33.2,11.38,3.08,True,True,0.0,True
+APTOS__2eba4279e503,APTOS,280,g278,left,left,100.0,macula,macula,98.4,0,0,No DR,99.59,99.59,0.34,0.06,0.01,0.0,True,True,1.0,False
+APTOS__2f143453bb71,APTOS,285,g283,right,right,99.94,macula,macula,91.57,0,0,No DR,98.66,98.66,1.12,0.18,0.03,0.01,True,True,1.0,False
+APTOS__2fefb720869a,APTOS,301,g299,left,left,100.0,macula,macula,98.91,0,0,No DR,99.98,99.98,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__30cab14951ac,APTOS,310,g308,right,right,99.82,macula,macula,99.19,1,0,No DR,57.76,57.76,31.49,8.56,1.77,0.42,True,True,0.0,True
+APTOS__c546670d9684,APTOS,310,g308,right,right,99.82,macula,macula,99.19,0,0,No DR,57.76,57.76,31.49,8.56,1.77,0.42,True,True,1.0,True
+APTOS__31b5d6fb0256,APTOS,323,g321,right,right,99.98,macula,macula,95.8,2,2,Moderate,38.01,10.15,30.54,38.01,16.45,4.85,True,True,1.0,True
+APTOS__3232b34cbe99,APTOS,327,g325,left,left,100.0,macula,macula,98.38,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__328d141ed3aa,APTOS,331,g329,left,left,100.0,macula,macula,99.01,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__32d7d360d891,APTOS,333,g331,right,right,99.9,macula,macula,75.64,0,0,No DR,98.98,98.98,0.85,0.14,0.03,0.01,True,True,1.0,False
+APTOS__3323fd59782e,APTOS,337,g335,left,left,99.52,optic_disc,optic_disc,99.92,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__3428230bf1bd,APTOS,350,g348,left,left,99.66,macula,macula,99.56,2,3,Severe,38.09,0.87,4.19,17.25,38.09,39.6,True,True,0.0,True
+APTOS__35362d43e753,APTOS,363,g361,right,right,99.93,macula,optic_disc,62.89,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,True
+APTOS__35777eb7859d,APTOS,366,g364,left,left,100.0,macula,macula,99.58,0,0,No DR,99.96,99.96,0.03,0.01,0.0,0.0,True,True,1.0,False
+APTOS__357f02a779d7,APTOS,367,g365,left,left,100.0,macula,macula,96.66,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__358d2224de73,APTOS,369,g367,left,left,99.83,macula,macula,99.73,1,2,Moderate,37.73,10.49,31.09,37.73,16.01,4.68,True,True,0.0,True
+APTOS__36b5b3c9fb32,APTOS,388,g386,right,right,99.99,macula,macula,99.77,3,3,Severe,38.92,1.01,4.83,19.21,38.92,36.03,True,True,1.0,True
+APTOS__370f575adb23,APTOS,390,g388,right,right,99.99,macula,macula,93.76,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__7ce671f952be,APTOS,390,g388,right,right,99.96,macula,macula,87.89,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__3748349334f6,APTOS,395,g393,left,left,99.92,macula,macula,99.78,2,3,Severe,39.14,1.6,7.38,25.71,39.14,26.18,True,True,0.0,True
+APTOS__383e72af1955,APTOS,406,g404,right,right,99.98,macula,macula,98.94,3,3,Severe,38.94,1.02,4.85,19.27,38.94,35.93,True,True,1.0,True
+APTOS__384631079d1e,APTOS,407,g405,left,left,100.0,macula,macula,99.73,1,2,Moderate,36.02,3.44,14.34,36.02,32.28,13.92,True,True,0.0,True
+APTOS__384e6c915722,APTOS,410,g408,right,right,99.94,macula,macula,97.88,0,0,No DR,99.8,99.8,0.17,0.03,0.01,0.0,True,True,1.0,False
+APTOS__3a122851e526,APTOS,427,g425,right,right,99.22,macula,macula,99.93,2,3,Severe,35.38,2.67,11.59,32.99,35.38,17.37,True,True,0.0,True
+APTOS__3a1ecf5e2839,APTOS,429,g427,right,right,99.97,macula,macula,99.76,4,4,Proliferative,53.71,0.49,2.43,11.04,32.33,53.71,True,True,1.0,True
+APTOS__3a4cfea0a766,APTOS,430,g428,right,right,99.88,macula,macula,97.56,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__3b2b91590590,APTOS,443,g441,right,right,99.99,macula,macula,98.64,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__3b4a5fcbe5e0,APTOS,444,g442,left,left,99.9,macula,macula,99.81,4,4,Proliferative,82.67,0.12,0.61,3.07,13.53,82.67,True,True,1.0,False
+APTOS__3ca637fddd56,APTOS,444,g442,left,left,99.9,macula,macula,99.81,4,4,Proliferative,82.67,0.12,0.61,3.07,13.53,82.67,True,True,1.0,False
+APTOS__3b73a3a4a734,APTOS,447,g445,right,right,99.95,macula,macula,99.37,1,1,Mild,37.8,46.0,37.8,12.73,2.79,0.67,True,True,1.0,True
+APTOS__3c1efa38d0da,APTOS,452,g450,left,left,99.82,macula,macula,99.88,2,2,Moderate,34.84,3.09,13.14,34.84,33.65,15.28,True,True,1.0,True
+APTOS__3c326543fff6,APTOS,455,g453,right,right,99.92,macula,macula,85.91,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__3f3de2a6b0f5,APTOS,486,g484,right,right,99.98,macula,macula,98.26,2,2,Moderate,35.39,3.24,13.67,35.39,33.05,14.65,True,True,1.0,True
+APTOS__3f44d749cd0b,APTOS,487,g485,right,right,99.92,macula,macula,99.48,0,0,No DR,54.84,54.84,33.21,9.49,1.98,0.47,True,True,1.0,True
+APTOS__f9e1c439d4c8,APTOS,487,g485,right,right,99.92,macula,macula,99.48,0,0,No DR,54.84,54.84,33.21,9.49,1.98,0.47,True,True,1.0,True
+APTOS__3f47f83217b5,APTOS,488,g486,right,right,99.94,macula,macula,93.77,2,1,Mild,40.2,39.97,40.2,15.44,3.53,0.86,True,True,0.0,True
+APTOS__401fdfd0db07,APTOS,503,g501,left,left,100.0,macula,macula,99.95,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__4134b290f5f3,APTOS,515,g513,right,right,99.93,macula,macula,97.08,0,0,No DR,99.98,99.98,0.02,0.0,0.0,0.0,True,True,1.0,False
+APTOS__423abbaa5fad,APTOS,526,g524,right,right,99.66,optic_disc,optic_disc,98.73,2,3,Severe,39.08,1.05,5.02,19.77,39.08,35.07,True,True,0.0,True
+APTOS__4289af3afbd2,APTOS,530,g528,right,right,99.99,macula,macula,92.5,2,3,Severe,36.19,2.47,10.84,31.95,36.19,18.54,True,True,0.0,True
+APTOS__4294a14c656a,APTOS,531,g529,right,right,99.98,macula,macula,99.26,3,3,Severe,38.88,1.0,4.79,19.09,38.88,36.24,True,True,1.0,True
+APTOS__4318b6adeb97,APTOS,541,g539,left,left,100.0,macula,macula,98.7,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__436e1793d240,APTOS,545,g543,left,left,100.0,macula,macula,99.63,2,2,Moderate,39.53,7.77,26.07,39.53,20.24,6.4,True,True,1.0,True
+APTOS__436e7a7af761,APTOS,546,g544,right,right,99.8,macula,macula,92.25,0,0,No DR,99.98,99.98,0.02,0.0,0.0,0.0,True,True,1.0,False
+APTOS__4464bb62bf20,APTOS,566,g564,right,right,99.97,macula,macula,98.5,0,0,No DR,90.15,90.15,8.09,1.44,0.27,0.06,True,True,1.0,False
+APTOS__4478b870e549,APTOS,567,g565,left,left,99.91,macula,macula,99.58,2,2,Moderate,39.59,7.6,25.71,39.59,20.56,6.54,True,True,1.0,True
+APTOS__44e951e45dca,APTOS,575,g573,left,left,100.0,macula,macula,99.37,2,2,Moderate,38.07,10.08,30.41,38.07,16.55,4.89,True,True,1.0,True
+APTOS__453d553b0a94,APTOS,582,g580,left,left,99.97,optic_disc,macula,69.86,2,3,Severe,39.3,1.51,7.03,24.92,39.3,27.24,True,False,0.0,True
+APTOS__467b7d9d811c,APTOS,595,g593,left,left,99.91,macula,macula,99.88,2,2,Moderate,37.13,11.19,32.15,37.13,15.16,4.37,True,True,1.0,True
+APTOS__4704dbb59536,APTOS,602,g600,left,left,100.0,macula,macula,98.95,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__49419f8d5cb4,APTOS,624,g622,right,right,99.99,macula,macula,99.82,2,2,Moderate,34.96,3.13,13.25,34.96,33.52,15.14,True,True,1.0,True
+APTOS__494fc9c745a3,APTOS,625,g623,left,left,100.0,macula,macula,95.95,1,2,Moderate,35.88,12.54,34.0,35.88,13.72,3.86,True,True,0.0,True
+APTOS__4a213b405ee4,APTOS,641,g639,right,right,99.97,macula,macula,99.58,1,2,Moderate,38.08,10.07,30.39,38.08,16.57,4.89,True,True,0.0,True
+APTOS__4a3da369b227,APTOS,642,g640,left,left,99.59,macula,macula,83.98,4,4,Proliferative,83.96,0.11,0.55,2.81,12.57,83.96,True,True,1.0,False
+APTOS__4b6cb0bcfd44,APTOS,661,g659,left,left,100.0,macula,macula,99.12,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__4c389d033cb0,APTOS,668,g666,right,right,99.97,macula,macula,88.53,0,0,No DR,99.92,99.92,0.06,0.01,0.0,0.0,True,True,1.0,False
+APTOS__830e297965a1,APTOS,668,g666,right,right,99.99,macula,macula,94.34,0,0,No DR,99.97,99.97,0.02,0.0,0.0,0.0,True,True,1.0,False
+APTOS__4c9f0fdaaef7,APTOS,679,g677,left,left,100.0,macula,macula,99.92,3,3,Severe,38.33,0.9,4.34,17.72,38.33,38.7,True,True,1.0,True
+APTOS__4ccee4db09b6,APTOS,680,g678,left,left,100.0,macula,macula,99.22,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__4cddfc22b0ad,APTOS,681,g679,left,left,100.0,macula,macula,67.96,0,0,No DR,99.81,99.81,0.16,0.02,0.0,0.0,True,True,1.0,True
+APTOS__4d167ca69ea8,APTOS,687,g685,right,right,100.0,macula,macula,99.41,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__4da2961e62fe,APTOS,696,g694,right,right,99.96,macula,macula,83.48,1,1,Mild,42.24,29.88,42.24,21.18,5.36,1.33,True,True,1.0,True
+APTOS__4dc2211a1c31,APTOS,699,g697,right,right,99.85,macula,macula,99.05,4,4,Proliferative,97.46,0.01,0.08,0.4,2.05,97.46,True,True,1.0,False
+APTOS__4dd14c380696,APTOS,700,g698,left,left,100.0,macula,macula,99.52,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__4ec7796df40e,APTOS,720,g718,right,right,99.41,macula,macula,94.76,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__4ed31cc07366,APTOS,722,g720,right,right,100.0,macula,macula,91.82,2,2,Moderate,37.02,11.31,32.33,37.02,15.02,4.32,True,True,1.0,True
+APTOS__4fef9ed8a4c5,APTOS,737,g735,left,left,99.97,macula,macula,99.93,3,4,Proliferative,59.21,0.4,1.96,9.13,29.31,59.21,True,True,0.0,True
+APTOS__4ffa38550c95,APTOS,738,g736,left,left,100.0,macula,macula,98.08,0,0,No DR,99.88,99.88,0.1,0.02,0.0,0.0,True,True,1.0,False
+APTOS__5056fa7d505f,APTOS,742,g740,right,right,99.21,macula,macula,85.89,0,0,No DR,99.87,99.87,0.11,0.02,0.0,0.0,True,True,1.0,False
+APTOS__51405d042000,APTOS,759,g757,right,right,99.99,macula,macula,99.7,2,3,Severe,39.24,1.11,5.25,20.42,39.24,33.98,True,True,0.0,True
+APTOS__5188a8afa879,APTOS,762,g760,left,left,100.0,macula,macula,99.8,2,2,Moderate,39.64,5.88,21.63,39.64,24.42,8.43,True,True,1.0,True
+APTOS__9033f1493da1,APTOS,762,g760,left,left,100.0,macula,macula,96.41,2,1,Mild,41.3,22.48,41.3,26.69,7.59,1.95,True,True,0.0,True
+APTOS__523d0c2cb4d6,APTOS,780,g778,right,right,100.0,macula,macula,97.06,2,3,Severe,36.58,0.72,3.5,14.96,36.58,44.24,True,True,0.0,True
+APTOS__523ff163211b,APTOS,781,g779,right,right,100.0,macula,macula,99.33,2,3,Severe,34.32,2.93,12.55,34.17,34.32,16.03,True,True,0.0,True
+APTOS__529906ff9dfa,APTOS,792,g790,right,right,99.99,macula,macula,98.57,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__52ae917fcea4,APTOS,793,g791,left,left,100.0,macula,macula,83.68,1,2,Moderate,39.65,5.91,21.7,39.65,24.35,8.4,True,True,0.0,True
+APTOS__52dbec057cc8,APTOS,794,g792,right,right,99.98,optic_disc,optic_disc,65.11,2,1,Mild,39.54,18.64,39.54,30.04,9.32,2.45,True,True,0.0,True
+APTOS__537e50fdf22e,APTOS,806,g804,left,left,100.0,macula,macula,99.98,3,4,Proliferative,93.53,0.04,0.2,1.04,5.18,93.53,True,True,0.0,False
+APTOS__54038e56131d,APTOS,811,g809,left,left,100.0,macula,optic_disc,97.74,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__540e4973829e,APTOS,812,g810,left,left,100.0,macula,macula,98.85,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__5486da4273d7,APTOS,819,g817,left,left,100.0,macula,macula,99.83,2,4,Proliferative,77.57,0.17,0.83,4.16,17.27,77.57,True,True,0.0,False
+APTOS__5511f114e7ee,APTOS,829,g827,left,left,100.0,macula,macula,97.34,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__55eac26bd383,APTOS,832,g830,right,right,99.86,macula,macula,95.28,1,1,Mild,40.43,39.25,40.43,15.79,3.64,0.88,True,True,1.0,True
+APTOS__578109578b46,APTOS,850,g848,right,right,99.91,macula,macula,96.55,1,0,No DR,66.4,66.4,25.91,6.17,1.23,0.29,True,True,0.0,True
+APTOS__57a5e4274275,APTOS,851,g849,right,right,99.64,macula,macula,60.15,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,True
+APTOS__57ce57a8cfb0,APTOS,854,g852,right,right,99.99,macula,macula,99.34,2,2,Moderate,39.77,6.57,23.35,39.77,22.74,7.57,True,True,1.0,True
+APTOS__58af2c054ced,APTOS,869,g867,left,left,100.0,macula,macula,96.67,0,0,No DR,99.99,99.99,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__b66f23ffa730,APTOS,869,g867,left,left,100.0,macula,macula,95.37,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__58b866484a05,APTOS,870,g868,right,right,99.74,macula,macula,90.07,4,4,Proliferative,91.27,0.06,0.28,1.44,6.96,91.27,True,True,1.0,False
+APTOS__58c12863f33d,APTOS,871,g869,right,right,99.99,macula,macula,93.33,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__58f07741ee3b,APTOS,874,g872,left,left,100.0,macula,macula,97.66,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__5a27b9b2a9c1,APTOS,892,g890,right,right,99.86,macula,macula,84.13,0,0,No DR,99.82,99.82,0.15,0.02,0.0,0.0,True,True,1.0,False
+APTOS__5a2c27b95c7c,APTOS,893,g891,right,right,99.92,macula,macula,99.16,2,1,Mild,41.36,35.98,41.36,17.5,4.15,1.01,True,True,0.0,True
+APTOS__0851d6a69589,APTOS,894,g892,left,left,99.99,macula,optic_disc,73.09,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__5a444c32cd9a,APTOS,894,g892,left,left,100.0,macula,optic_disc,73.99,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__ac1667fac512,APTOS,894,g892,left,left,100.0,macula,optic_disc,61.19,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,True
+APTOS__e66ad813a508,APTOS,894,g892,left,left,100.0,macula,optic_disc,84.01,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__5b644a403e1f,APTOS,908,g906,right,right,100.0,macula,macula,87.66,2,3,Severe,38.14,1.95,8.83,28.64,38.14,22.44,True,True,0.0,True
+APTOS__5b72ff04333d,APTOS,909,g907,right,right,99.93,macula,macula,99.22,1,1,Mild,40.94,21.48,40.94,27.52,7.99,2.06,True,True,1.0,True
+APTOS__5b994ff78547,APTOS,911,g909,right,right,99.99,macula,macula,95.36,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__5d024177e214,APTOS,931,g929,left,left,99.91,macula,macula,99.92,2,3,Severe,38.56,1.82,8.29,27.62,38.56,23.7,True,True,0.0,True
+APTOS__5d9c841eb245,APTOS,935,g933,right,right,99.77,macula,macula,97.43,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__5db2e3a4594a,APTOS,936,g934,left,left,99.57,optic_disc,optic_disc,99.87,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__5eb311bcb5f9,APTOS,951,g949,left,left,100.0,macula,macula,99.88,2,4,Proliferative,54.86,0.47,2.32,10.62,31.73,54.86,True,True,0.0,True
+APTOS__a9e984b57556,APTOS,951,g949,left,left,100.0,macula,macula,99.88,3,4,Proliferative,54.86,0.47,2.32,10.62,31.73,54.86,True,True,0.0,True
+APTOS__5eb8fb1aad41,APTOS,952,g950,left,left,98.08,optic_disc,optic_disc,99.93,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__5ed6dc419e4d,APTOS,953,g951,right,right,99.99,macula,macula,96.2,2,3,Severe,35.71,2.59,11.29,32.58,35.71,17.83,True,True,0.0,True
+APTOS__60eeae3ba23d,APTOS,969,g967,left,left,99.96,macula,macula,99.93,2,3,Severe,39.4,1.19,5.62,21.44,39.4,32.35,True,True,0.0,True
+APTOS__60f15dd68d30,APTOS,970,g968,right,right,93.33,macula,macula,91.47,4,4,Proliferative,99.36,0.0,0.02,0.1,0.52,99.36,True,True,1.0,False
+APTOS__772af553b8b7,APTOS,970,g968,right,right,93.71,macula,macula,91.58,3,4,Proliferative,99.37,0.0,0.02,0.1,0.51,99.37,True,True,0.0,False
+APTOS__fcc6aa6755e6,APTOS,970,g968,right,right,93.33,macula,macula,91.47,3,4,Proliferative,99.36,0.0,0.02,0.1,0.52,99.36,True,True,0.0,False
+APTOS__61c667663f2f,APTOS,985,g983,right,right,99.91,macula,macula,77.4,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__62318d514160,APTOS,990,g988,right,right,97.93,optic_disc,optic_disc,51.91,4,4,Proliferative,95.62,0.03,0.13,0.7,3.53,95.62,True,True,1.0,True
+APTOS__650fbed3fdca,APTOS,1023,g1021,left,left,100.0,macula,macula,99.29,2,2,Moderate,39.25,5.24,19.88,39.25,26.19,9.44,True,True,1.0,True
+APTOS__6630f8675a97,APTOS,1038,g1036,right,right,99.98,macula,macula,99.58,4,4,Proliferative,77.68,0.17,0.83,4.14,17.19,77.68,True,True,1.0,False
+APTOS__66375b3c64db,APTOS,1040,g1038,left,left,99.94,macula,macula,90.59,4,3,Severe,39.04,1.64,7.57,26.12,39.04,25.63,True,True,0.0,True
+APTOS__66d2ca47aa44,APTOS,1054,g1052,right,right,99.95,macula,macula,99.27,2,2,Moderate,39.32,8.23,27.02,39.32,19.4,6.03,True,True,1.0,True
+APTOS__6733544ae7a6,APTOS,1055,g1053,right,right,99.99,macula,macula,99.82,2,2,Moderate,39.38,5.4,20.34,39.38,25.72,9.16,True,True,1.0,True
+APTOS__68ddb15a74de,APTOS,1074,g1072,right,right,99.99,macula,macula,89.73,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__692e946b1f85,APTOS,1075,g1073,left,left,97.65,optic_disc,optic_disc,99.84,0,0,No DR,98.99,98.99,0.84,0.14,0.03,0.01,True,True,1.0,False
+APTOS__6b128e648646,APTOS,1094,g1092,left,left,99.94,macula,macula,99.89,3,4,Proliferative,58.48,0.41,2.01,9.37,29.73,58.48,True,True,0.0,True
+APTOS__6bf26b777e3a,APTOS,1106,g1104,right,right,99.96,macula,macula,99.27,0,0,No DR,99.4,99.4,0.5,0.08,0.02,0.0,True,True,1.0,False
+APTOS__6cee2e148520,APTOS,1124,g1122,left,left,100.0,macula,macula,93.18,0,0,No DR,99.93,99.93,0.06,0.01,0.0,0.0,True,True,1.0,False
+APTOS__6d0c0531083f,APTOS,1127,g1125,left,left,99.98,macula,macula,99.97,3,3,Severe,38.94,1.68,7.74,26.49,38.94,25.15,True,True,1.0,True
+APTOS__6d292ca4c9ad,APTOS,1130,g1128,right,right,99.78,macula,macula,97.15,1,0,No DR,50.88,50.88,35.4,10.85,2.32,0.55,True,True,0.0,True
+APTOS__6d3d1fe6c32a,APTOS,1131,g1129,left,left,99.96,macula,macula,96.87,2,1,Mild,41.15,22.03,41.15,27.06,7.77,2.0,True,True,0.0,True
+APTOS__6d5a8362dd1e,APTOS,1134,g1132,right,right,99.49,macula,macula,94.74,0,0,No DR,97.62,97.62,1.98,0.33,0.06,0.01,True,True,1.0,False
+APTOS__6e092caa065f,APTOS,1148,g1146,left,left,100.0,macula,macula,85.36,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__6e1db8711879,APTOS,1150,g1148,left,left,100.0,macula,macula,99.34,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__6f460f9968c7,APTOS,1162,g1160,right,right,99.96,macula,macula,82.48,0,0,No DR,99.99,99.99,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__6f689fced922,APTOS,1165,g1163,right,right,99.97,macula,macula,76.97,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__7116128c65ab,APTOS,1181,g1179,left,left,99.91,macula,macula,97.09,1,1,Mild,35.89,14.17,35.89,34.32,12.26,3.37,True,True,1.0,True
+APTOS__711d1480d2e3,APTOS,1182,g1180,right,right,99.96,macula,macula,99.29,2,2,Moderate,39.3,5.3,20.05,39.3,26.02,9.33,True,True,1.0,True
+APTOS__7131bf4c9e6f,APTOS,1183,g1181,left,left,100.0,macula,macula,75.96,0,0,No DR,97.88,97.88,1.76,0.29,0.05,0.01,True,True,1.0,False
+APTOS__a1e236fbc863,APTOS,1183,g1181,left,left,100.0,macula,macula,88.67,0,0,No DR,98.32,98.32,1.4,0.23,0.04,0.01,True,True,1.0,False
+APTOS__72a867980067,APTOS,1197,g1195,left,left,99.99,optic_disc,optic_disc,87.36,0,0,No DR,99.89,99.89,0.09,0.01,0.0,0.0,True,True,1.0,False
+APTOS__0e3572b5884a,APTOS,1202,g1200,right,right,100.0,macula,macula,97.69,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__7347bd23ba80,APTOS,1202,g1200,right,right,99.99,macula,macula,92.14,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__a2b995b81692,APTOS,1202,g1200,right,right,99.99,macula,macula,92.35,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__737ef6226677,APTOS,1207,g1205,right,right,99.99,macula,optic_disc,59.24,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,True
+APTOS__7455e2b5fc57,APTOS,1216,g1214,right,right,100.0,macula,macula,99.81,2,2,Moderate,38.34,4.46,17.62,38.34,28.6,10.98,True,True,1.0,True
+APTOS__750e0168399d,APTOS,1219,g1217,right,right,99.96,macula,macula,98.75,0,0,No DR,99.96,99.96,0.03,0.0,0.0,0.0,True,True,1.0,False
+APTOS__762d6e5d5068,APTOS,1236,g1234,right,right,99.98,macula,macula,99.11,3,2,Moderate,38.9,4.88,18.86,38.9,27.27,10.1,True,True,0.0,True
+APTOS__76cb010f7aa0,APTOS,1246,g1244,right,right,99.99,macula,macula,98.14,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__77543f66a84a,APTOS,1253,g1251,left,left,99.99,macula,macula,95.95,2,3,Severe,38.62,1.8,8.22,27.48,38.62,23.88,True,True,0.0,True
+APTOS__77a1f1398fdb,APTOS,1254,g1252,right,right,99.93,macula,macula,97.0,0,0,No DR,99.07,99.07,0.78,0.13,0.02,0.01,True,True,1.0,False
+APTOS__785777558f05,APTOS,1267,g1265,right,right,99.99,macula,macula,99.66,4,3,Severe,38.66,0.96,4.59,18.5,38.66,37.29,True,True,0.0,True
+APTOS__789434d095d1,APTOS,1271,g1269,left,left,99.92,macula,macula,99.62,4,4,Proliferative,97.99,0.01,0.06,0.31,1.62,97.99,True,True,1.0,False
+APTOS__799214e8b07c,APTOS,1280,g1278,left,left,100.0,macula,macula,98.62,0,0,No DR,99.93,99.93,0.06,0.01,0.0,0.0,True,True,1.0,False
+APTOS__79cbae28d8b2,APTOS,1284,g1282,left,left,100.0,macula,optic_disc,77.06,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__7a06ea127e02,APTOS,1286,g1284,left,left,100.0,macula,macula,92.56,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__7a42443ed106,APTOS,1292,g1290,right,right,99.98,macula,macula,90.8,0,0,No DR,99.99,99.99,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__7b29e3783919,APTOS,1304,g1302,right,right,99.98,macula,macula,80.27,3,3,Severe,35.69,0.66,3.21,13.93,35.69,46.51,True,True,1.0,True
+APTOS__7c90ab025331,APTOS,1322,g1320,right,right,99.96,macula,macula,97.47,4,3,Severe,35.91,0.67,3.27,14.16,35.91,45.99,True,True,0.0,True
+APTOS__7cc4b7aabe04,APTOS,1323,g1321,left,left,99.78,macula,macula,99.44,4,4,Proliferative,95.62,0.03,0.13,0.7,3.53,95.62,True,True,1.0,False
+APTOS__7d11dbc1e738,APTOS,1326,g1324,left,left,100.0,macula,macula,92.31,0,0,No DR,99.95,99.95,0.04,0.01,0.0,0.0,True,True,1.0,False
+APTOS__7dee6bf8b9c1,APTOS,1338,g1336,left,left,99.94,macula,macula,99.94,2,3,Severe,39.36,1.47,6.85,24.51,39.36,27.8,True,True,0.0,True
+APTOS__7e9081e95bf6,APTOS,1345,g1343,right,right,99.98,macula,macula,94.98,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__7ee6de71c140,APTOS,1350,g1348,left,left,100.0,macula,macula,98.77,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__7ef5ff774a48,APTOS,1353,g1351,right,right,99.85,macula,macula,94.96,1,0,No DR,53.43,53.43,34.02,9.96,2.1,0.5,True,True,0.0,True
+APTOS__8010c931321f,APTOS,1368,g1366,left,left,99.72,optic_disc,optic_disc,99.91,0,0,No DR,99.97,99.97,0.03,0.0,0.0,0.0,True,True,1.0,False
+APTOS__80dbeb0fdc75,APTOS,1378,g1376,left,left,100.0,macula,macula,98.87,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__810ed108f5b7,APTOS,1385,g1383,left,left,100.0,macula,macula,99.3,0,0,No DR,99.98,99.98,0.02,0.0,0.0,0.0,True,True,1.0,False
+APTOS__8114d6a160df,APTOS,1386,g1384,left,left,100.0,macula,macula,99.9,1,3,Severe,35.6,2.61,11.4,32.73,35.6,17.66,True,True,0.0,True
+APTOS__8241e43408a8,APTOS,1397,g1395,right,right,99.98,macula,macula,96.69,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__82d364726a58,APTOS,1402,g1400,right,right,99.95,macula,macula,99.05,0,0,No DR,88.85,88.85,9.13,1.64,0.31,0.07,True,True,1.0,False
+APTOS__8329e80c10ac,APTOS,1407,g1404,left,left,99.98,macula,optic_disc,99.57,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__83a63c4a3e4a,APTOS,1413,g1410,left,left,99.96,macula,optic_disc,99.31,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__8421107255ae,APTOS,1420,g1417,right,right,99.99,macula,macula,83.62,2,3,Severe,38.66,0.96,4.59,18.48,38.66,37.32,True,True,0.0,True
+APTOS__8564b7aa3c1a,APTOS,1436,g1433,left,left,100.0,macula,optic_disc,90.4,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__857230f64a2e,APTOS,1437,g1434,right,right,99.78,macula,macula,98.14,4,4,Proliferative,96.0,0.02,0.12,0.63,3.22,96.0,True,True,1.0,False
+APTOS__8596a24a14bd,APTOS,1438,g1435,right,right,100.0,macula,macula,99.96,4,4,Proliferative,69.17,0.26,1.28,6.21,23.09,69.17,True,True,1.0,True
+APTOS__869bbd3170cc,APTOS,1449,g1446,right,right,99.93,macula,macula,90.2,2,1,Mild,42.19,30.81,42.19,20.58,5.15,1.28,True,True,0.0,True
+APTOS__875a2fc5fe23,APTOS,1460,g1457,right,right,99.98,macula,macula,92.58,4,3,Severe,36.41,2.41,10.64,31.65,36.41,18.89,True,True,0.0,True
+APTOS__876deb29f000,APTOS,1462,g1459,left,left,100.0,macula,macula,98.31,0,0,No DR,99.36,99.36,0.53,0.09,0.02,0.0,True,True,1.0,False
+APTOS__87d46b1cc4e9,APTOS,1471,g1468,left,left,100.0,macula,macula,99.06,0,0,No DR,99.96,99.96,0.04,0.01,0.0,0.0,True,True,1.0,False
+APTOS__885fa5fc5da8,APTOS,1477,g1474,right,right,99.99,macula,macula,94.19,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__8860c7b11530,APTOS,1478,g1475,right,right,99.85,macula,macula,97.64,2,1,Mild,41.76,34.06,41.76,18.59,4.49,1.1,True,True,0.0,True
+APTOS__887c26fc0e1f,APTOS,1480,g1477,left,left,99.98,macula,macula,99.75,4,3,Severe,34.23,0.58,2.82,12.53,34.23,49.85,True,True,0.0,True
+APTOS__8a01daa423f7,APTOS,1497,g1494,right,right,99.86,macula,macula,96.45,1,1,Mild,40.48,20.41,40.48,28.45,8.46,2.2,True,True,1.0,True
+APTOS__8a25a080f28f,APTOS,1499,g1496,left,left,99.98,macula,macula,99.4,1,3,Severe,39.42,1.43,6.66,24.06,39.42,28.44,True,True,0.0,True
+APTOS__8a7765e785fb,APTOS,1503,g1500,right,right,99.71,macula,macula,82.8,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__8ac0c44bbf24,APTOS,1512,g1509,right,right,99.88,macula,macula,99.61,4,4,Proliferative,94.04,0.04,0.18,0.96,4.78,94.04,True,True,1.0,False
+APTOS__8b079e79035f,APTOS,1517,g1514,right,right,99.89,macula,macula,82.95,0,0,No DR,99.93,99.93,0.06,0.01,0.0,0.0,True,True,1.0,False
+APTOS__8c4ceddeb1c6,APTOS,1532,g1529,left,left,100.0,macula,macula,97.8,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__8c87bd748996,APTOS,1535,g1532,left,left,99.98,macula,macula,97.75,2,2,Moderate,37.33,3.93,15.97,37.33,30.44,12.33,True,True,1.0,True
+APTOS__8d3d67661620,APTOS,1537,g1534,right,right,99.94,macula,macula,99.76,2,1,Mild,35.91,14.19,35.91,34.29,12.24,3.36,True,True,0.0,True
+APTOS__8d4d14a4ab07,APTOS,1538,g1535,left,left,100.0,macula,macula,59.52,0,0,No DR,99.99,99.99,0.0,0.0,0.0,0.0,True,True,1.0,True
+APTOS__8e6df9eedcd8,APTOS,1554,g1551,right,right,99.94,macula,macula,96.93,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__8e76054f0831,APTOS,1555,g1552,right,right,99.99,macula,macula,95.16,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__8f1e7433a95d,APTOS,1566,g1563,right,right,99.98,macula,macula,99.61,2,2,Moderate,35.94,12.48,33.92,35.94,13.78,3.88,True,True,1.0,True
+APTOS__8f2996b8d855,APTOS,1567,g1564,right,right,99.99,macula,macula,94.4,1,0,No DR,63.53,63.53,27.83,6.91,1.4,0.33,True,True,0.0,True
+APTOS__8ff863f8874f,APTOS,1574,g1571,left,left,99.97,macula,macula,99.67,1,2,Moderate,37.35,10.93,31.77,37.35,15.46,4.48,True,True,0.0,True
+APTOS__901a3552fe26,APTOS,1576,g1573,right,right,99.98,macula,macula,84.18,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__9095d43fb132,APTOS,1584,g1581,left,left,100.0,macula,macula,95.71,0,0,No DR,99.88,99.88,0.1,0.02,0.0,0.0,True,True,1.0,False
+APTOS__910bfd38e2f5,APTOS,1591,g1588,right,right,100.0,macula,macula,99.65,3,4,Proliferative,55.53,0.46,2.26,10.38,31.37,55.53,True,True,0.0,True
+APTOS__922586d86cd8,APTOS,1605,g1602,left,left,99.67,optic_disc,optic_disc,99.91,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__92fcf50b3562,APTOS,1617,g1614,left,left,100.0,macula,macula,92.82,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__932181b93b2f,APTOS,1619,g1616,right,right,99.98,macula,macula,99.41,2,2,Moderate,38.84,9.03,28.58,38.84,18.06,5.48,True,True,1.0,True
+APTOS__94145d1f42cf,APTOS,1630,g1627,left,left,100.0,macula,macula,99.8,0,0,No DR,99.82,99.82,0.15,0.02,0.0,0.0,True,True,1.0,False
+APTOS__942f544c4e15,APTOS,1631,g1628,left,left,100.0,macula,macula,98.17,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__96a9706b8534,APTOS,1654,g1650,left,left,99.97,macula,macula,99.89,1,3,Severe,39.4,1.19,5.61,21.42,39.4,32.38,True,True,0.0,True
+APTOS__96b5474ae604,APTOS,1655,g1651,left,left,100.0,macula,macula,92.18,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__96c699221180,APTOS,1657,g1653,left,left,72.46,optic_disc,optic_disc,99.97,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__97a5ad7548b7,APTOS,1669,g1665,right,right,99.99,macula,macula,99.22,2,2,Moderate,34.78,13.69,35.37,34.78,12.66,3.5,True,True,1.0,True
+APTOS__97bf61736b86,APTOS,1670,g1666,left,left,99.95,macula,macula,99.81,2,2,Moderate,38.28,4.42,17.51,38.28,28.73,11.07,True,True,1.0,True
+APTOS__97d02a9b94f7,APTOS,1672,g1668,left,left,100.0,macula,macula,98.97,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__98441214557f,APTOS,1679,g1675,left,left,99.99,macula,macula,95.58,0,0,No DR,99.87,99.87,0.11,0.02,0.0,0.0,True,True,1.0,False
+APTOS__99132193eaa0,APTOS,1692,g1688,left,left,100.0,macula,macula,98.71,1,1,Mild,37.01,15.31,37.01,33.21,11.38,3.09,True,True,1.0,True
+APTOS__99240ee00485,APTOS,1694,g1690,left,left,100.0,macula,macula,94.42,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__9a7bd084395e,APTOS,1714,g1710,right,right,99.99,macula,macula,99.94,2,4,Proliferative,61.61,0.36,1.77,8.37,27.89,61.61,True,True,0.0,True
+APTOS__9a9b21215c55,APTOS,1715,g1711,left,left,99.99,macula,macula,99.55,2,3,Severe,36.28,2.45,10.76,31.83,36.28,18.68,True,True,0.0,True
+APTOS__9ba469af2980,APTOS,1729,g1725,right,right,99.8,macula,macula,97.32,0,0,No DR,98.63,98.63,1.14,0.19,0.03,0.01,True,True,1.0,False
+APTOS__9bafbbd152d2,APTOS,1730,g1726,right,right,99.98,macula,macula,99.97,3,4,Proliferative,66.75,0.29,1.43,6.86,24.68,66.75,True,True,0.0,True
+APTOS__9da74370835a,APTOS,1750,g1746,right,right,100.0,macula,macula,99.11,2,3,Severe,36.04,2.5,10.99,32.16,36.04,18.31,True,True,0.0,True
+APTOS__9dab2e6ba44b,APTOS,1751,g1747,right,right,99.97,macula,macula,93.38,2,3,Severe,37.7,2.08,9.33,29.54,37.7,21.36,True,True,0.0,True
+APTOS__9de9421f17e3,APTOS,1752,g1748,left,left,100.0,macula,macula,98.99,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__9f8112c710be,APTOS,1769,g1765,left,left,99.98,macula,optic_disc,93.89,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,False,1.0,False
+APTOS__9f935fb38440,APTOS,1770,g1766,right,right,99.73,macula,macula,98.77,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__a01024054596,APTOS,1775,g1771,right,right,99.09,macula,macula,92.9,1,1,Mild,38.76,43.77,38.76,13.68,3.05,0.73,True,True,1.0,True
+APTOS__a0adbe677508,APTOS,1791,g1787,right,right,100.0,macula,macula,96.16,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__a0cd7bffdaa0,APTOS,1793,g1789,right,right,98.39,macula,macula,82.5,4,4,Proliferative,78.45,0.16,0.79,3.97,16.63,78.45,True,True,1.0,False
+APTOS__a182b5b191de,APTOS,1806,g1802,right,right,99.99,macula,macula,99.79,4,3,Severe,38.13,0.88,4.22,17.32,38.13,39.45,True,True,0.0,True
+APTOS__a1872f9c0cba,APTOS,1807,g1803,right,right,99.99,macula,macula,98.06,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__a247961a5cd9,APTOS,1816,g1812,right,right,99.98,macula,macula,78.31,0,0,No DR,99.54,99.54,0.39,0.06,0.01,0.0,True,True,1.0,False
+APTOS__a2dff8dbc9f8,APTOS,1824,g1820,right,right,99.97,macula,macula,93.65,0,0,No DR,99.93,99.93,0.06,0.01,0.0,0.0,True,True,1.0,False
+APTOS__a32886cb31ab,APTOS,1827,g1823,left,left,99.96,macula,macula,98.23,1,1,Mild,40.63,20.75,40.63,28.16,8.31,2.15,True,True,1.0,True
+APTOS__a32b5ce3d48a,APTOS,1828,g1824,right,right,99.99,macula,macula,99.54,4,1,Mild,39.4,18.42,39.4,30.25,9.44,2.49,True,True,0.0,True
+APTOS__a3fcf42ff56d,APTOS,1839,g1835,right,right,99.76,macula,macula,97.32,4,4,Proliferative,98.83,0.01,0.03,0.18,0.95,98.83,True,True,1.0,False
+APTOS__a476fd984005,APTOS,1846,g1842,left,left,99.95,macula,macula,99.89,2,4,Proliferative,73.53,0.21,1.04,5.11,20.13,73.53,True,True,0.0,False
+APTOS__a4d41c495666,APTOS,1851,g1847,left,left,99.98,macula,macula,99.92,2,3,Severe,39.06,1.64,7.54,26.07,39.06,25.7,True,True,0.0,True
+APTOS__fd62bd0db4f1,APTOS,1851,g1847,left,left,100.0,macula,macula,99.94,1,1,Mild,39.15,42.82,39.15,14.11,3.16,0.76,True,True,1.0,True
+APTOS__a654b25124c3,APTOS,1866,g1862,left,left,99.69,optic_disc,optic_disc,99.9,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__a664d2055886,APTOS,1867,g1863,right,right,99.99,macula,macula,99.97,2,3,Severe,39.25,1.54,7.14,25.17,39.25,26.89,True,True,0.0,True
+APTOS__a77eb914b383,APTOS,1884,g1880,left,left,100.0,macula,macula,66.03,0,0,No DR,99.55,99.55,0.38,0.06,0.01,0.0,True,True,1.0,True
+APTOS__a790a3b36390,APTOS,1885,g1881,right,right,99.99,macula,macula,99.75,2,2,Moderate,39.02,4.99,19.18,39.02,26.93,9.88,True,True,1.0,True
+APTOS__a7b03e58a6e1,APTOS,1886,g1882,left,left,100.0,macula,macula,90.23,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__a8c54e2a4b79,APTOS,1906,g1902,left,left,100.0,macula,macula,99.7,1,1,Mild,39.35,42.3,39.35,14.34,3.23,0.78,True,True,1.0,True
+APTOS__a8c9fcdbc0be,APTOS,1908,g1904,left,left,100.0,macula,macula,99.46,0,0,No DR,99.48,99.48,0.44,0.07,0.01,0.0,True,True,1.0,False
+APTOS__a8eb35b3bcd2,APTOS,1910,g1906,right,right,100.0,macula,macula,98.12,2,1,Mild,42.24,27.91,42.24,22.52,5.86,1.47,True,True,0.0,True
+APTOS__a9a28c37c8c4,APTOS,1917,g1913,left,left,99.75,macula,macula,99.4,2,3,Severe,36.9,2.29,10.16,30.92,36.9,19.73,True,True,0.0,True
+APTOS__aa10a4b2e709,APTOS,1925,g1921,right,right,99.99,macula,macula,89.81,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__aa4407aab872,APTOS,1927,g1923,left,left,99.99,macula,optic_disc,74.91,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__b2b79b37d314,APTOS,1927,g1923,left,left,100.0,macula,macula,77.95,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__aa841de1ee82,APTOS,1932,g1928,left,left,100.0,macula,macula,97.14,2,3,Severe,37.43,2.15,9.62,30.03,37.43,20.77,True,True,0.0,True
+APTOS__ab1c20a94f3f,APTOS,1943,g1939,right,right,62.9,macula,macula,91.1,4,4,Proliferative,88.25,0.08,0.39,1.98,9.31,88.25,True,True,1.0,True
+APTOS__abdb365cacbc,APTOS,1955,g1951,right,right,99.99,macula,macula,99.94,1,2,Moderate,39.75,6.35,22.82,39.75,23.25,7.82,True,True,0.0,True
+APTOS__abf0f56c6f12,APTOS,1957,g1953,left,left,100.0,macula,macula,99.63,2,1,Mild,41.34,22.62,41.34,26.57,7.54,1.93,True,True,0.0,True
+APTOS__ad12cde115ab,APTOS,1968,g1964,right,right,99.95,macula,macula,98.2,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__ad1aa75d5630,APTOS,1969,g1965,left,left,100.0,macula,optic_disc,67.74,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,True
+APTOS__ad1f7445b1a8,APTOS,1970,g1966,right,right,99.94,macula,macula,86.5,1,1,Mild,41.09,37.02,41.09,16.94,3.98,0.97,True,True,1.0,True
+APTOS__ad20080452de,APTOS,1971,g1967,right,right,99.99,macula,macula,95.75,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__ae49cc60f251,APTOS,1986,g1982,left,left,99.63,optic_disc,optic_disc,99.81,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__ae94ce412de9,APTOS,1993,g1989,left,left,100.0,macula,macula,99.51,0,0,No DR,93.97,93.97,4.99,0.85,0.16,0.04,True,True,1.0,False
+APTOS__aea59ebec445,APTOS,1995,g1991,right,right,99.99,macula,macula,99.92,3,4,Proliferative,85.4,0.1,0.5,2.52,11.48,85.4,True,True,0.0,False
+APTOS__af345c68e836,APTOS,2005,g2001,right,right,99.98,macula,macula,97.09,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__af3b0115aad1,APTOS,2006,g2002,left,left,99.98,macula,macula,96.02,3,4,Proliferative,99.57,0.0,0.01,0.07,0.35,99.57,True,True,0.0,False
+APTOS__af5a0bc4e1fa,APTOS,2007,g2003,left,right,55.22,optic_disc,optic_disc,99.93,0,0,No DR,89.57,89.57,8.55,1.53,0.29,0.07,False,True,1.0,True
+APTOS__b07bc463b718,APTOS,2022,g2018,left,left,100.0,macula,macula,99.55,1,2,Moderate,39.04,5.01,19.24,39.04,26.87,9.85,True,True,0.0,True
+APTOS__b085caa513a8,APTOS,2023,g2019,right,right,99.83,macula,macula,95.71,0,0,No DR,92.86,92.86,5.89,1.02,0.19,0.04,True,True,1.0,False
+APTOS__b11dcdcbc8c8,APTOS,2034,g2030,left,left,100.0,macula,macula,96.55,0,0,No DR,98.69,98.69,1.09,0.18,0.03,0.01,True,True,1.0,False
+APTOS__b1c6f0997e27,APTOS,2040,g2036,right,right,99.96,macula,macula,89.15,0,0,No DR,99.93,99.93,0.05,0.01,0.0,0.0,True,True,1.0,False
+APTOS__b200c23b299b,APTOS,2042,g2038,left,left,96.46,optic_disc,optic_disc,99.91,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__b21abe5d9722,APTOS,2043,g2039,left,left,100.0,macula,optic_disc,55.34,0,0,No DR,99.97,99.97,0.02,0.0,0.0,0.0,True,False,1.0,True
+APTOS__b43440c6ebe4,APTOS,2063,g2059,left,left,100.0,macula,macula,92.72,0,0,No DR,97.0,97.0,2.49,0.41,0.08,0.02,True,True,1.0,False
+APTOS__b468ebf5cb11,APTOS,2064,g2060,left,left,99.97,macula,macula,99.97,2,4,Proliferative,66.95,0.28,1.41,6.81,24.55,66.95,True,True,0.0,True
+APTOS__b5a3ca5c0a80,APTOS,2082,g2078,right,right,99.99,macula,macula,60.87,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,True
+APTOS__b5e6ae31493c,APTOS,2086,g2082,left,left,100.0,macula,macula,86.53,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__b70e7c26f51e,APTOS,2101,g2097,left,left,100.0,macula,macula,73.13,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__b72f59b85f7c,APTOS,2104,g2100,right,right,99.95,macula,macula,98.29,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__b7983cb3f270,APTOS,2112,g2108,left,left,100.0,macula,macula,95.57,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__b83a6eca125f,APTOS,2121,g2117,left,left,99.78,macula,macula,99.99,2,4,Proliferative,77.68,0.17,0.83,4.14,17.19,77.68,True,True,0.0,False
+APTOS__b842b43cb7fb,APTOS,2122,g2118,left,left,100.0,macula,macula,99.25,0,0,No DR,99.93,99.93,0.06,0.01,0.0,0.0,True,True,1.0,False
+APTOS__b960142a8de7,APTOS,2138,g2134,right,right,100.0,macula,macula,98.47,3,4,Proliferative,85.37,0.1,0.5,2.53,11.51,85.37,True,True,0.0,False
+APTOS__b963a11638f2,APTOS,2139,g2135,right,right,99.46,macula,macula,97.1,0,0,No DR,99.29,99.29,0.59,0.1,0.02,0.0,True,True,1.0,False
+APTOS__b96b518596b3,APTOS,2140,g2136,right,right,99.98,macula,macula,99.83,4,4,Proliferative,82.76,0.12,0.6,3.05,13.47,82.76,True,True,1.0,False
+APTOS__ba4e62c11cc0,APTOS,2157,g2152,right,right,100.0,macula,macula,94.35,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__baaca2f7e1f0,APTOS,2159,g2154,left,left,100.0,macula,macula,72.26,0,0,No DR,99.05,99.05,0.79,0.13,0.02,0.01,True,True,1.0,False
+APTOS__bab776139279,APTOS,2160,g2155,right,right,99.94,macula,macula,99.38,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__bb2f89488ecd,APTOS,2166,g2161,left,left,100.0,macula,macula,72.88,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__bc7bf19b84e3,APTOS,2178,g2173,left,left,100.0,macula,macula,93.85,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__bc8c6a778cde,APTOS,2179,g2174,left,left,100.0,macula,macula,99.92,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__be521870a0ea,APTOS,2201,g2196,left,left,100.0,macula,macula,84.52,0,0,No DR,90.99,90.99,7.4,1.3,0.24,0.06,True,True,1.0,False
+APTOS__be6cbf6e5b10,APTOS,2203,g2198,left,left,100.0,macula,macula,98.12,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__bf7047dc683c,APTOS,2217,g2212,left,left,99.97,macula,macula,99.91,2,4,Proliferative,54.49,0.48,2.36,10.75,31.92,54.49,True,True,0.0,True
+APTOS__bf7221a016b5,APTOS,2218,g2213,left,left,100.0,macula,macula,98.97,0,0,No DR,99.39,99.39,0.51,0.08,0.02,0.0,True,True,1.0,False
+APTOS__bf8092e4001d,APTOS,2219,g2214,right,right,99.86,macula,macula,92.19,3,4,Proliferative,60.86,0.37,1.83,8.6,28.34,60.86,True,True,0.0,True
+APTOS__1601c939412f,APTOS,2235,g2230,left,left,100.0,macula,macula,91.07,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__c096131ad065,APTOS,2235,g2230,left,left,100.0,macula,macula,78.42,0,0,No DR,99.54,99.54,0.38,0.06,0.01,0.0,True,True,1.0,False
+APTOS__c0968d41eb93,APTOS,2236,g2231,left,left,99.98,macula,macula,98.35,1,1,Mild,42.26,29.41,42.26,21.49,5.47,1.36,True,True,1.0,True
+APTOS__c1896142a20a,APTOS,2245,g2240,right,right,99.97,macula,macula,99.95,4,4,Proliferative,72.04,0.22,1.12,5.47,21.15,72.04,True,True,1.0,False
+APTOS__c280730cc211,APTOS,2255,g2250,left,left,99.93,macula,macula,99.94,2,4,Proliferative,54.75,0.47,2.33,10.66,31.78,54.75,True,True,0.0,True
+APTOS__c31651ea04c6,APTOS,2258,g2253,left,left,100.0,macula,macula,99.86,3,4,Proliferative,68.85,0.26,1.3,6.29,23.3,68.85,True,True,0.0,True
+APTOS__c406325360b1,APTOS,2272,g2267,right,right,99.92,macula,macula,90.89,2,0,No DR,90.17,90.17,8.06,1.43,0.27,0.06,True,True,0.0,False
+APTOS__c446985355f1,APTOS,2273,g2268,left,left,100.0,macula,macula,71.68,0,0,No DR,99.83,99.83,0.14,0.02,0.0,0.0,True,True,1.0,False
+APTOS__c4e8b1ec8893,APTOS,2277,g2272,left,left,99.99,macula,optic_disc,81.29,2,0,No DR,57.62,57.62,31.58,8.61,1.78,0.42,True,False,0.0,True
+APTOS__c56e65f74187,APTOS,2283,g2278,left,left,100.0,macula,macula,99.64,1,2,Moderate,35.5,12.94,34.49,35.5,13.34,3.73,True,True,0.0,True
+APTOS__c6229222bf22,APTOS,2296,g2291,right,right,99.99,macula,macula,92.55,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__c62cef02efa2,APTOS,2297,g2292,left,left,99.99,macula,macula,97.03,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__c7b622ec8104,APTOS,2314,g2309,left,left,99.8,macula,macula,93.65,1,1,Mild,42.16,26.69,42.16,23.4,6.19,1.56,True,True,1.0,True
+APTOS__c7c3d363bc86,APTOS,2316,g2311,left,left,100.0,macula,macula,97.93,0,0,No DR,90.94,90.94,7.44,1.31,0.25,0.06,True,True,1.0,False
+APTOS__c94f37085d0f,APTOS,2332,g2327,right,right,99.96,macula,optic_disc,63.4,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,True
+APTOS__c96f743915b5,APTOS,2333,g2328,left,left,100.0,macula,macula,99.85,1,1,Mild,39.16,18.05,39.16,30.59,9.65,2.55,True,True,1.0,True
+APTOS__c9c563864ab1,APTOS,2335,g2330,left,left,100.0,macula,macula,97.88,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__ca360bec5851,APTOS,2344,g2339,left,left,99.99,macula,macula,99.72,2,2,Moderate,39.76,6.91,24.15,39.76,21.98,7.2,True,True,1.0,True
+APTOS__cab3dfa7962d,APTOS,2351,g2346,left,left,99.98,macula,macula,99.3,1,2,Moderate,37.54,4.03,16.28,37.54,30.09,12.06,True,True,0.0,True
+APTOS__cac80797770f,APTOS,2353,g2348,right,right,99.96,macula,macula,97.96,2,2,Moderate,37.73,10.49,31.09,37.73,16.01,4.68,True,True,1.0,True
+APTOS__cae51154e1ce,APTOS,2357,g2352,right,right,99.8,macula,macula,98.85,1,2,Moderate,38.52,9.49,29.42,38.52,17.37,5.2,True,True,0.0,True
+APTOS__cbc2e57447c2,APTOS,2370,g2365,right,right,100.0,macula,macula,99.37,2,3,Severe,37.71,2.07,9.32,29.52,37.71,21.38,True,True,0.0,True
+APTOS__cbd0870aa933,APTOS,2371,g2366,left,left,99.99,macula,macula,99.55,4,4,Proliferative,52.51,0.52,2.55,11.48,32.94,52.51,True,True,1.0,True
+APTOS__cd1c98ec48b1,APTOS,2386,g2381,left,left,100.0,macula,macula,85.49,0,0,No DR,99.91,99.91,0.08,0.01,0.0,0.0,True,True,1.0,False
+APTOS__cd66754e1b3b,APTOS,2394,g2389,left,left,100.0,macula,macula,98.67,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__ceb601fe8dba,APTOS,2405,g2400,left,left,100.0,macula,macula,99.84,2,2,Moderate,35.63,3.31,13.91,35.63,32.77,14.38,True,True,1.0,True
+APTOS__cec299c2a2d5,APTOS,2406,g2401,left,left,100.0,macula,macula,99.93,0,0,No DR,95.58,95.58,3.67,0.62,0.11,0.03,True,True,1.0,False
+APTOS__cf603a9ef2d5,APTOS,2410,g2405,left,left,99.99,macula,macula,97.62,1,2,Moderate,39.77,6.75,23.79,39.77,22.32,7.36,True,True,0.0,True
+APTOS__d0926ed2c8e5,APTOS,2422,g2417,left,left,100.0,macula,macula,95.34,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__d0b132d2c7ec,APTOS,2423,g2418,right,right,99.99,macula,macula,99.4,4,3,Severe,36.23,2.46,10.81,31.9,36.23,18.6,True,True,0.0,True
+APTOS__d16e39b9d6f0,APTOS,2432,g2427,left,left,100.0,macula,macula,99.57,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__d18e5b68f6d2,APTOS,2435,g2430,right,right,99.95,macula,macula,99.94,2,2,Moderate,34.91,13.56,35.22,34.91,12.78,3.54,True,True,1.0,True
+APTOS__d1fa0f744620,APTOS,2445,g2440,left,left,100.0,macula,macula,99.0,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__d264396d8d1a,APTOS,2448,g2443,right,right,100.0,macula,macula,91.51,2,4,Proliferative,54.98,0.47,2.31,10.58,31.67,54.98,True,True,0.0,True
+APTOS__d26bb2ed6e71,APTOS,2449,g2444,right,right,99.94,macula,macula,87.41,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__d2dc86021c67,APTOS,2463,g2458,left,left,100.0,macula,macula,98.31,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__d30d079e6f9a,APTOS,2465,g2460,right,right,99.98,macula,macula,91.64,0,0,No DR,99.98,99.98,0.02,0.0,0.0,0.0,True,True,1.0,False
+APTOS__d48178e4a49b,APTOS,2480,g2475,right,right,99.99,macula,macula,97.0,4,2,Moderate,39.01,8.78,28.1,39.01,18.47,5.65,True,True,0.0,True
+APTOS__d5a39339ff3d,APTOS,2490,g2485,right,right,99.99,macula,macula,99.72,2,3,Severe,36.68,2.34,10.37,31.25,36.68,19.35,True,True,0.0,True
+APTOS__d5ad3362424c,APTOS,2491,g2486,left,left,100.0,macula,macula,96.0,0,0,No DR,98.78,98.78,1.01,0.16,0.03,0.01,True,True,1.0,False
+APTOS__d6dbb0820ea5,APTOS,2501,g2496,right,right,99.99,macula,macula,86.63,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__d7078e8b0349,APTOS,2505,g2500,left,left,100.0,macula,macula,99.16,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__d74ccc796517,APTOS,2506,g2501,left,left,100.0,macula,macula,81.66,0,0,No DR,99.98,99.98,0.02,0.0,0.0,0.0,True,True,1.0,False
+APTOS__d838d5b9f571,APTOS,2516,g2511,left,left,100.0,macula,optic_disc,50.42,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,True
+APTOS__d85588ff2ebd,APTOS,2521,g2516,left,left,99.98,macula,macula,99.8,1,1,Mild,42.13,31.45,42.13,20.17,5.01,1.24,True,True,1.0,True
+APTOS__d881c04f01fe,APTOS,2528,g2523,left,left,99.99,macula,optic_disc,98.07,0,0,No DR,99.9,99.9,0.09,0.01,0.0,0.0,True,False,1.0,False
+APTOS__d9311f7497cb,APTOS,2535,g2530,left,left,99.98,macula,macula,59.55,2,2,Moderate,39.2,8.44,27.45,39.2,19.02,5.87,True,True,1.0,True
+APTOS__d99dd99be001,APTOS,2543,g2538,right,right,99.99,macula,optic_disc,94.59,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__d9bbdc33db83,APTOS,2547,g2542,left,left,100.0,macula,macula,98.34,2,3,Severe,38.58,1.81,8.27,27.56,38.58,23.77,True,True,0.0,True
+APTOS__da6bbb76d562,APTOS,2557,g2552,left,left,100.0,macula,macula,99.67,0,0,No DR,98.48,98.48,1.27,0.21,0.04,0.01,True,True,1.0,False
+APTOS__da949aa67a4f,APTOS,2560,g2555,left,left,100.0,macula,macula,99.36,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__db6207e62c7b,APTOS,2571,g2566,right,right,100.0,macula,macula,99.62,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__dc0eea0b68a7,APTOS,2577,g2572,left,left,100.0,macula,macula,91.03,0,0,No DR,96.19,96.19,3.16,0.53,0.1,0.02,True,True,1.0,False
+APTOS__dc0f6e5b489b,APTOS,2578,g2573,right,right,99.91,macula,macula,96.12,0,0,No DR,99.94,99.94,0.05,0.01,0.0,0.0,True,True,1.0,False
+APTOS__de57c9e9fa93,APTOS,2598,g2593,left,left,100.0,macula,macula,94.5,0,0,No DR,77.71,77.71,17.78,3.64,0.7,0.16,True,True,1.0,False
+APTOS__de6210f88536,APTOS,2599,g2594,right,right,99.99,macula,macula,78.34,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__de730033c683,APTOS,2600,g2595,left,left,100.0,macula,optic_disc,63.86,0,0,No DR,99.83,99.83,0.14,0.02,0.0,0.0,True,False,1.0,True
+APTOS__e04f3c6619a3,APTOS,2621,g2616,right,right,100.0,macula,macula,84.69,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__e067b06fd655,APTOS,2622,g2617,left,left,100.0,macula,macula,89.68,0,0,No DR,99.48,99.48,0.43,0.07,0.01,0.0,True,True,1.0,False
+APTOS__e06cccc08c59,APTOS,2623,g2618,left,left,99.8,optic_disc,optic_disc,99.85,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__e150935f66a6,APTOS,2635,g2630,left,left,100.0,macula,macula,94.76,2,0,No DR,92.64,92.64,6.07,1.05,0.2,0.05,True,True,0.0,False
+APTOS__e160a3b19911,APTOS,2636,g2631,right,right,99.98,macula,macula,98.06,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__e251bdf05b85,APTOS,2649,g2644,left,left,98.09,optic_disc,optic_disc,99.66,0,0,No DR,99.98,99.98,0.02,0.0,0.0,0.0,True,True,1.0,False
+APTOS__e26d8718ca58,APTOS,2653,g2648,right,right,99.37,macula,macula,80.75,1,0,No DR,86.41,86.41,11.06,2.05,0.39,0.09,True,True,0.0,False
+APTOS__e2856afe62c5,APTOS,2654,g2649,left,left,99.99,macula,macula,99.93,2,3,Severe,37.2,0.77,3.74,15.78,37.2,42.5,True,True,0.0,True
+APTOS__e4210e7fe587,APTOS,2673,g2668,left,left,99.94,macula,macula,99.58,3,4,Proliferative,62.0,0.35,1.75,8.25,27.65,62.0,True,True,0.0,True
+APTOS__e42d9a94a66d,APTOS,2674,g2669,right,right,99.64,macula,macula,99.13,0,0,No DR,93.38,93.38,5.47,0.94,0.18,0.04,True,True,1.0,False
+APTOS__e4730ddde408,APTOS,2675,g2670,right,right,100.0,macula,macula,98.82,4,3,Severe,39.48,1.28,6.01,22.45,39.48,30.79,True,True,0.0,True
+APTOS__0083ee8054ee,APTOS,2689,g2684,right,right,99.96,macula,macula,99.49,4,4,Proliferative,93.49,0.04,0.2,1.05,5.21,93.49,True,True,1.0,False
+APTOS__0097f532ac9f,APTOS,2690,g2685,right,right,99.94,macula,macula,96.59,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,True,1.0,False
+APTOS__0124dffecf29,APTOS,2697,g2692,left,left,99.99,macula,macula,99.6,1,1,Mild,38.39,44.66,38.39,13.3,2.94,0.71,True,True,1.0,True
+APTOS__01f7bb8be950,APTOS,2707,g2702,right,right,99.98,macula,macula,98.49,0,0,No DR,99.95,99.95,0.04,0.01,0.0,0.0,True,True,1.0,False
+APTOS__022f820027b8,APTOS,2709,g2704,left,left,100.0,macula,macula,99.7,0,0,No DR,99.81,99.81,0.16,0.03,0.0,0.0,True,True,1.0,False
+APTOS__0231642cf1c2,APTOS,2710,g2705,left,left,100.0,macula,macula,98.97,0,0,No DR,99.53,99.53,0.4,0.06,0.01,0.0,True,True,1.0,False
+APTOS__03747397839f,APTOS,2723,g2718,left,left,98.57,macula,macula,99.96,2,4,Proliferative,80.65,0.14,0.69,3.49,15.03,80.65,True,True,0.0,False
+APTOS__03fd50da928d,APTOS,2727,g2722,left,left,99.99,macula,macula,99.71,2,4,Proliferative,66.62,0.29,1.43,6.9,24.76,66.62,True,True,0.0,True
+APTOS__0415fc68b176,APTOS,2729,g2724,left,left,99.92,macula,macula,95.6,2,3,Severe,35.07,0.62,3.03,13.3,35.07,47.97,True,True,0.0,True
+APTOS__05113073b268,APTOS,2739,g2734,right,right,99.88,macula,macula,98.37,0,0,No DR,97.44,97.44,2.13,0.35,0.07,0.02,True,True,1.0,False
+APTOS__05e9126dfa5c,APTOS,2748,g2743,left,left,100.0,macula,macula,94.27,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__06024377d573,APTOS,2749,g2744,left,left,99.69,macula,macula,99.96,2,4,Proliferative,62.32,0.35,1.72,8.15,27.46,62.32,True,True,0.0,True
+APTOS__064af6592ba6,APTOS,2751,g2746,left,left,99.99,macula,macula,99.85,2,2,Moderate,37.51,10.75,31.49,37.51,15.68,4.56,True,True,1.0,True
+APTOS__069f43616fab,APTOS,2754,g2749,left,left,99.96,macula,macula,82.0,3,4,Proliferative,93.6,0.04,0.2,1.03,5.13,93.6,True,True,0.0,False
+APTOS__07929d32b5b3,APTOS,2767,g2762,left,right,97.3,macula,optic_disc,78.86,1,1,Mild,41.94,25.06,41.94,24.62,6.69,1.69,False,False,1.0,True
+APTOS__08a3875063c3,APTOS,2782,g2777,right,right,100.0,macula,macula,99.44,4,4,Proliferative,59.31,0.39,1.95,9.1,29.25,59.31,True,True,1.0,True
+APTOS__08bef347f40d,APTOS,2784,g2779,right,right,99.99,macula,macula,91.98,0,0,No DR,99.93,99.93,0.06,0.01,0.0,0.0,True,True,1.0,False
+APTOS__09f6ab477654,APTOS,2803,g2798,right,right,100.0,macula,macula,99.55,2,3,Severe,37.22,2.2,9.84,30.4,37.22,20.34,True,True,0.0,True
+APTOS__0a1076183736,APTOS,2805,g2800,right,right,99.99,macula,macula,99.92,2,4,Proliferative,52.32,0.52,2.56,11.56,33.03,52.32,True,True,0.0,True
+APTOS__0a61bddab956,APTOS,2808,g2803,left,left,100.0,macula,macula,93.35,1,2,Moderate,36.37,12.02,33.32,36.37,14.25,4.04,True,True,0.0,True
+APTOS__0b2ea8f268cf,APTOS,2820,g2815,right,right,90.79,optic_disc,optic_disc,99.91,0,0,No DR,94.17,94.17,4.82,0.82,0.15,0.04,True,True,1.0,False
+APTOS__0b64a0a06f9a,APTOS,2822,g2817,right,right,99.96,macula,macula,97.07,0,0,No DR,98.76,98.76,1.03,0.17,0.03,0.01,True,True,1.0,False
+APTOS__0b8bdec9d869,APTOS,2823,g2818,left,left,100.0,macula,macula,98.97,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__0cb6b898389f,APTOS,2833,g2828,left,left,100.0,macula,macula,98.76,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__0cecc2864b7f,APTOS,2838,g2833,right,right,99.74,macula,macula,84.42,0,0,No DR,99.08,99.08,0.77,0.12,0.02,0.01,True,True,1.0,False
+APTOS__0d310aba6373,APTOS,2841,g2836,left,left,100.0,macula,macula,99.72,1,3,Severe,37.76,2.06,9.26,29.42,37.76,21.5,True,True,0.0,True
+APTOS__0dbe6c26cedc,APTOS,2850,g2845,left,left,100.0,macula,macula,97.41,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__0e94cd271c00,APTOS,2858,g2853,right,right,99.94,macula,macula,87.67,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__0eced86c9db8,APTOS,2860,g2855,right,right,99.97,macula,macula,98.14,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__0fb560f9adb2,APTOS,2871,g2866,left,left,99.61,macula,macula,99.77,2,3,Severe,38.52,1.83,8.35,27.73,38.52,23.57,True,True,0.0,True
+APTOS__0fcfc6301f3d,APTOS,2874,g2869,right,right,99.99,macula,macula,98.18,2,1,Mild,39.96,19.37,39.96,29.38,8.95,2.34,True,True,0.0,True
+APTOS__0fe31196e0e8,APTOS,2876,g2871,right,right,99.99,macula,optic_disc,72.49,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__1002b5151b8e,APTOS,2878,g2873,right,right,99.96,macula,macula,99.64,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__1116271db4ea,APTOS,2893,g2888,right,right,99.97,macula,macula,99.35,1,1,Mild,37.54,15.9,37.54,32.63,10.97,2.95,True,True,1.0,True
+APTOS__115e42dd6a81,APTOS,2896,g2891,left,left,99.99,macula,macula,99.79,2,3,Severe,34.74,2.82,12.17,33.73,34.74,16.53,True,True,0.0,True
+APTOS__1177d583c807,APTOS,2897,g2892,right,right,99.99,macula,macula,75.78,2,2,Moderate,38.37,9.69,29.75,38.37,17.09,5.09,True,True,1.0,True
+APTOS__12b57dac703e,APTOS,2906,g2901,left,left,100.0,macula,macula,98.11,0,0,No DR,92.74,92.74,5.99,1.03,0.19,0.05,True,True,1.0,False
+APTOS__12ce6a1a1f31,APTOS,2908,g2903,left,left,100.0,macula,macula,99.94,1,3,Severe,39.43,1.42,6.62,23.97,39.43,28.57,True,True,0.0,True
+APTOS__13d014ccd136,APTOS,2914,g2909,left,left,100.0,macula,macula,87.97,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__157d17349cc6,APTOS,2931,g2926,left,left,99.99,macula,macula,99.97,2,3,Severe,39.33,1.49,6.93,24.71,39.33,27.53,True,True,0.0,True
+APTOS__15b21c80cc31,APTOS,2933,g2928,right,right,99.99,macula,macula,91.17,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__15bed5adde74,APTOS,2934,g2929,left,left,99.99,macula,macula,99.66,3,4,Proliferative,99.15,0.0,0.03,0.13,0.69,99.15,True,True,0.0,False
+APTOS__1608c82a263f,APTOS,2942,g2937,right,right,99.95,macula,macula,98.02,0,0,No DR,98.03,98.03,1.64,0.27,0.05,0.01,True,True,1.0,False
+APTOS__1633f8291a80,APTOS,2944,g2939,right,right,99.88,macula,macula,84.56,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__17d997fe1090,APTOS,2956,g2951,left,left,100.0,macula,macula,91.42,0,0,No DR,98.85,98.85,0.96,0.16,0.03,0.01,True,True,1.0,False
+APTOS__188a9323be03,APTOS,2969,g2964,right,right,99.63,macula,macula,99.77,2,3,Severe,38.23,1.93,8.73,28.45,38.23,22.67,True,True,0.0,True
+APTOS__18b06f56ab27,APTOS,2972,g2967,right,right,100.0,macula,macula,99.42,1,2,Moderate,39.15,5.12,19.57,39.15,26.52,9.63,True,True,0.0,True
+APTOS__18cde9649e90,APTOS,2975,g2970,left,left,100.0,macula,macula,94.54,0,0,No DR,99.7,99.7,0.25,0.04,0.01,0.0,True,True,1.0,False
+APTOS__194814669fee,APTOS,2986,g2981,right,right,99.95,macula,macula,97.85,1,2,Moderate,38.04,4.29,17.09,38.04,29.19,11.39,True,True,0.0,True
+APTOS__1a19f2ef4472,APTOS,2996,g2991,left,left,100.0,macula,optic_disc,64.48,0,0,No DR,99.73,99.73,0.23,0.04,0.01,0.0,True,False,1.0,True
+APTOS__1a1e974a7dbf,APTOS,2997,g2992,left,left,100.0,macula,macula,95.7,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__e55188915f9d,APTOS,3011,g3006,right,right,99.95,optic_disc,optic_disc,92.2,1,1,Mild,42.16,26.69,42.16,23.4,6.19,1.56,True,True,1.0,True
+APTOS__e582e56e7942,APTOS,3013,g3008,right,right,100.0,macula,macula,97.22,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__e60e4edb3ca9,APTOS,3021,g3016,right,right,100.0,macula,macula,98.38,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__e62490b7d0e9,APTOS,3022,g3017,left,left,99.97,macula,macula,99.19,4,4,Proliferative,60.18,0.38,1.88,8.82,28.74,60.18,True,True,1.0,True
+APTOS__e65a2ff90494,APTOS,3024,g3019,right,right,99.93,macula,macula,99.78,2,2,Moderate,39.07,8.68,27.91,39.07,18.64,5.71,True,True,1.0,True
+APTOS__e6f0ce5bf282,APTOS,3034,g3029,left,left,99.99,macula,macula,99.49,2,3,Severe,39.48,1.29,6.06,22.58,39.48,30.6,True,True,0.0,True
+APTOS__e756495c11cb,APTOS,3037,g3032,right,right,99.93,macula,macula,84.6,2,2,Moderate,39.77,6.45,23.05,39.77,23.03,7.71,True,True,1.0,True
+APTOS__e7a372a1c3a4,APTOS,3040,g3035,left,left,99.9,macula,macula,98.79,2,2,Moderate,36.77,11.59,32.72,36.77,14.71,4.21,True,True,1.0,True
+APTOS__e868c3da340b,APTOS,3051,g3046,right,right,99.93,macula,macula,99.64,2,4,Proliferative,76.13,0.18,0.9,4.49,18.3,76.13,True,True,0.0,False
+APTOS__e933923aab15,APTOS,3059,g3054,right,right,99.99,optic_disc,macula,75.57,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__e93394175a19,APTOS,3060,g3055,left,left,99.87,optic_disc,macula,99.56,3,4,Proliferative,81.93,0.13,0.64,3.22,14.09,81.93,True,False,0.0,False
+APTOS__e9f3c85a2a02,APTOS,3068,g3063,right,right,99.99,macula,macula,98.15,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__ead23cc922ed,APTOS,3083,g3078,left,left,98.92,macula,macula,99.0,1,1,Mild,41.6,34.91,41.6,18.1,4.33,1.06,True,True,1.0,True
+APTOS__eae70f527755,APTOS,3085,g3080,left,left,100.0,macula,macula,93.25,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__ed246ae1ed08,APTOS,3101,g3096,left,left,99.99,macula,macula,99.16,4,3,Severe,35.28,0.63,3.09,13.51,35.28,47.48,True,True,0.0,True
+APTOS__ed2c06fcc573,APTOS,3102,g3097,right,right,100.0,macula,macula,99.18,2,2,Moderate,39.17,5.14,19.62,39.17,26.47,9.6,True,True,1.0,True
+APTOS__ed3ce1674761,APTOS,3105,g3100,right,right,99.95,macula,macula,97.01,0,0,No DR,99.97,99.97,0.03,0.0,0.0,0.0,True,True,1.0,False
+APTOS__eeb231c3ef1f,APTOS,3122,g3117,right,right,99.96,macula,macula,89.54,1,1,Mild,41.36,35.98,41.36,17.5,4.15,1.01,True,True,1.0,True
+APTOS__eebd1e195952,APTOS,3123,g3118,right,right,99.99,macula,macula,98.88,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__eed4afc8ec83,APTOS,3124,g3119,left,left,100.0,macula,optic_disc,89.71,1,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,0.0,False
+APTOS__f02057c41256,APTOS,3137,g3132,left,left,99.99,macula,macula,94.21,0,0,No DR,99.0,99.0,0.83,0.14,0.03,0.01,True,True,1.0,False
+APTOS__f025f33b2c9b,APTOS,3138,g3133,right,right,99.98,optic_disc,macula,99.84,4,4,Proliferative,56.46,0.44,2.18,10.05,30.86,56.46,True,False,1.0,True
+APTOS__f02956bd7c50,APTOS,3139,g3134,left,left,100.0,macula,macula,99.11,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__f1d719c97838,APTOS,3155,g3150,right,right,100.0,macula,macula,92.03,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__f1dc26c4bfa3,APTOS,3156,g3151,left,left,99.98,macula,macula,97.47,4,2,Moderate,39.72,7.13,24.67,39.72,21.5,6.97,True,True,0.0,True
+APTOS__f2094a20b275,APTOS,3157,g3152,left,left,99.97,macula,optic_disc,76.62,2,1,Mild,38.4,44.63,38.4,13.31,2.95,0.71,True,False,0.0,True
+APTOS__f2d2a0c92034,APTOS,3162,g3157,left,left,99.99,macula,macula,99.26,4,4,Proliferative,97.87,0.01,0.06,0.33,1.72,97.87,True,True,1.0,False
+APTOS__f45f1485c940,APTOS,3179,g3174,left,left,99.98,macula,macula,99.58,2,2,Moderate,38.32,9.76,29.87,38.32,16.99,5.06,True,True,1.0,True
+APTOS__f47a2a4a0411,APTOS,3181,g3176,right,right,99.98,macula,macula,93.87,1,1,Mild,41.99,25.36,41.99,24.39,6.59,1.67,True,True,1.0,True
+APTOS__f5733f77273d,APTOS,3195,g3190,right,right,100.0,macula,macula,86.73,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__f576e45d1da2,APTOS,3196,g3191,left,left,99.92,macula,macula,99.97,3,4,Proliferative,52.74,0.51,2.52,11.4,32.83,52.74,True,True,0.0,True
+APTOS__f58d37d48e42,APTOS,3200,g3195,right,right,97.78,macula,macula,78.58,4,4,Proliferative,90.88,0.06,0.29,1.51,7.27,90.88,True,True,1.0,False
+APTOS__f68690db78d3,APTOS,3210,g3205,left,left,100.0,macula,macula,96.37,0,0,No DR,99.89,99.89,0.09,0.01,0.0,0.0,True,True,1.0,False
+APTOS__f6d760566a51,APTOS,3213,g3208,left,left,99.99,macula,optic_disc,95.45,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,False,1.0,False
+APTOS__f85c78201a50,APTOS,3230,g3225,left,left,100.0,macula,macula,54.02,0,0,No DR,99.98,99.98,0.02,0.0,0.0,0.0,True,True,1.0,True
+APTOS__f86d1c404acb,APTOS,3232,g3227,right,right,99.98,macula,macula,72.92,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__f8cf7ed8ef00,APTOS,3233,g3228,left,left,99.95,macula,macula,94.33,4,4,Proliferative,76.02,0.18,0.91,4.52,18.38,76.02,True,True,1.0,False
+APTOS__fa748b57262b,APTOS,3252,g3247,right,right,100.0,macula,macula,99.92,2,3,Severe,38.06,1.97,8.92,28.81,38.06,22.23,True,True,0.0,True
+APTOS__fb696a8e055a,APTOS,3258,g3253,left,left,99.98,macula,macula,99.86,4,4,Proliferative,96.4,0.02,0.11,0.57,2.9,96.4,True,True,1.0,False
+APTOS__fbdc796290d4,APTOS,3265,g3260,right,right,99.95,macula,macula,83.35,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__fc8fce67fbf8,APTOS,3272,g3267,left,left,100.0,macula,macula,90.9,0,0,No DR,100.0,100.0,0.0,0.0,0.0,0.0,True,True,1.0,False
+APTOS__fca1a8738b8a,APTOS,3273,g3268,left,left,100.0,macula,optic_disc,54.77,0,0,No DR,99.99,99.99,0.01,0.0,0.0,0.0,True,False,1.0,True
+APTOS__fecf4c5ae84b,APTOS,3294,g3289,left,left,99.99,macula,macula,99.9,1,2,Moderate,38.36,4.48,17.67,38.36,28.55,10.94,True,True,0.0,True
+APTOS__fefded6bf135,APTOS,3296,g3291,right,right,99.76,macula,macula,99.89,0,0,No DR,82.13,82.13,14.41,2.8,0.54,0.13,True,True,1.0,False
+MULTIMODAL__IDRiD_003,MULTIMODAL,3313,g3308,left,left,100.0,macula,macula,99.05,2,2,Moderate,36.12,12.29,33.68,36.12,13.97,3.95,True,True,1.0,True
+MULTIMODAL__IDRiD_004test,MULTIMODAL,3315,g3310,right,right,99.99,macula,macula,95.27,4,3,Severe,38.2,0.88,4.26,17.46,38.2,39.2,True,True,0.0,True
+MULTIMODAL__IDRiD_009test,MULTIMODAL,3325,g3320,right,right,99.99,macula,macula,99.71,2,3,Severe,39.07,1.05,5.0,19.71,39.07,35.17,True,True,0.0,True
+MULTIMODAL__IDRiD_011test,MULTIMODAL,3329,g3324,left,left,99.94,macula,macula,99.99,2,2,Moderate,37.34,3.94,15.99,37.34,30.42,12.32,True,True,1.0,True
+MULTIMODAL__IDRiD_012,MULTIMODAL,3330,g3325,left,left,99.98,macula,macula,92.24,3,3,Severe,39.35,1.48,6.88,24.58,39.35,27.71,True,True,1.0,True
+MULTIMODAL__IDRiD_012test,MULTIMODAL,3331,g3326,left,left,100.0,macula,macula,99.93,2,0,No DR,76.33,76.33,18.81,3.92,0.76,0.18,True,True,0.0,False
+MULTIMODAL__IDRiD_019,MULTIMODAL,3344,g3339,left,left,99.98,macula,macula,99.91,2,3,Severe,37.6,0.81,3.93,16.4,37.6,41.26,True,True,0.0,True
+MULTIMODAL__IDRiD_020test,MULTIMODAL,3347,g3342,right,right,99.99,macula,macula,95.05,2,2,Moderate,36.18,3.49,14.51,36.18,32.08,13.73,True,True,1.0,True
+MULTIMODAL__IDRiD_023test,MULTIMODAL,3352,g3347,left,left,99.81,macula,macula,99.82,2,3,Severe,38.55,0.94,4.5,18.22,38.55,37.78,True,True,0.0,True
+MULTIMODAL__IDRiD_028,MULTIMODAL,3361,g3356,left,left,99.96,macula,macula,99.9,4,4,Proliferative,71.0,0.23,1.17,5.73,21.86,71.0,True,True,1.0,False
+MULTIMODAL__IDRiD_031test,MULTIMODAL,3368,g3363,left,left,100.0,macula,macula,95.64,3,2,Moderate,36.99,3.79,15.5,36.99,30.97,12.76,True,True,0.0,True
+MULTIMODAL__IDRiD_032,MULTIMODAL,3369,g3364,left,left,100.0,macula,macula,99.69,4,3,Severe,35.25,0.63,3.08,13.48,35.25,47.56,True,True,0.0,True
+MULTIMODAL__IDRiD_033,MULTIMODAL,3371,g3366,right,right,99.99,macula,macula,99.62,4,3,Severe,35.38,0.64,3.12,13.61,35.38,47.26,True,True,0.0,True
+MULTIMODAL__IDRiD_040test,MULTIMODAL,3384,g3379,right,right,99.99,macula,macula,96.36,4,3,Severe,37.25,2.2,9.81,30.36,37.25,20.39,True,True,0.0,True
+MULTIMODAL__IDRiD_043,MULTIMODAL,3388,g3383,left,left,99.93,macula,macula,99.73,2,2,Moderate,38.68,4.7,18.34,38.68,27.83,10.46,True,True,1.0,True
+MULTIMODAL__IDRiD_045,MULTIMODAL,3391,g3386,left,left,99.99,macula,macula,99.41,2,2,Moderate,35.84,12.58,34.05,35.84,13.68,3.85,True,True,1.0,True
+MULTIMODAL__IDRiD_057test,MULTIMODAL,3409,g3404,left,left,99.26,macula,macula,99.58,4,4,Proliferative,94.24,0.04,0.18,0.92,4.62,94.24,True,True,1.0,False
+MULTIMODAL__IDRiD_058,MULTIMODAL,3410,g3405,left,left,99.98,macula,macula,98.9,2,3,Severe,39.45,1.23,5.8,21.92,39.45,31.6,True,True,0.0,True
+MULTIMODAL__IDRiD_059,MULTIMODAL,3412,g3407,right,right,100.0,macula,macula,99.86,2,3,Severe,38.76,1.75,8.01,27.06,38.76,24.42,True,True,0.0,True
+MULTIMODAL__IDRiD_064test,MULTIMODAL,3423,g3418,right,right,99.99,macula,macula,79.71,1,1,Mild,42.25,29.82,42.25,21.22,5.38,1.34,True,True,1.0,True
+MULTIMODAL__IDRiD_065test,MULTIMODAL,3425,g3420,right,right,99.99,macula,optic_disc,58.36,2,1,Mild,36.12,14.4,36.12,34.09,12.08,3.31,True,False,0.0,True
+MULTIMODAL__IDRiD_068test,MULTIMODAL,3431,g3426,right,right,99.98,macula,macula,98.47,0,1,Mild,38.64,44.07,38.64,13.55,3.01,0.73,True,True,0.0,True
+MULTIMODAL__IDRiD_078,MULTIMODAL,3446,g3441,right,right,100.0,macula,macula,98.63,2,3,Severe,38.4,0.91,4.39,17.88,38.4,38.42,True,True,0.0,True
+MULTIMODAL__IDRiD_078test,MULTIMODAL,3447,g3442,left,left,100.0,macula,macula,96.17,0,0,No DR,77.71,77.71,17.78,3.64,0.7,0.16,True,True,1.0,False
+MULTIMODAL__IDRiD_079,MULTIMODAL,3448,g3443,left,left,100.0,macula,macula,98.15,1,1,Mild,37.45,46.75,37.45,12.43,2.71,0.65,True,True,1.0,True
+MULTIMODAL__IDRiD_085test,MULTIMODAL,3461,g3456,right,right,99.93,macula,macula,91.61,1,1,Mild,41.11,36.95,41.11,16.98,3.99,0.97,True,True,1.0,True
+MULTIMODAL__IDRiD_086test,MULTIMODAL,3463,g3458,left,left,99.99,macula,macula,99.93,2,1,Mild,36.72,48.29,36.72,11.82,2.56,0.61,True,True,0.0,True
+MULTIMODAL__IDRiD_088,MULTIMODAL,3466,g3461,left,left,99.99,macula,macula,77.33,3,2,Moderate,39.72,7.12,24.63,39.72,21.54,6.99,True,True,0.0,True
+MULTIMODAL__IDRiD_099,MULTIMODAL,3482,g3477,right,right,99.99,macula,macula,99.76,4,4,Proliferative,63.82,0.33,1.62,7.7,26.53,63.82,True,True,1.0,True
+MULTIMODAL__IDRiD_100test,MULTIMODAL,3484,g3479,left,left,100.0,macula,macula,99.95,2,2,Moderate,35.21,13.24,34.85,35.21,13.06,3.64,True,True,1.0,True
+MULTIMODAL__IDRiD_116,MULTIMODAL,3502,g3497,right,right,99.97,macula,macula,94.14,2,2,Moderate,38.99,4.96,19.09,38.99,27.02,9.94,True,True,1.0,True
+MULTIMODAL__IDRiD_117,MULTIMODAL,3503,g3498,left,left,99.98,macula,macula,99.97,2,2,Moderate,38.66,4.68,18.3,38.66,27.87,10.49,True,True,1.0,True
+MULTIMODAL__IDRiD_118,MULTIMODAL,3504,g3418,right,right,99.99,macula,macula,79.71,0,1,Mild,42.25,29.82,42.25,21.22,5.38,1.34,True,True,0.0,True
+MULTIMODAL__IDRiD_119,MULTIMODAL,3505,g3499,right,right,100.0,macula,macula,98.76,4,4,Proliferative,67.42,0.28,1.38,6.68,24.24,67.42,True,True,1.0,True
+MULTIMODAL__IDRiD_134,MULTIMODAL,3519,g3513,left,left,100.0,macula,macula,99.62,2,1,Mild,41.85,33.56,41.85,18.88,4.58,1.13,True,True,0.0,True
+MULTIMODAL__IDRiD_135,MULTIMODAL,3520,g3514,right,right,99.99,macula,macula,94.44,2,1,Mild,36.83,15.11,36.83,33.39,11.53,3.13,True,True,0.0,True
+MULTIMODAL__IDRiD_139,MULTIMODAL,3523,g3517,left,left,100.0,macula,macula,97.17,0,0,No DR,70.3,70.3,23.2,5.23,1.03,0.24,True,True,1.0,False
+MULTIMODAL__IDRiD_160,MULTIMODAL,3533,g3527,right,right,99.93,macula,macula,60.82,0,0,No DR,67.33,67.33,25.27,5.94,1.18,0.28,True,True,1.0,True
+MULTIMODAL__IDRiD_178,MULTIMODAL,3542,g3536,right,right,100.0,macula,macula,93.6,4,2,Moderate,39.39,5.42,20.39,39.39,25.67,9.13,True,True,0.0,True
+MULTIMODAL__IDRiD_180,MULTIMODAL,3544,g3538,left,left,99.98,optic_disc,optic_disc,87.73,3,2,Moderate,39.61,7.56,25.61,39.61,20.65,6.58,True,True,0.0,True
+MULTIMODAL__IDRiD_182,MULTIMODAL,3546,g3540,right,right,99.96,macula,macula,83.63,0,0,No DR,72.14,72.14,21.88,4.81,0.95,0.22,True,True,1.0,False
+MULTIMODAL__IDRiD_195,MULTIMODAL,3558,g3552,right,right,99.92,macula,macula,78.73,0,0,No DR,85.32,85.32,11.92,2.23,0.42,0.1,True,True,1.0,False
+MULTIMODAL__IDRiD_196,MULTIMODAL,3559,g3553,right,right,99.97,macula,macula,96.77,2,1,Mild,35.98,14.26,35.98,34.23,12.19,3.35,True,True,0.0,True
+MULTIMODAL__IDRiD_214,MULTIMODAL,3577,g3571,left,left,100.0,macula,macula,98.52,0,0,No DR,73.16,73.16,21.14,4.59,0.9,0.21,True,True,1.0,False
+MULTIMODAL__IDRiD_215,MULTIMODAL,3578,g3572,right,right,99.97,macula,macula,94.76,0,0,No DR,82.96,82.96,13.77,2.65,0.51,0.12,True,True,1.0,False
+MULTIMODAL__IDRiD_219,MULTIMODAL,3581,g3575,left,left,100.0,macula,macula,90.02,0,0,No DR,99.7,99.7,0.25,0.04,0.01,0.0,True,True,1.0,False
+MULTIMODAL__IDRiD_226,MULTIMODAL,3588,g3581,left,left,100.0,macula,macula,98.37,0,0,No DR,79.48,79.48,16.44,3.3,0.63,0.15,True,True,1.0,False
+MULTIMODAL__IDRiD_237,MULTIMODAL,3599,g3592,left,left,99.98,optic_disc,macula,71.16,2,2,Moderate,39.75,6.96,24.26,39.75,21.88,7.15,True,False,1.0,True
+MULTIMODAL__IDRiD_238,MULTIMODAL,3600,g3593,left,left,100.0,macula,macula,99.85,0,0,No DR,74.49,74.49,20.17,4.3,0.84,0.2,True,True,1.0,False
+MULTIMODAL__IDRiD_254,MULTIMODAL,3616,g3609,right,right,99.98,macula,macula,98.31,4,4,Proliferative,55.31,0.46,2.28,10.46,31.49,55.31,True,True,1.0,True
+MULTIMODAL__IDRiD_255,MULTIMODAL,3617,g3610,left,left,100.0,macula,macula,97.48,0,0,No DR,97.65,97.65,1.96,0.32,0.06,0.01,True,True,1.0,False
+MULTIMODAL__IDRiD_271,MULTIMODAL,3632,g3625,right,right,99.99,macula,macula,97.97,3,4,Proliferative,71.12,0.23,1.17,5.7,21.78,71.12,True,True,0.0,False
+MULTIMODAL__IDRiD_275,MULTIMODAL,3636,g3629,right,right,99.97,macula,macula,74.98,0,0,No DR,93.32,93.32,5.51,0.95,0.18,0.04,True,True,1.0,False
+MULTIMODAL__IDRiD_279,MULTIMODAL,3639,g3443,left,left,100.0,macula,macula,98.15,1,1,Mild,37.45,46.75,37.45,12.43,2.71,0.65,True,True,1.0,True
+MULTIMODAL__IDRiD_287,MULTIMODAL,3647,g3639,right,right,99.97,macula,macula,94.67,0,0,No DR,89.0,89.0,9.01,1.62,0.31,0.07,True,True,1.0,False
+MULTIMODAL__IDRiD_295,MULTIMODAL,3655,g3647,left,left,100.0,macula,macula,97.16,0,0,No DR,94.44,94.44,4.6,0.78,0.15,0.03,True,True,1.0,False
+MULTIMODAL__IDRiD_298,MULTIMODAL,3658,g3650,left,left,100.0,macula,macula,95.57,0,0,No DR,92.57,92.57,6.12,1.06,0.2,0.05,True,True,1.0,False
+MULTIMODAL__IDRiD_316,MULTIMODAL,3676,g3668,right,right,99.99,macula,macula,82.51,0,0,No DR,98.48,98.48,1.27,0.21,0.04,0.01,True,True,1.0,False
+MULTIMODAL__IDRiD_317,MULTIMODAL,3677,g3669,left,left,100.0,macula,macula,90.49,0,0,No DR,97.0,97.0,2.49,0.41,0.08,0.02,True,True,1.0,False
+MULTIMODAL__IDRiD_327,MULTIMODAL,3687,g3356,left,left,99.96,macula,macula,99.9,3,4,Proliferative,71.0,0.23,1.17,5.73,21.86,71.0,True,True,0.0,False
+MULTIMODAL__IDRiD_330,MULTIMODAL,3690,g3681,right,right,100.0,macula,macula,98.02,3,3,Severe,39.44,1.22,5.76,21.79,39.44,31.79,True,True,1.0,True
+MULTIMODAL__IDRiD_333,MULTIMODAL,3693,g3386,left,left,99.99,macula,macula,99.41,2,2,Moderate,35.84,12.58,34.05,35.84,13.68,3.85,True,True,1.0,True
+MULTIMODAL__IDRiD_341,MULTIMODAL,3700,g3690,right,right,100.0,macula,macula,99.88,3,3,Severe,35.66,0.66,3.2,13.9,35.66,46.58,True,True,1.0,True
+MULTIMODAL__IDRiD_342,MULTIMODAL,3701,g3691,right,right,99.99,macula,macula,82.76,0,0,No DR,69.73,69.73,23.6,5.36,1.06,0.25,True,True,1.0,True
+MULTIMODAL__IDRiD_361,MULTIMODAL,3715,g3705,left,left,99.92,macula,macula,98.37,4,3,Severe,34.96,0.61,3.0,13.19,34.96,48.23,True,True,0.0,True
+MULTIMODAL__IDRiD_362,MULTIMODAL,3716,g3706,right,right,99.99,macula,macula,94.89,4,4,Proliferative,52.85,0.51,2.51,11.36,32.77,52.85,True,True,1.0,True
+MULTIMODAL__IDRiD_364,MULTIMODAL,3718,g3708,left,left,99.97,macula,macula,99.97,3,4,Proliferative,52.1,0.53,2.59,11.64,33.15,52.1,True,True,0.0,True
+MULTIMODAL__IDRiD_365,MULTIMODAL,3719,g3709,left,left,100.0,macula,macula,99.55,0,1,Mild,41.71,34.37,41.71,18.41,4.43,1.09,True,True,0.0,True
+MULTIMODAL__IDRiD_381,MULTIMODAL,3734,g3723,left,left,100.0,macula,macula,99.72,0,1,Mild,40.85,21.24,40.85,27.73,8.09,2.09,True,True,0.0,True
+MULTIMODAL__IDRiD_390,MULTIMODAL,3742,g3731,right,right,100.0,macula,macula,99.95,4,4,Proliferative,55.87,0.45,2.23,10.26,31.19,55.87,True,True,1.0,True
+MULTIMODAL__IDRiD_392,MULTIMODAL,3744,g3733,left,left,98.93,macula,macula,99.85,4,4,Proliferative,91.34,0.05,0.28,1.42,6.91,91.34,True,True,1.0,False
+MULTIMODAL__IDRiD_405,MULTIMODAL,3756,g3745,left,left,99.99,macula,macula,99.02,2,0,No DR,57.47,57.47,31.67,8.65,1.79,0.42,True,True,0.0,True
+MULTIMODAL__IDRiD_406,MULTIMODAL,3757,g3746,right,right,99.97,macula,macula,87.3,0,0,No DR,87.17,87.17,10.46,1.92,0.36,0.08,True,True,1.0,False
+MULTIMODAL__IDRiD_408,MULTIMODAL,3759,g3748,right,right,100.0,macula,macula,99.59,1,1,Mild,42.19,30.74,42.19,20.62,5.17,1.28,True,True,1.0,True

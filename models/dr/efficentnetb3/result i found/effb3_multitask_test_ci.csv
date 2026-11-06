@@ -1,0 +1,6 @@
+metric,value_%,ci95_low_%,ci95_high_%
+laterality accuracy,99.65,99.13,100
+laterality balanced acc,99.67,99.17,100
+centre balanced acc,84.44,76.37,91.86
+grade accuracy,70.02,66.09,73.88
+grade QWK,89.03,86.93,90.93

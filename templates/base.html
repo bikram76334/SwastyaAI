@@ -5,26 +5,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>
-            {%block title%} {%endblock%}
+            {%block title%}  {%endblock%}
   </title>
 
 <link href="{{url_for('static',filename='css/bootstrap.min.css')}} " rel="stylesheet">
             <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" >
-            <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
-
-
-
+           
     </head>
+
+   
 
     <body class="d-flex flex-column vh-100">
          {% include 'nav.html' %} 
         <div class="container">
+             </div>
           
-  
-
-            {% block contents %}
-            {% endblock %}
-        </div>
+ {% block contents %}  
+       
+        {%endblock%}
 
         <script src="/static/js/bootstrap.min.js" ></script>
         <script src="/static/js/main.js">  </script>

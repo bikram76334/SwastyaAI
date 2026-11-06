@@ -75,7 +75,7 @@
   "ne|Show this model's metrics": "यस मोडेलको मेट्रिक्स देखाउनुहोस्",
   "ne|Model Performance - E1 with B0 - Seed 2024": "मोडेल प्रदर्शन - B0 - २०२४ सहित E1",
   "ne|Model Performance - E1 with B0 - Seed ४२": "मोडेल प्रदर्शन - B0 - ४२ सहित E1",
-    "ne|Model Performance - E1 with B0 - Seed १२३": "मोडेल प्रदर्शन - B0 - १२३ सहित E1",
+  "ne|Model Performance - E1 with B0 - Seed १२३": "मोडेल प्रदर्शन - B0 - १२३ सहित E1",
   "ne|73.78%": "73.78%",
   "ne|93.89%": "93.89%",
   "ne|55.52%": "55.52%",
@@ -96,5 +96,8 @@
   "ne|Predicted class with probabilities": "सम्भाव्यता भएको पूर्वानुमानित वर्ग",
   "ne|Heatmaps,performance information": "हीटम्याप,कार्यसम्पादन जानकारी",
   "ne|Uncertainty / low-confidence warning": "अनिश्चितता /कम विश्वासको चेतावनी",
-  "ne|The model's measured performance, including external-dataset results": "बाह्य - डाटासेट परिणामहरू सहित मोडेलको मापन गरिएको प्रदर्शन"
+  "ne|The model's measured performance, including external-dataset results": "बाह्य - डाटासेट परिणामहरू सहित मोडेलको मापन गरिएको प्रदर्शन",
+  "ne|Uploaded fundus image": "अपलोड गरिएको फन्डसको तस्बिर",
+  "ne|Ear Disease Screening": "कान रोगको जाँच",
+  "ne|Upload a ear photo (JPG or PNG). The model shows result.": "कानको फोटो अपलोड गर्नुहोस् (JPG वा PNG) । मोडेलले परिणाम देखाउँदछ ।"
 }
